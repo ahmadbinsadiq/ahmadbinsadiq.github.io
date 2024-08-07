@@ -78,20 +78,35 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
-        .projects li, .research li, .education li, .certifications li, .awards li, .contact li, .key-skills li, .softwares li {
+        .key-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .key-skills .category {
+            flex: 1 1 100%;
+            background-color: #444444; /* Medium Gray */
+            border-radius: 12px;
             padding: 15px;
             margin-bottom: 15px;
-            border: 1px solid #444444;
-            border-radius: 8px;
-            background: #2d2d2d; /* Dark Gray */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            margin-left: 10px; /* Margin for left side */
-            margin-right: 10px; /* Margin for right side */
         }
-        .key-skills, .softwares {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        .key-skills .category h3 {
+            margin: 0 0 10px;
+            color: #39ff14; /* Neon Green */
+        }
+        .key-skills .skills {
+            display: flex;
+            flex-wrap: wrap;
             gap: 10px;
+        }
+        .key-skills .skill {
+            background-color: #39ff14; /* Neon Green */
+            color: #1c1c1c; /* Dark Gray */
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
         a {
             color: #00ffff; /* Neon Cyan */
@@ -165,11 +180,11 @@
                 </li>
                 <li>
                     <strong>Employee Attrition Analysis and Prediction</strong><br>
-                    Analyzed employee data to predict attrition, resulting in a 30% reduction in turnover.
+                    Analyzed employee data to predict attrition rates and identified key factors influencing employee turnover, leading to improved retention strategies.
                 </li>
                 <li>
                     <strong>Power BI Dashboard for Sales Data</strong><br>
-                    Developed an interactive Power BI dashboard to visualize sales data, enhancing decision-making.
+                    Designed and implemented a Power BI dashboard for sales data visualization, enabling dynamic reporting and interactive insights for stakeholders.
                 </li>
             </ul>
         </div>
@@ -233,40 +248,94 @@
 
         <div id="key-skills" class="tab-content">
             <h2 class="section-title">Key Skills</h2>
-            <ul class="key-skills">
-                <li>
-                    <strong>Programming:</strong><br>
-                    Python (Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Plotly), R (data manipulation, ggplot2, Excel integration)
-                </li>
-                <li>
-                    <strong>Deep Learning:</strong><br>
-                    TensorFlow, Keras, PyTorch, CNNs, RNNs
-                </li>
-                <li>
-                    <strong>Natural Language Processing:</strong><br>
-                    NLTK, spaCy, transformers, text preprocessing, tokenization, sentiment analysis
-                </li>
-                <li>
-                    <strong>Data Visualization:</strong><br>
-                    Power BI, Tableau, Matplotlib, Seaborn
-                </li>
-                <li>
-                    <strong>Databases:</strong><br>
-                    SQL and Microsoft SQL Server
-                </li>
-                <li>
-                    <strong>Machine Learning:</strong><br>
-                    Supervised and unsupervised learning, model deployment, feature engineering
-                </li>
-                <li>
-                    <strong>Tools:</strong><br>
-                    Jupyter Notebook, Visual Studio Code, PyCharm, RStudio, Git, APIs, web scraping, Excel, Streamlit
-                </li>
-                <li>
-                    <strong>Soft Skills:</strong><br>
-                    Problem-solving, critical thinking, creativity, people management, emotional intelligence, decision-making
-                </li>
-            </ul>
+            <div class="key-skills">
+                <div class="category">
+                    <h3>Programming</h3>
+                    <div class="skills">
+                        <div class="skill">Python</div>
+                        <div class="skill">Scikit-learn</div>
+                        <div class="skill">Pandas</div>
+                        <div class="skill">NumPy</div>
+                        <div class="skill">Matplotlib</div>
+                        <div class="skill">Seaborn</div>
+                        <div class="skill">Plotly</div>
+                        <div class="skill">R</div>
+                        <div class="skill">ggplot2</div>
+                        <div class="skill">Excel</div>
+                    </div>
+                </div>
+                <div class="category">
+                    <h3>Deep Learning</h3>
+                    <div class="skills">
+                        <div class="skill">TensorFlow</div>
+                        <div class="skill">Keras</div>
+                        <div class="skill">PyTorch</div>
+                        <div class="skill">CNNs</div>
+                        <div class="skill">RNNs</div>
+                    </div>
+                </div>
+                <div class="category">
+                    <h3>Natural Language Processing</h3>
+                    <div class="skills">
+                        <div class="skill">NLTK</div>
+                        <div class="skill">spaCy</div>
+                        <div class="skill">transformers</div>
+                        <div class="skill">text preprocessing</div>
+                        <div class="skill">tokenization</div>
+                        <div class="skill">sentiment analysis</div>
+                    </div>
+                </div>
+                <div class="category">
+                    <h3>Data Visualization</h3>
+                    <div class="skills">
+                        <div class="skill">Power BI</div>
+                        <div class="skill">Tableau</div>
+                        <div class="skill">Matplotlib</div>
+                        <div class="skill">Seaborn</div>
+                    </div>
+                </div>
+                <div class="category">
+                    <h3>Databases</h3>
+                    <div class="skills">
+                        <div class="skill">SQL</div>
+                        <div class="skill">Microsoft SQL Server</div>
+                    </div>
+                </div>
+                <div class="category">
+                    <h3>Machine Learning</h3>
+                    <div class="skills">
+                        <div class="skill">Supervised Learning</div>
+                        <div class="skill">Unsupervised Learning</div>
+                        <div class="skill">Model Deployment</div>
+                        <div class="skill">Feature Engineering</div>
+                    </div>
+                </div>
+                <div class="category">
+                    <h3>Tools</h3>
+                    <div class="skills">
+                        <div class="skill">Jupyter Notebook</div>
+                        <div class="skill">Visual Studio Code</div>
+                        <div class="skill">PyCharm</div>
+                        <div class="skill">RStudio</div>
+                        <div class="skill">Git</div>
+                        <div class="skill">APIs</div>
+                        <div class="skill">Web Scraping</div>
+                        <div class="skill">Excel</div>
+                        <div class="skill">Streamlit</div>
+                    </div>
+                </div>
+                <div class="category">
+                    <h3>Soft Skills</h3>
+                    <div class="skills">
+                        <div class="skill">Problem-solving</div>
+                        <div class="skill">Critical Thinking</div>
+                        <div class="skill">Creativity</div>
+                        <div class="skill">People Management</div>
+                        <div class="skill">Emotional Intelligence</div>
+                        <div class="skill">Decision-making</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="softwares" class="tab-content">
