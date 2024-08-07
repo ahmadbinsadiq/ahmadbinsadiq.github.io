@@ -78,7 +78,7 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
-        .projects li, .research li, .education li, .certifications li, .awards li, .contact li {
+        .projects li, .research li, .education li, .certifications li, .awards li, .contact li, .key-skills li, .softwares li {
             padding: 15px;
             margin-bottom: 15px;
             border: 1px solid #444444;
@@ -87,6 +87,11 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             margin-left: 10px; /* Margin for left side */
             margin-right: 10px; /* Margin for right side */
+        }
+        .key-skills, .softwares {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
         }
         a {
             color: #00ffff; /* Neon Cyan */
@@ -112,8 +117,8 @@
             <div class="tab" onclick="openTab(event, 'certifications')">Certifications</div>
             <div class="tab" onclick="openTab(event, 'awards')">Awards</div>
             <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
-            <!-- Optional General Tab -->
-            <!-- <div class="tab" onclick="openTab(event, 'general')">General</div> -->
+            <div class="tab" onclick="openTab(event, 'key-skills')">Key Skills</div>
+            <div class="tab" onclick="openTab(event, 'softwares')">Softwares</div>
         </div>
 
         <div id="about" class="tab-content active">
@@ -121,8 +126,6 @@
             <p>I am Ahmad Bin Sadiq, a dynamic Data Scientist with a strong passion for leveraging data to drive actionable insights and innovative solutions. With over two years of hands-on experience in machine learning, deep learning, and data analytics, I have a proven track record of developing predictive models, performing complex data analyses, and delivering impactful results. My technical expertise spans a wide array of tools and technologies, including Python, R, SQL, TensorFlow, Keras, and Power BI. I am adept at working in fast-paced environments and thrive on solving complex problems with creative and effective solutions.</p>
             <p>Throughout my career, I have successfully led projects that optimize operational efficiency, forecast sales, analyze financial risks, and improve production processes. My recent endeavors include developing a real-time object detection system using TensorFlow, predicting energy consumption for the textile industry, and creating an AI-powered toolkit for data analysis and machine learning model visualization. Each project has not only honed my technical skills but also reinforced my ability to translate data into strategic business insights.</p>
             <p>I am now eager to take on new challenges and contribute to a forward-thinking multinational company. My goal is to leverage my expertise in deep learning, machine learning, and data analysis to develop groundbreaking AI solutions that drive growth and innovation. Let's connect and explore how I can contribute to your organization's success.</p>
-
-
         </div>
 
         <div id="projects" class="tab-content">
@@ -175,12 +178,12 @@
             <h2 class="section-title">Research</h2>
             <ul class="research">
                 <li>
-                    <strong>AI Integration with OEE Metrics</strong><br>
-                    Research focused on integrating AI with OEE metrics to enhance manufacturing processes, focusing on productivity, efficiency, and quality improvements.
+                    <strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong><br>
+                    Research on leveraging AI to enhance Overall Equipment Effectiveness in manufacturing.
                 </li>
                 <li>
-                    <strong>Investigating Factors Affecting the Adoption of Industry 5.0 in the Manufacturing Sector: An Integrated Model Approach</strong><br>
-                    Conducted master’s research identifying factors influencing the adoption of Industry 5.0 technologies, utilizing advanced data collection and analysis to provide strategic recommendations for integration and operational efficiency.
+                    <strong>Deep Learning Model for Image Classification</strong><br>
+                    Investigated the application of deep learning techniques for classifying images into various categories.
                 </li>
             </ul>
         </div>
@@ -190,12 +193,11 @@
             <ul class="education">
                 <li>
                     <strong>Master of Industrial Engineering & Management</strong><br>
-                    University of the Punjab, Lahore, Pakistan | 2021-2024<br>
-                    <span style="color: #39ff14;">Gold Medalist</span>
+                    University of the Punjab, Gold Medalist
                 </li>
                 <li>
                     <strong>Bachelor of Industrial & Manufacturing Engineering</strong><br>
-                    UET Lahore, Pakistan | 2016-2020
+                    UET Lahore
                 </li>
             </ul>
         </div>
@@ -203,68 +205,84 @@
         <div id="certifications" class="tab-content">
             <h2 class="section-title">Certifications</h2>
             <ul class="certifications">
-                <li>
-                    <strong>AI Engineering</strong><br>
-                    IBM
-                </li>
-                <li>
-                    <strong>Data Science</strong><br>
-                    IBM
-                </li>
-                <li>
-                    <strong>Data Analytics</strong><br>
-                    Google
-                </li>
-                <li>
-                    <strong>Lean Six-Sigma Black Belt</strong><br>
-                    AIGPE
-                </li>
+                <li>AI Engineering - IBM</li>
+                <li>Data Science - IBM</li>
+                <li>Data Analytics - Google</li>
+                <li>Lean Six-Sigma Black Belt - AIGPE</li>
             </ul>
         </div>
 
         <div id="awards" class="tab-content">
             <h2 class="section-title">Awards</h2>
             <ul class="awards">
-                <li>
-                    <strong>Gold Medalist</strong><br>
-                    Master’s Degree, University of the Punjab | 2023
-                </li>
-                <li>
-                    <strong>Benevolent Scholarship</strong><br>
-                    Punjab Government | 2014-2020
-                </li>
-                <li>
-                    <strong>Solar Panel Award</strong><br>
-                    Chief Minister Punjab | 2014
-                </li>
-                <li>
-                    <strong>Laptop Award</strong><br>
-                    Chief Minister Punjab | 2018
-                </li>
+                <li>Gold Medal in Master's Degree (2023)</li>
+                <li>Benevolent Scholarship from Punjab Government (2014-2020)</li>
+                <li>Solar Panel Award from Chief Minister Punjab (2014)</li>
+                <li>Laptop Award from Chief Minister Punjab (2018)</li>
             </ul>
         </div>
 
         <div id="contact" class="tab-content">
             <h2 class="section-title">Contact</h2>
             <ul class="contact">
+                <li>Email: <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></li>
+                <li>Phone: <a href="tel:+923035049492">+92-303-5049492</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq">Ahmad Bin Sadiq</a></li>
+            </ul>
+        </div>
+
+        <div id="key-skills" class="tab-content">
+            <h2 class="section-title">Key Skills</h2>
+            <ul class="key-skills">
                 <li>
-                    <strong>Email:</strong> <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a>
+                    <strong>Programming:</strong><br>
+                    Python (Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Plotly), R (data manipulation, ggplot2, Excel integration)
                 </li>
                 <li>
-                    <strong>Phone:</strong> <a href="tel:+92-303-5049492">+92-303-5049492</a>
+                    <strong>Deep Learning:</strong><br>
+                    TensorFlow, Keras, PyTorch, CNNs, RNNs
                 </li>
                 <li>
-                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">www.linkedin.com/in/ahmad-bin-sadiq</a>
+                    <strong>Natural Language Processing:</strong><br>
+                    NLTK, spaCy, transformers, text preprocessing, tokenization, sentiment analysis
                 </li>
                 <li>
-                    <strong>GitHub:</strong> <a href="https://github.com/ahmadbinsadiq" target="_blank">https://github.com/ahmadbinsadiq</a>
+                    <strong>Data Visualization:</strong><br>
+                    Power BI, Tableau, Matplotlib, Seaborn
                 </li>
                 <li>
-                    <strong>Credly:</strong> <a href="https://www.credly.com/users/ahmad-bin-sadiq" target="_blank">https://www.credly.com/users/ahmad-bin-sadiq</a>
+                    <strong>Databases:</strong><br>
+                    SQL and Microsoft SQL Server
                 </li>
                 <li>
-                    <strong>Streamlit:</strong> <a href="https://share.streamlit.io/user/ahmadbinsadiq" target="_blank">https://share.streamlit.io/user/ahmadbinsadiq</a>
+                    <strong>Machine Learning:</strong><br>
+                    Supervised and unsupervised learning, model deployment, feature engineering
                 </li>
+                <li>
+                    <strong>Tools:</strong><br>
+                    Jupyter Notebook, Visual Studio Code, PyCharm, RStudio, Git, APIs, web scraping, Excel, Streamlit
+                </li>
+                <li>
+                    <strong>Soft Skills:</strong><br>
+                    Problem-solving, critical thinking, creativity, people management, emotional intelligence, decision-making
+                </li>
+            </ul>
+        </div>
+
+        <div id="softwares" class="tab-content">
+            <h2 class="section-title">Softwares</h2>
+            <ul class="softwares">
+                <li>Microsoft Office 365</li>
+                <li>Visual Studio Code</li>
+                <li>Microsoft Power BI</li>
+                <li>Tableau</li>
+                <li>Google Cloud Platform</li>
+                <li>Jupyter Notebook</li>
+                <li>MySQL Workbench</li>
+                <li>Minitab</li>
+                <li>SPSS</li>
+                <li>Trello</li>
+                <li>Draw.io</li>
             </ul>
         </div>
     </div>
@@ -274,18 +292,18 @@
     </footer>
 
     <script>
-        function openTab(event, tabName) {
-            var i, tabcontent, tablinks;
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabs;
             tabcontent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+                tabcontent[i].style.display = "none";  
             }
-            tablinks = document.getElementsByClassName("tab");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            tabs = document.getElementsByClassName("tab");
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].className = tabs[i].className.replace(" active", "");
             }
             document.getElementById(tabName).style.display = "block";
-            event.currentTarget.className += " active";
+            evt.currentTarget.className += " active";
         }
     </script>
 </body>
