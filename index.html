@@ -3,199 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmad Bin Sadiq - Data Scientist</title>
+    <title>Ahmad Bin Sadiq - Data Scientist & AI Expert</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
             margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            text-align: center;
-            padding: 50px 0;
-        }
-        header h1 {
-            margin: 0;
-            color: #007acc;
-        }
-        header p {
-            font-size: 1.2em;
-            color: #555;
-        }
-        .section {
-            margin: 40px 0;
-        }
-        .section h2 {
-            border-bottom: 2px solid #007acc;
-            padding-bottom: 10px;
-            color: #007acc;
-        }
-        .section p {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f2027; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2c5364, #203a43, #0f2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            color: #ffffff;
             line-height: 1.6;
         }
-        ul {
-            list-style-type: none;
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        header {
+            background: #1c1c1c;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #333333 3px solid;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+
+        header #branding {
+            float: left;
+        }
+
+        header #branding h1 {
+            margin: 0;
+        }
+
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+
+        .showcase {
+            min-height: 400px;
+            background: url('https://source.unsplash.com/1600x900/?technology,ai') no-repeat 0 -400px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .showcase p {
+            font-size: 20px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #33b5e5;
+        }
+
+        .section-title {
+            border-bottom: 3px solid #33b5e5;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .skills, .experience, .projects {
+            margin-bottom: 40px;
+        }
+
+        .skills ul, .experience ul, .projects ul {
+            list-style: none;
             padding: 0;
         }
-        ul li {
-            padding: 5px 0;
+
+        .skills li, .experience li, .projects li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
         }
-        a {
-            color: #007acc;
+
+        .skills li:before, .experience li:before, .projects li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #33b5e5;
+            font-size: 20px;
+            top: -2px;
+        }
+
+        footer {
+            background: #333333;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #33b5e5;
             text-decoration: none;
         }
-        a:hover {
+
+        footer a:hover {
             text-decoration: underline;
         }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #007acc;
-            color: #fff;
+
+        @media (max-width: 768px) {
+            header nav, header ul {
+                float: none;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            header li {
+                display: block;
+                margin: 0;
+                padding: 10px 0;
+            }
+
+            .showcase {
+                min-height: 300px;
+            }
+
+            .showcase h1 {
+                font-size: 40px;
+            }
+
+            .showcase p {
+                font-size: 18px;
+            }
+
+            .container {
+                width: 95%;
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="container">
     <header>
-        <h1>Ahmad Bin Sadiq</h1>
-        <p>Dynamic Data Scientist with over 2 years of experience in machine learning, deep learning, and data analytics.</p>
+        <div class="container">
+            <div id="branding">
+                <h1>Ahmad Bin Sadiq</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#summary">Summary</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <div class="section">
-        <h2>Contact Information</h2>
-        <p>Phone: +92-303-5049492</p>
-        <p>Email: <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/ahmadbinsadiq" target="_blank">https://github.com/ahmadbinsadiq</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">www.linkedin.com/in/ahmad-bin-sadiq</a></p>
+    <div class="showcase">
+        <div class="container">
+            <h1>Data Scientist & AI Expert</h1>
+            <p>Leveraging AI to drive innovation and efficiency</p>
+        </div>
     </div>
 
-    <div class="section">
-        <h2>Professional Summary</h2>
-        <p>Dynamic Data Scientist with over 2 years of experience in machine learning, deep learning, and data analytics. Proven track record in developing predictive models, performing complex data analysis, and delivering actionable insights. Skilled in Python, R, SQL, and data visualization tools such as Power BI and Tableau. Adept at working in fast-paced environments and driving process improvements.</p>
-    </div>
+    <div class="container content">
+        <section id="summary">
+            <h2 class="section-title">Professional Summary</h2>
+            <p>Dynamic Data Scientist with over 2 years of experience in machine learning, deep learning, and data analytics. Proven track record in developing predictive models, performing complex data analysis, and delivering actionable insights. Skilled in Python, R, SQL, and data visualization tools such as Power BI and Tableau. Adept at working in fast-paced environments and driving process improvements.</p>
+        </section>
 
-    <div class="section">
-        <h2>Objective</h2>
-        <p>Aspiring AI expert seeking a challenging role in a forward-thinking multinational company to leverage my deep learning, machine learning, and data analysis skills to develop innovative AI solutions and drive company growth.</p>
-    </div>
+        <section id="skills">
+            <h2 class="section-title">Key Skills</h2>
+            <ul class="skills">
+                <li>Programming: Python (Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Plotly), R (data manipulation, ggplot2, Excel integration)</li>
+                <li>Deep Learning: TensorFlow, Keras, PyTorch, CNNs, RNNs</li>
+                <li>Natural Language Processing: NLTK, spaCy, transformers, text preprocessing, tokenization, sentiment analysis</li>
+                <li>Data Visualization: Power BI, Tableau, Matplotlib, Seaborn</li>
+                <li>Databases: SQL and Microsoft SQL Server</li>
+                <li>Machine Learning: Supervised and unsupervised learning, model deployment, feature engineering</li>
+                <li>Tools: Jupyter Notebook, Visual Studio Code, PyCharm, RStudio, Git, APIs, web scraping, Excel</li>
+                <li>Soft Skills: Problem-solving, critical thinking, creativity, people management, emotional intelligence, decision-making</li>
+            </ul>
+        </section>
 
-    <div class="section">
-        <h2>Key Skills</h2>
-        <ul>
-            <li>Programming: Python (Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Plotly), R (data manipulation, ggplot2, Excel integration)</li>
-            <li>Deep Learning: TensorFlow, Keras, PyTorch, CNNs, RNNs</li>
-            <li>Natural Language Processing: NLTK, spaCy, transformers, text preprocessing, tokenization, sentiment analysis</li>
-            <li>Data Visualization: Power BI, Tableau, Matplotlib, Seaborn</li>
-            <li>Databases: SQL and Microsoft SQL Server</li>
-            <li>Machine Learning: Supervised and unsupervised learning, model deployment, feature engineering</li>
-            <li>Tools: Jupyter Notebook, Visual Studio Code, PyCharm, RStudio, Git, APIs, web scraping, Excel</li>
-            <li>Soft Skills: Problem-solving, critical thinking, creativity, people management, emotional intelligence, decision making</li>
-        </ul>
-    </div>
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <ul class="experience">
+                <li>
+                    <strong>Data Analyst & Data Scientist</strong><br>
+                    Fiverr & Other Freelance Platforms (Remote) | August 2022 – Present
+                    <ul>
+                        <li>Sales Performance Analysis: Conducted sales data analysis of a brand's shops in Dubai using SQL, Python (Pandas, Matplotlib), Excel, and Tableau/Power BI to identify trends, resulting in actionable insights for 10% quarterly revenue growth.</li>
+                        <li>Financial Risk Analysis: Analyzed financial data using SQL, Python (Pandas, NumPy, Matplotlib), Excel, and Power BI to assess risks, resulting in actionable recommendations that reduced operational risks by 20%.</li>
+                        <li>Operational Efficiency Improvement: Identified operational inefficiencies in a date industry using SQL, Python (Pandas, Seaborn), R, and Tableau, implementing process improvements that enhanced efficiency and reduced costs.</li>
+                        <li>Supply Chain Analysis: Optimized a multinational supply chain processes using SQL, Python (Pandas, NumPy, Matplotlib), Excel, and Tableau, resulting in cost savings and improved efficiency.</li>
+                        <li>Energy Consumption Forecasting: Predicted energy consumption of 500 textile industries using Python (Pandas, Scikit-learn), R, SQL, and Tableau, optimizing resource allocation and reducing costs.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Research Assistant</strong><br>
+                    World Wide Fund for Nature | Lahore, Pakistan | April 2022 – July 2022
+                    <ul>
+                        <li>Effectively provided consultancy Services for Technical Support in the project “Decarbonizing the Textile Manufacturing Sector of Pakistan.”</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Research Assistant</strong><br>
+                    School of International Cooperation and Development (IDEC), Hiroshima University, Japan | Sindh, Pakistan | February 2022 – March 2022
+                    <ul>
+                        <li>Conducted surveys in floodplains of District Sukkur, Larkana & Khairpur and data collection regards for the permanent solution of their residence with local administrations.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Executive Officer</strong><br>
+                    STYLE TEXTILE | Lahore, Pakistan | January 2021 – January 2022
+                    <ul>
+                        <li>Applied Lean Six Sigma methodology to achieve 5% cost savings through process optimization.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Project Engineer</strong><br>
+                    Bata Shoes | Lahore, Pakistan | September 2020 – December 2020
+                    <ul>
+                        <li>Applied Lean Manufacturing principles to streamline production processes and reduce waste by 15%.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Assistant Project Engineer</strong><br>
+                    Changhong Ruba | Lahore, Pakistan | May 2020 – August 2020
+                    <ul>
+                        <li>Assisted in project management activities and conducted process improvement initiatives to enhance productivity.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 
-    <div class="section">
-        <h2>Professional Experience</h2>
-        <h3>Data Analyst & Data Scientist</h3>
-        <p>Fiverr & Other Freelance Platforms (Remote) | August 2022 – Present</p>
-        <ul>
-            <li>Sales Performance Analysis: Conducted sales data analysis of a brands all shops in Dubai using SQL, Python (Pandas, Matplotlib), Excel, and Tableau/Power BI to identify trends, resulting in actionable insights for 10% quarterly revenue growth.</li>
-            <li>Financial Risk Analysis: Analyzed financial data using SQL, Python (Pandas, NumPy, Matplotlib), Excel, and Power BI to assess risks, resulting in actionable recommendations that reduced operational risks by 20%.</li>
-            <li>Operational Efficiency Improvement: Identified operational inefficiencies in a date industry using SQL, Python (Pandas, Seaborn), R, and Tableau, implementing process improvements that enhanced efficiency and reduced costs.</li>
-            <li>Supply Chain Analysis: Optimized a multinational supply chain processes using SQL, Python (Pandas, NumPy, Matplotlib), Excel, and Tableau, resulting in cost savings and improved efficiency.</li>
-            <li>Energy Consumption Forecasting: Predicted energy consumption of 500 textile industries using Python (Pandas, Scikit-learn), R, SQL, and Tableau, optimizing resource allocation and reducing costs.</li>
-        </ul>
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <ul class="projects">
+                <li>
+                    <strong>MNIST Digit Classification using CNN</strong><br>
+                    Developed a Convolutional Neural Network (CNN) model to classify handwritten digits from the MNIST dataset, achieving an accuracy of 99%.
+                </li>
+                <li>
+                    <strong>Real-Time Object Detection with TensorFlow</strong><br>
+                    Implemented a real-time object detection system using TensorFlow and OpenCV, capable of detecting multiple objects in live video streams with high accuracy.
+                </li>
+                <li>
+                    <strong>House Price Prediction</strong><br>
+                    Built a regression model to predict house prices using various machine learning algorithms, including linear regression, decision trees, and random forests, and performed hyperparameter tuning to optimize model performance.
+                </li>
+                <li>
+                    <strong>Breast Cancer Prediction using SVM</strong><br>
+                    Developed a Support Vector Machine (SVM) model to predict breast cancer based on the Wisconsin Diagnostic Breast Cancer (WDBC) dataset, achieving an accuracy of 97%.
+                </li>
+                <li>
+                    <strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong><br>
+                    Conducted research on integrating AI with OEE to improve productivity, efficiency, and quality in manufacturing processes.
+                </li>
+            </ul>
+        </section>
 
-        <h3>Research Assistant</h3>
-        <p>World Wide Fund for Nature | Lahore, Pakistan | April 2022 – July 2022</p>
-        <ul>
-            <li>Effectively provided consultancy Services for Technical Support in the project “Decarbonizing the Textile Manufacturing Sector of Pakistan.”</li>
-        </ul>
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <ul>
+                <li>
+                    <strong>Master of Industrial Engineering & Management (Gold Medalist)</strong><br>
+                    University of the Punjab | 2021 – 2024
+                </li>
+                <li>
+                    <strong>Bachelor of Industrial & Manufacturing Engineering</strong><br>
+                    UET Lahore | 2016 – 2020
+                </li>
+                <li>
+                    <strong>Certifications</strong><br>
+                    <ul>
+                        <li>AI Engineering (IBM)</li>
+                        <li>Data Science (IBM)</li>
+                        <li>Data Analytics (Google)</li>
+                        <li>Lean Six Sigma Black Belt (AIGPE)</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 
-        <h3>Research Assistant</h3>
-        <p>School of International Cooperation and Development (IDEC), Hiroshima University, Japan | Sindh, Pakistan | February 2022 – March 2022</p>
-        <ul>
-            <li>Conducted surveys in floodplains of District Sukkur, Larkana & Khairpur and data collection regards for the permanent solution of their residence with local administrations.</li>
-        </ul>
-
-        <h3>Executive Officer</h3>
-        <p>STYLE TEXTILE | Lahore, Pakistan | November 2020 – February 2022</p>
-        <ul>
-            <li>Data-Driven Efficiency Optimization: Analyzed production data to identify idle time and bottlenecks, developing data-driven plans that reduced idle time by 15%.</li>
-            <li>Predictive Analytics: Implemented predictive analytics to forecast production targets and resource requirements, improving system efficiency by 20%.</li>
-            <li>Team Management: Led 7 cross-functional teams, utilizing data to track performance metrics and ensure daily production targets were met.</li>
-        </ul>
-
-        <h3>Project Engineer</h3>
-        <p>Bata Shoes | Lahore, Pakistan | January 2020 – July 2020</p>
-        <ul>
-            <li>Process Improvement Through Data Analysis: Conducted in-depth analysis of assembly line data to identify inefficiencies, leading to a 14% reduction in defects.</li>
-            <li>Lean and Six Sigma Projects: Applied Lean and Six Sigma methodologies, supported by statistical analysis, to improve production processes and enhance utilization rates.</li>
-        </ul>
-
-        <h3>Project Engineer</h3>
-        <p>Changhong Ruba | Lahore, Pakistan | July 2019 – November 2019</p>
-        <ul>
-            <li>Efficiency Enhancement Using Data Analytics: Analyzed production line data to identify areas for improvement, resulting in a 5% efficiency increase in Air-Conditioner and Refrigerator assembly lines.</li>
-            <li>Continuous Improvement Projects: Led data-driven Six Sigma projects that improved LED assembly line efficiency by 4%.</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Notable Projects</h2>
-        <ul>
-            <li>AI Integration with Overall Equipment Effectiveness (OEE)</li>
-            <li>Real-Time Object Detection with TensorFlow</li>
-            <li>Sales Forecasting with Time Series Analysis</li>
-            <li>Sentiment Analysis of Product Reviews</li>
-            <li>Image Detection with Convolutional Neural Networks</li>
-            <li>Real Estate Price Prediction</li>
-            <li>Customer Segmentation Using K-Means Clustering</li>
-            <li>Breast Cancer Prediction Using Support Vector Machines</li>
-            <li>Employee Attrition Analysis and Prediction</li>
-            <li>Power BI Dashboard for Sales Data</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Academic Education</h2>
-        <p><strong>Master of Industrial Engineering & Management (Gold Medalist)</strong><br>University of the Punjab | Lahore, Pakistan | 2021 - 2024</p>
-        <p><strong>Bachelor of Industrial & Manufacturing Engineering</strong><br>UET Lahore | Lahore, Pakistan | 2016 - 2020</p>
-    </div>
-
-    <div class="section">
-        <h2>Certifications</h2>
-        <ul>
-            <li>AI Engineering | IBM</li>
-            <li>Data Science | IBM</li>
-            <li>Data Analytics | Google</li>
-            <li>Lean Six-Sigma Black Belt | AIGPE</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Awards & Honors</h2>
-        <ul>
-            <li>Gold Medal in Master's Degree | 2023</li>
-            <li>Merit-based Benevolent Scholarship from Punjab Government | 2014 - 2020</li>
-            <li>Merit-based Solar Panel Award from Chief Minister Punjab | 2014</li>
-            <li>Merit-based Laptop Award from Chief Minister Punjab | 2018</li>
-        </ul>
+        <section id="contact">
+            <h2 class="section-title">Contact Information</h2>
+            <p>Email: <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></p>
+            <p>Phone: +92-303-5049492</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">www.linkedin.com/in/ahmad-bin-sadiq</a></p>
+        </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 Ahmad Bin Sadiq</p>
+        <p>© 2024 Ahmad Bin Sadiq. All Rights Reserved.</p>
     </footer>
-</div>
-
 </body>
 </html>
-
