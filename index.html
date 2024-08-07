@@ -78,7 +78,7 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
-        .projects li, .research li, .education li, .certifications li, .awards li, .contact li, .softwares li {
+        .projects li, .research li, .education li, .certifications li, .awards li, .contact li {
             padding: 15px;
             margin-bottom: 15px;
             border: 1px solid #444444;
@@ -88,54 +88,49 @@
             margin-left: 10px; /* Margin for left side */
             margin-right: 10px; /* Margin for right side */
         }
-        .key-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        .key-skills .section {
-            flex: 1;
-            min-width: 150px;
-            padding: 10px;
-            border: 1px solid #444444;
-            border-radius: 8px;
-            background: #2d2d2d; /* Dark Gray */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-        .key-skills .section h3 {
-            color: #39ff14; /* Neon Green */
-            margin-top: 0;
-        }
-        .key-skills .item {
-            background-color: #39ff14; /* Neon Green */
-            color: #1c1c1c; /* Dark Gray text */
-            padding: 5px;
-            margin: 5px 0;
-            border-radius: 5px;
-            display: inline-block;
-        }
-        .softwares {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        .softwares .software {
-            background-color: #444444; /* Medium Gray */
-            color: #ffffff; /* White text */
-            padding: 10px;
-            border: 1px solid #333333;
-            border-radius: 8px;
-            display: inline-block;
-            min-width: 150px;
-        }
         a {
             color: #00ffff; /* Neon Cyan */
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
+        }
+        /* Key Skills style */
+        .key-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .key-skills .category {
+            flex: 1;
+            min-width: 150px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .key-skills .item {
+            background-color: #2d2d2d; /* Dark Gray */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+        /* Highlight style for Education section */
+        .highlight {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 5px;
+            text-align: center;
         }
     </style>
 </head>
@@ -168,7 +163,6 @@
         <div id="projects" class="tab-content">
             <h2 class="section-title">Projects</h2>
             <ul class="projects">
-                <!-- Existing project entries -->
                 <li>
                     <strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong><br>
                     Effectively provided consultancy services for Technical Support in the project “AI Integration with Overall Equipment Effectiveness in the manufacturing industry.”
@@ -187,27 +181,27 @@
                 </li>
                 <li>
                     <strong>Image Detection with Convolutional Neural Networks</strong><br>
-                    Implemented CNN models to classify images, enhancing image recognition accuracy.
+                    Implemented a CNN model to classify images with 91% accuracy.
                 </li>
                 <li>
                     <strong>Data Analysis and ML Toolkit</strong><br>
-                    Developed a Streamlit application for data analysis and machine learning model evaluation, featuring various visualization tools and model options.
+                    Developed a Streamlit web application for dataset analysis and machine learning models visualization, featuring data preview, visualizations, adjustable model parameters, and predictions.
                 </li>
                 <li>
                     <strong>Real Estate Price Prediction</strong><br>
-                    Conducted detailed analysis and model tuning to predict real estate prices, achieving significant improvements in prediction accuracy.
+                    Created predictive models to estimate real estate prices based on various factors.
                 </li>
                 <li>
                     <strong>Car Sales Prediction</strong><br>
-                    Built predictive models to forecast car sales based on historical data.
+                    Built a model to predict car sales prices and trends, providing actionable insights for sales strategy.
                 </li>
                 <li>
                     <strong>Employee Attrition Analysis and Prediction</strong><br>
-                    Analyzed employee attrition data to predict future trends and develop retention strategies.
+                    Analyzed employee attrition rates and built predictive models to understand and mitigate turnover.
                 </li>
                 <li>
                     <strong>Power BI Dashboard for Sales Data</strong><br>
-                    Created interactive dashboards for visualizing sales data, helping stakeholders make informed decisions.
+                    Created interactive dashboards to visualize and analyze sales data, enhancing business decision-making.
                 </li>
             </ul>
         </div>
@@ -215,14 +209,9 @@
         <div id="research" class="tab-content">
             <h2 class="section-title">Research</h2>
             <ul class="research">
-                <!-- Existing research entries -->
                 <li>
-                    <strong>AI Integration with OEE</strong><br>
-                    Ongoing research on integrating AI with Overall Equipment Effectiveness to enhance productivity and reduce downtime.
-                </li>
-                <li>
-                    <strong>Self-Training Methods in Machine Learning</strong><br>
-                    Investigating self-training techniques to improve model performance using unlabeled data.
+                    <strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong><br>
+                    Ongoing research on how AI can be integrated into OEE metrics to enhance productivity and efficiency.
                 </li>
             </ul>
         </div>
@@ -230,11 +219,10 @@
         <div id="education" class="tab-content">
             <h2 class="section-title">Education</h2>
             <ul class="education">
-                <!-- Existing education entries -->
                 <li>
                     <strong>Master of Industrial Engineering & Management</strong><br>
                     University of the Punjab, 2021-2024<br>
-                    Gold Medalist
+                    <span class="highlight">Gold Medalist</span>
                 </li>
                 <li>
                     <strong>Bachelor of Industrial & Manufacturing Engineering</strong><br>
@@ -246,156 +234,120 @@
         <div id="certifications" class="tab-content">
             <h2 class="section-title">Certifications</h2>
             <ul class="certifications">
-                <!-- Existing certifications entries -->
-                <li>
-                    <strong>AI Engineering (IBM)</strong>
-                </li>
-                <li>
-                    <strong>Data Science (IBM)</strong>
-                </li>
-                <li>
-                    <strong>Data Analytics (Google)</strong>
-                </li>
-                <li>
-                    <strong>Lean Six-Sigma Black Belt (AIGPE)</strong>
-                </li>
+                <li>AI Engineering (IBM)</li>
+                <li>Data Science (IBM)</li>
+                <li>Data Analytics (Google)</li>
+                <li>Lean Six-Sigma Black Belt (AIGPE)</li>
             </ul>
         </div>
 
         <div id="awards" class="tab-content">
             <h2 class="section-title">Awards</h2>
             <ul class="awards">
-                <!-- Existing awards entries -->
-                <li>
-                    <strong>Gold Medal in Master's Degree</strong><br>
-                    University of the Punjab, 2023
-                </li>
-                <li>
-                    <strong>Benevolent Scholarship from Punjab Government</strong><br>
-                    2014-2020
-                </li>
-                <li>
-                    <strong>Solar Panel Award from Chief Minister Punjab</strong><br>
-                    2014
-                </li>
-                <li>
-                    <strong>Laptop Award from Chief Minister Punjab</strong><br>
-                    2018
-                </li>
+                <li>Gold Medal in Master’s Degree (2023)</li>
+                <li>Benevolent Scholarship from Punjab Government (2014-2020)</li>
+                <li>Solar Panel Award from Chief Minister Punjab (2014)</li>
+                <li>Laptop Award from Chief Minister Punjab (2018)</li>
             </ul>
         </div>
 
         <div id="contact" class="tab-content">
             <h2 class="section-title">Contact</h2>
             <ul class="contact">
-                <li>
-                    <strong>Phone:</strong> +92-303-5049492
-                </li>
-                <li>
-                    <strong>Email:</strong> <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a>
-                </li>
-                <li>
-                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ahmad-bin-sadiq">www.linkedin.com/in/ahmad-bin-sadiq</a>
-                </li>
+                <li>Email: <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></li>
+                <li>Phone: <a href="tel:+923035049492">+92-303-5049492</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">www.linkedin.com/in/ahmad-bin-sadiq</a></li>
             </ul>
         </div>
 
         <div id="key-skills" class="tab-content">
             <h2 class="section-title">Key Skills</h2>
             <div class="key-skills">
-                <div class="section">
-                    <h3>Programming</h3>
-                    <div class="item">Python</div>
-                    <div class="item">Scikit-learn</div>
-                    <div class="item">Pandas</div>
-                    <div class="item">NumPy</div>
-                    <div class="item">Matplotlib</div>
-                    <div class="item">Seaborn</div>
-                    <div class="item">Plotly</div>
-                    <div class="item">R</div>
-                    <div class="item">ggplot2</div>
-                    <div class="item">Excel Integration</div>
-                </div>
-                <div class="section">
-                    <h3>Deep Learning</h3>
-                    <div class="item">TensorFlow</div>
-                    <div class="item">Keras</div>
-                    <div class="item">PyTorch</div>
-                    <div class="item">CNNs</div>
-                    <div class="item">RNNs</div>
-                </div>
-                <div class="section">
-                    <h3>Natural Language Processing</h3>
-                    <div class="item">NLTK</div>
-                    <div class="item">spaCy</div>
-                    <div class="item">Transformers</div>
-                    <div class="item">Text Preprocessing</div>
-                    <div class="item">Tokenization</div>
-                    <div class="item">Sentiment Analysis</div>
-                </div>
-                <div class="section">
-                    <h3>Data Visualization</h3>
-                    <div class="item">Power BI</div>
-                    <div class="item">Tableau</div>
-                    <div class="item">Matplotlib</div>
-                    <div class="item">Seaborn</div>
-                </div>
-                <div class="section">
-                    <h3>Databases</h3>
-                    <div class="item">SQL</div>
-                    <div class="item">Microsoft SQL Server</div>
-                </div>
-                <div class="section">
-                    <h3>Machine Learning</h3>
-                    <div class="item">Supervised Learning</div>
-                    <div class="item">Unsupervised Learning</div>
-                    <div class="item">Model Deployment</div>
-                    <div class="item">Feature Engineering</div>
-                </div>
-                <div class="section">
-                    <h3>Tools</h3>
-                    <div class="item">Jupyter Notebook</div>
-                    <div class="item">Visual Studio Code</div>
-                    <div class="item">PyCharm</div>
-                    <div class="item">RStudio</div>
-                    <div class="item">Git</div>
-                    <div class="item">APIs</div>
-                    <div class="item">Web Scraping</div>
-                    <div class="item">Excel</div>
-                    <div class="item">Streamlit</div>
-                </div>
-                <div class="section">
-                    <h3>Soft Skills</h3>
-                    <div class="item">Problem-solving</div>
-                    <div class="item">Critical Thinking</div>
-                    <div class="item">Creativity</div>
-                    <div class="item">People Management</div>
-                    <div class="item">Emotional Intelligence</div>
-                    <div class="item">Decision-making</div>
-                </div>
+                <div class="category">Programming</div>
+                <div class="item">Python</div>
+                <div class="item">Scikit-learn</div>
+                <div class="item">Pandas</div>
+                <div class="item">NumPy</div>
+                <div class="item">Matplotlib</div>
+                <div class="item">Seaborn</div>
+                <div class="item">Plotly</div>
+                <div class="item">R</div>
+                <div class="item">data manipulation</div>
+                <div class="item">ggplot2</div>
+                <div class="item">Excel integration</div>
+
+                <div class="category">Deep Learning</div>
+                <div class="item">TensorFlow</div>
+                <div class="item">Keras</div>
+                <div class="item">PyTorch</div>
+                <div class="item">CNNs</div>
+                <div class="item">RNNs</div>
+
+                <div class="category">Natural Language Processing</div>
+                <div class="item">NLTK</div>
+                <div class="item">spaCy</div>
+                <div class="item">transformers</div>
+                <div class="item">text preprocessing</div>
+                <div class="item">tokenization</div>
+                <div class="item">sentiment analysis</div>
+
+                <div class="category">Data Visualization</div>
+                <div class="item">Power BI</div>
+                <div class="item">Tableau</div>
+                <div class="item">Matplotlib</div>
+                <div class="item">Seaborn</div>
+
+                <div class="category">Databases</div>
+                <div class="item">SQL</div>
+                <div class="item">Microsoft SQL Server</div>
+
+                <div class="category">Machine Learning</div>
+                <div class="item">Supervised learning</div>
+                <div class="item">Unsupervised learning</div>
+                <div class="item">model deployment</div>
+                <div class="item">feature engineering</div>
+
+                <div class="category">Tools</div>
+                <div class="item">Jupyter Notebook</div>
+                <div class="item">Visual Studio Code</div>
+                <div class="item">PyCharm</div>
+                <div class="item">RStudio</div>
+                <div class="item">Git</div>
+                <div class="item">APIs</div>
+                <div class="item">web scraping</div>
+                <div class="item">Excel</div>
+                <div class="item">Streamlit</div>
+
+                <div class="category">Soft Skills</div>
+                <div class="item">Problem-solving</div>
+                <div class="item">Critical thinking</div>
+                <div class="item">Creativity</div>
+                <div class="item">People management</div>
+                <div class="item">Emotional intelligence</div>
+                <div class="item">Decision-making</div>
             </div>
         </div>
 
         <div id="softwares" class="tab-content">
             <h2 class="section-title">Softwares</h2>
-            <div class="softwares">
-                <div class="software">Microsoft Office 365</div>
-                <div class="software">Visual Studio Code</div>
-                <div class="software">Microsoft Power BI</div>
-                <div class="software">Tableau</div>
-                <div class="software">Google Cloud Platform</div>
-                <div class="software">Jupyter Notebook</div>
-                <div class="software">MySQL Workbench</div>
-                <div class="software">Minitab</div>
-                <div class="software">SPSS</div>
-                <div class="software">Trello</div>
-                <div class="software">Draw.io</div>
+            <div class="key-skills">
+                <div class="item">Microsoft Office 365</div>
+                <div class="item">Visual Studio Code</div>
+                <div class="item">Microsoft Power BI</div>
+                <div class="item">Tableau</div>
+                <div class="item">Google Cloud Platform</div>
+                <div class="item">Jupyter Notebook</div>
+                <div class="item">MySQL Workbench</div>
+                <div class="item">Minitab</div>
+                <div class="item">SPSS</div>
+                <div class="item">Trello</div>
+                <div class="item">Draw.io</div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Ahmad Bin Sadiq. All rights reserved.</p>
+        <p>© 2024 Ahmad Bin Sadiq</p>
     </footer>
 
     <script>
@@ -403,18 +355,15 @@
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";  
+                tabcontent[i].style.display = "none";
             }
             tablinks = document.getElementsByClassName("tab");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
-            document.getElementById(tabName).style.display = "block";  
+            document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
         }
-
-        // Open the first tab by default
-        document.getElementsByClassName("tab")[0].click();
     </script>
 </body>
 </html>
