@@ -3,231 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmad Bin Sadiq - Data Scientist</title>
+    <title>Ahmad Bin Sadiq - Personal Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            color: #333;
-            background-color: #f4f4f4;
+            color: #2f4f4f; /* Dark Slate Gray */
+            background-color: #f0f0f0; /* Light Gray */
             margin: 0;
             padding: 0;
         }
+
         header {
-            background-color: #3e2a6c; /* Deep Purple */
+            background-color: #003f6c; /* Deep Blue */
             color: #ffffff;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
             padding-bottom: 60px; /* Ensure content doesn't overlap with footer */
         }
+
         .tabs {
             display: flex;
             cursor: pointer;
             padding: 0;
             margin: 0;
-            background-color: #6a1b9a; /* Medium Purple */
-            border-bottom: 2px solid #aeaeae; /* Gray */
+            background-color: #003f6c; /* Deep Blue */
+            border-bottom: 2px solid #d0d0d0; /* Light Gray */
             border-radius: 12px 12px 0 0;
         }
+
         .tab {
             flex: 1;
             padding: 15px;
             text-align: center;
-            background-color: #3e2a6c; /* Deep Purple */
-            border: 1px solid #3e2a6c;
+            background-color: #6a0dad; /* Electric Purple */
+            border: 1px solid #6a0dad;
             border-radius: 12px 12px 0 0;
             margin-right: 2px;
             color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         .tab:hover {
-            background-color: #5c2a91; /* Purple Hover */
+            background-color: #4a0072; /* Darker Purple */
         }
+
         .tab-content {
             display: none;
             padding: 20px;
             background: #ffffff;
             border-radius: 12px;
             border: 1px solid #ddd;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             overflow: auto; /* Allow scrolling */
         }
-        .active {
-            display: block;
-        }
+
         footer {
-            background-color: #3e2a6c; /* Deep Purple */
+            background-color: #003f6c; /* Deep Blue */
             color: #ffffff;
             text-align: center;
             padding: 10px;
             position: fixed;
             bottom: 0;
             width: 100%;
-            box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.2);
         }
+
         .section-title {
-            color: #6a1b9a; /* Medium Purple */
+            color: #6a0dad; /* Electric Purple */
             font-size: 26px;
-            border-bottom: 2px solid #a7a7a7; /* Gray */
+            border-bottom: 2px solid #d0d0d0; /* Light Gray */
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
-        .projects li, .research li {
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: #f9f9f9;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+
         a {
-            color: #6a1b9a; /* Medium Purple */
+            color: #00bcd4; /* Accent Cyan */
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
+        }
+
+        .contact-info {
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Ahmad Bin Sadiq</h1>
-        <p>Data Scientist | AI Specialist</p>
+        <p>AI Expert | Data Scientist | Engineer</p>
     </header>
 
     <div class="container">
         <div class="tabs">
-            <div class="tab" onclick="openTab(event, 'about')">About</div>
-            <div class="tab" onclick="openTab(event, 'projects')">Projects</div>
-            <div class="tab" onclick="openTab(event, 'research')">Research</div>
-            <div class="tab" onclick="openTab(event, 'education')">Education</div>
-            <div class="tab" onclick="openTab(event, 'certifications')">Certifications</div>
-            <div class="tab" onclick="openTab(event, 'awards')">Awards</div>
-            <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
-            <!-- Add General Tab if needed -->
-            <!-- <div class="tab" onclick="openTab(event, 'general')">General</div> -->
+            <div class="tab" onclick="showTab('about')">About</div>
+            <div class="tab" onclick="showTab('projects')">Projects</div>
+            <div class="tab" onclick="showTab('research')">Research</div>
+            <div class="tab" onclick="showTab('contact')">Contact</div>
         </div>
 
-        <div id="about" class="tab-content active">
-            <h2 class="section-title">Professional Summary</h2>
-            <p>Dynamic Data Scientist with over 2 years of experience in machine learning, deep learning, and data analytics. Proven track record in developing predictive models, performing complex data analysis, and delivering actionable insights. Skilled in Python, R, SQL, and data visualization tools such as Power BI and Tableau. Adept at working in fast-paced environments and driving process improvements.</p>
-            <h2 class="section-title">Objective</h2>
-            <p>Aspiring AI expert seeking a challenging role in a forward-thinking multinational company to leverage my deep learning, machine learning, and data analysis skills to develop innovative AI solutions and drive company growth.</p>
+        <div id="about" class="tab-content">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I am Ahmad Bin Sadiq, an AI expert and data scientist with extensive experience in various domains including machine learning, deep learning, and data analysis.
+            </p>
+            <p>
+                <strong>Objective:</strong> Aspiring AI expert seeking a challenging role in a forward-thinking multinational company to leverage my deep learning, machine learning, and data analysis skills to develop innovative AI solutions and drive company growth.
+            </p>
         </div>
 
         <div id="projects" class="tab-content">
             <h2 class="section-title">Projects</h2>
-            <ul class="projects">
-                <li>
-                    <strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong><br>
-                    Effectively provided consultancy services for Technical Support in the project “AI Integration with Overall Equipment Effectiveness in the manufacturing industry.”
-                </li>
-                <li>
-                    <strong>Real-Time Object Detection with TensorFlow</strong><br>
-                    Developed a real-time object detection system using TensorFlow, capable of detecting and classifying multiple objects in video streams. This project involved data preprocessing, model training, and real-time application.
-                </li>
-                <li>
-                    <strong>Sales Forecasting with Time Series Analysis</strong><br>
-                    Built a model to forecast monthly sales, increasing forecast accuracy by 20%.
-                </li>
-                <li>
-                    <strong>Sentiment Analysis of Product Reviews</strong><br>
-                    Analyzed product reviews to determine customer sentiment, improving product offerings.
-                </li>
-                <li>
-                    <strong>Image Detection with Convolutional Neural Networks</strong><br>
-                    Implemented a CNN model to classify images with 91% accuracy.
-                </li>
-                <li>
-                    <strong>Data Analysis and ML Toolkit</strong><br>
-                    Developed a Streamlit web application for dataset analysis and machine learning models visualization, featuring data preview, visualizations, adjustable model parameters, and predictions.
-                </li>
-                <li>
-                    <strong>Real Estate Price Prediction</strong><br>
-                    Applied regression algorithms to predict house prices using features such as bed, bath, and house size, involving data preprocessing, model tuning, and evaluation to identify the best model.
-                </li>
-                <li>
-                    <strong>Car Sales Prediction</strong><br>
-                    Applied multiple machine learning algorithms to predict car prices using features like engine size and horsepower, optimizing model performance through hyperparameter tuning and evaluation.
-                </li>
-                <li>
-                    <strong>Employee Attrition Analysis and Prediction</strong><br>
-                    Analyzed employee data to predict attrition, resulting in a 30% reduction in turnover.
-                </li>
-                <li>
-                    <strong>Power BI Dashboard for Sales Data</strong><br>
-                    Developed an interactive Power BI dashboard to visualize sales data, enhancing decision-making.
-                </li>
+            <ul>
+                <li><a href="https://github.com/ahmadbinsadiq/Data-Analysis-and-ML-Toolkit">Data Analysis and ML Toolkit</a>: A Streamlit web application allowing users to analyze datasets, visualize results, and adjust model parameters.</li>
+                <li><a href="https://github.com/ahmadbinsadiq/Real-Estate-Price-Prediction">Real Estate Price Prediction</a>: Analyzing house prices using various models and fine-tuning for optimal performance.</li>
+                <li><a href="https://github.com/ahmadbinsadiq/Car-Sales-Prediction">Car Sales Prediction</a>: Predicting car sales based on various features, including year, price, and kilometers driven.</li>
+                <li><a href="https://github.com/ahmadbinsadiq/Employee-Attrition-Analysis">Employee Attrition Analysis and Prediction</a>: Using machine learning to analyze and predict employee attrition based on various factors.</li>
+                <li><a href="https://github.com/ahmadbinsadiq/Power-BI-Dashboard">Power BI Dashboard for Sales Data</a>: Creating interactive dashboards to visualize and analyze sales data.</li>
             </ul>
         </div>
 
         <div id="research" class="tab-content">
             <h2 class="section-title">Research</h2>
-            <ul class="research">
+            <ul>
                 <li>
-                    <strong>AI Integration with OEE Metrics</strong><br>
-                    Research focused on integrating AI with OEE metrics to enhance manufacturing processes, focusing on productivity, efficiency, and quality improvements.
+                    <strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong>: Examining how AI technologies can be integrated with OEE metrics to improve manufacturing efficiency.
                 </li>
                 <li>
-                    <strong>Investigating Factors Affecting the Adoption of Industry 5.0 in the Manufacturing Sector: An Integrated Model Approach</strong><br>
-                    Conducted master’s research identifying factors influencing the adoption of Industry 5.0 technologies, utilizing advanced data collection and analysis to provide strategic recommendations for integration and operational efficiency.
+                    <strong>Real-Time Object Detection with TensorFlow</strong>: Implementing real-time object detection algorithms using TensorFlow for various applications.
                 </li>
-            </ul>
-        </div>
-
-        <div id="education" class="tab-content">
-            <h2 class="section-title">Education</h2>
-            <ul>
-                <li><strong>Master of Industrial Engineering & Management</strong><br>
-                    University of the Punjab, Lahore, Pakistan | 2021-2024<br>
-                    <span style="color: #6a1b9a;">Gold Medalist</span>
+                <li>
+                    <strong>Sales Forecasting with Time Series Analysis</strong>: Utilizing time series analysis techniques to forecast sales and identify trends.
                 </li>
-                <li><strong>Bachelor of Industrial & Manufacturing Engineering</strong><br>
-                    UET Lahore, Pakistan | 2016-2020
+                <li>
+                    <strong>Sentiment Analysis of Product Reviews</strong>: Analyzing product reviews to determine sentiment and customer satisfaction.
                 </li>
-            </ul>
-        </div>
-
-        <div id="certifications" class="tab-content">
-            <h2 class="section-title">Certifications</h2>
-            <ul>
-                <li>AI Engineering (IBM)</li>
-                <li>Data Science (IBM)</li>
-                <li>Data Analytics (Google)</li>
-                <li>Lean Six-Sigma Black Belt (AIGPE)</li>
-            </ul>
-        </div>
-
-        <div id="awards" class="tab-content">
-            <h2 class="section-title">Awards</h2>
-            <ul>
-                <li><strong>Gold Medal</strong> in Master's Degree, University of the Punjab | 2023</li>
-                <li><strong>Benevolent Scholarship</strong> from Punjab Government | 2014-2020</li>
-                <li><strong>Solar Panel Award</strong> from Chief Minister Punjab | 2014</li>
-                <li><strong>Laptop Award</strong> from Chief Minister Punjab | 2018</li>
+                <li>
+                    <strong>Image Detection with Convolutional Neural Networks</strong>: Applying CNN models for image classification and detection tasks.
+                </li>
+                <li>
+                    <strong>Investigating Factors Affecting the Adoption of Industry 5.0 in Manufacturing Sector: An Integrated Model Approach</strong>: Conducted master’s research identifying factors influencing the adoption of Industry 5.0 technologies, utilizing advanced data collection and analysis to provide strategic recommendations for integration and operational efficiency.
+                </li>
             </ul>
         </div>
 
         <div id="contact" class="tab-content">
             <h2 class="section-title">Contact</h2>
-            <ul>
-                <li><strong>Email:</strong> <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></li>
-                <li><strong>Phone:</strong> <a href="tel:+923035049492">+92-303-5049492</a></li>
-                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">www.linkedin.com/in/ahmad-bin-sadiq</a></li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/ahmadbinsadiq" target="_blank">https://github.com/ahmadbinsadiq</a></li>
-            </ul>
+            <p class="contact-info">
+                Email: <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a><br>
+                LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq">www.linkedin.com/in/ahmad-bin-sadiq</a><br>
+                Phone: <a href="tel:+923035049492">+92-303-5049492</a><br>
+                Credly: <a href="https://www.credly.com/users/ahmad-bin-sadiq">https://www.credly.com/users/ahmad-bin-sadiq</a>
+            </p>
         </div>
-        
-        <!-- Optional General Tab -->
-        <!-- <div id="general" class="tab-content">
-            <h2 class="section-title">General Information</h2>
-            <p>Overview of all sections...</p>
-        </div> -->
     </div>
 
     <footer>
@@ -235,19 +172,19 @@
     </footer>
 
     <script>
-        function openTab(event, tabId) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tab");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabId).style.display = "block";
-            event.currentTarget.className += " active";
+        function showTab(tabId) {
+            // Hide all tab contents
+            var contents = document.querySelectorAll('.tab-content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';
+            });
+
+            // Show the selected tab content
+            document.getElementById(tabId).style.display = 'block';
         }
+
+        // Show the first tab by default
+        document.querySelector('.tab').click();
     </script>
 </body>
 </html>
