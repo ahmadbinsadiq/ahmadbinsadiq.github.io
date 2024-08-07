@@ -44,6 +44,7 @@
             margin-right: 2px;
             color: #ffffff; /* White text */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s, color 0.3s;
         }
         .tab:hover {
             background-color: #39ff14; /* Neon Green Hover */
@@ -56,10 +57,12 @@
             border-radius: 12px;
             border: 1px solid #444444;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            overflow: auto; /* Allow scrolling */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
         .active {
             display: block;
+            opacity: 1;
         }
         footer {
             background-color: #333333; /* Darker Gray */
@@ -181,15 +184,15 @@
                 </li>
                 <li>
                     <strong>Image Detection with Convolutional Neural Networks</strong><br>
-                    Implemented a CNN model to classify images with 91% accuracy.
+                    Implemented a CNN model to classify images with high accuracy, tested on custom handwritten samples.
                 </li>
                 <li>
                     <strong>Data Analysis and ML Toolkit</strong><br>
-                    Developed a Streamlit web application for dataset analysis and machine learning models visualization, featuring data preview, visualizations, adjustable model parameters, and predictions.
+                    Created a Streamlit web application to analyze datasets and visualize results using various machine learning models.
                 </li>
                 <li>
                     <strong>Real Estate Price Prediction</strong><br>
-                    Created a model to predict real estate prices based on various features, enhancing property valuation accuracy.
+                    Built a model to predict real estate prices based on various features, enhancing property valuation accuracy.
                 </li>
                 <li>
                     <strong>Car Sales Prediction</strong><br>
@@ -316,13 +319,20 @@
             const i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+                tabcontent[i].style.opacity = 0;
+                setTimeout(() => {
+                    tabcontent[i].style.display = "none";
+                }, 500); // Match this delay with the opacity transition duration
             }
             tablinks = document.getElementsByClassName("tab");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
-            document.getElementById(tabName).style.display = "block";
+            const activeTab = document.getElementById(tabName);
+            activeTab.style.display = "block";
+            setTimeout(() => {
+                activeTab.style.opacity = 1;
+            }, 10); // Ensure opacity transition starts after display block
             evt.currentTarget.className += " active";
         }
 
