@@ -3,130 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmad Bin Sadiq - Data Scientist</title>
+    <title>Ahmad Bin Sadiq - Resume</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            color: #ffffff; /* White text */
-            background-color: #1c1c1c; /* Dark Gray background */
             margin: 0;
             padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
         }
+
         header {
-            background-color: #333333; /* Darker Gray */
-            color: #39ff14; /* Neon Green */
-            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
             text-align: center;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
+
         .container {
             width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding-bottom: 60px; /* Ensure content doesn't overlap with footer */
+            margin: 2rem auto;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .tabs {
             display: flex;
-            cursor: pointer;
-            padding: 0;
-            margin: 0;
-            background-color: #2d2d2d; /* Dark Gray */
-            border-bottom: 2px solid #333333; /* Darker Gray */
-            border-radius: 12px 12px 0 0;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #333;
         }
+
         .tab {
             flex: 1;
-            padding: 15px;
+            padding: 1rem;
             text-align: center;
-            background-color: #444444; /* Medium Gray */
-            border: 1px solid #333333;
-            border-radius: 12px 12px 0 0;
-            margin-right: 2px;
-            color: #ffffff; /* White text */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            background-color: #eee;
         }
-        .tab:hover {
-            background-color: #39ff14; /* Neon Green Hover */
-            color: #1c1c1c; /* Dark Gray text on hover */
+
+        .tab.active {
+            background-color: #fff;
+            border-bottom: 2px solid #333;
         }
+
         .tab-content {
             display: none;
-            padding: 20px;
-            background: #333333; /* Darker Gray background */
-            border-radius: 12px;
-            border: 1px solid #444444;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            overflow: auto; /* Allow scrolling */
         }
-        .active {
-            display: block;
-        }
-        footer {
-            background-color: #333333; /* Darker Gray */
-            color: #39ff14; /* Neon Green */
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.5);
-        }
+
         .section-title {
-            color: #39ff14; /* Neon Green */
-            font-size: 26px;
-            border-bottom: 2px solid #39ff14; /* Neon Green */
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
         }
+
+        .projects, .research, .education, .certifications, .awards, .contact, .softwares {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .projects li, .research li, .education li, .certifications li, .awards li, .contact li, .softwares li {
+            background-color: #f9f9f9;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
         .key-skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 1rem;
         }
-        .key-skills .category {
-            flex: 1 1 100%;
-            background-color: #444444; /* Medium Gray */
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+
+        .category {
+            flex: 1;
+            min-width: 200px;
         }
-        .key-skills .category h3 {
-            margin: 0 0 10px;
-            color: #39ff14; /* Neon Green */
+
+        .category h3 {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem;
+            margin: 0;
+            border-radius: 4px;
+            text-align: center;
         }
-        .key-skills .skills {
+
+        .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 0.5rem;
         }
-        .key-skills .skill {
-            background-color: #39ff14; /* Neon Green */
-            color: #1c1c1c; /* Dark Gray */
-            padding: 10px;
-            border-radius: 8px;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+        .skill {
+            background-color: #00ff00;
+            color: #000;
+            padding: 0.5rem;
+            border-radius: 4px;
+            flex: 1 1 auto;
+            text-align: center;
         }
-        a {
-            color: #00ffff; /* Neon Cyan */
-            text-decoration: none;
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
-        a:hover {
-            text-decoration: underline;
+
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab {
+                flex: none;
+                width: 100%;
+            }
+
+            .key-skills {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Ahmad Bin Sadiq</h1>
-        <p>Data Scientist | AI Specialist</p>
+        <p>AI Expert | Data Scientist | Industrial Engineer</p>
     </header>
 
     <div class="container">
         <div class="tabs">
-            <div class="tab" onclick="openTab(event, 'about')">About</div>
-            <div class="tab" onclick="openTab(event, 'projects')">Projects</div>
+            <div class="tab active" onclick="openTab(event, 'projects')">Projects</div>
             <div class="tab" onclick="openTab(event, 'research')">Research</div>
             <div class="tab" onclick="openTab(event, 'education')">Education</div>
             <div class="tab" onclick="openTab(event, 'certifications')">Certifications</div>
@@ -136,84 +151,29 @@
             <div class="tab" onclick="openTab(event, 'softwares')">Softwares</div>
         </div>
 
-        <div id="about" class="tab-content active">
-            <h2 class="section-title">Professional Summary</h2>
-            <p>I am Ahmad Bin Sadiq, a dynamic Data Scientist with a strong passion for leveraging data to drive actionable insights and innovative solutions. With over two years of hands-on experience in machine learning, deep learning, and data analytics, I have a proven track record of developing predictive models, performing complex data analyses, and delivering impactful results. My technical expertise spans a wide array of tools and technologies, including Python, R, SQL, TensorFlow, Keras, and Power BI. I am adept at working in fast-paced environments and thrive on solving complex problems with creative and effective solutions.</p>
-            <p>Throughout my career, I have successfully led projects that optimize operational efficiency, forecast sales, analyze financial risks, and improve production processes. My recent endeavors include developing a real-time object detection system using TensorFlow, predicting energy consumption for the textile industry, and creating an AI-powered toolkit for data analysis and machine learning model visualization. Each project has not only honed my technical skills but also reinforced my ability to translate data into strategic business insights.</p>
-            <p>I am now eager to take on new challenges and contribute to a forward-thinking multinational company. My goal is to leverage my expertise in deep learning, machine learning, and data analysis to develop groundbreaking AI solutions that drive growth and innovation. Let's connect and explore how I can contribute to your organization's success.</p>
-        </div>
-
-        <div id="projects" class="tab-content">
+        <div id="projects" class="tab-content" style="display: block;">
             <h2 class="section-title">Projects</h2>
             <ul class="projects">
-                <li>
-                    <strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong><br>
-                    Effectively provided consultancy services for Technical Support in the project “AI Integration with Overall Equipment Effectiveness in the manufacturing industry.”
-                </li>
-                <li>
-                    <strong>Real-Time Object Detection with TensorFlow</strong><br>
-                    Developed a real-time object detection system using TensorFlow, capable of detecting and classifying multiple objects in video streams. This project involved data preprocessing, model training, and real-time application.
-                </li>
-                <li>
-                    <strong>Sales Forecasting with Time Series Analysis</strong><br>
-                    Built a model to forecast monthly sales, increasing forecast accuracy by 20%.
-                </li>
-                <li>
-                    <strong>Sentiment Analysis of Product Reviews</strong><br>
-                    Analyzed product reviews to determine customer sentiment, improving product offerings.
-                </li>
-                <li>
-                    <strong>Image Detection with Convolutional Neural Networks</strong><br>
-                    Implemented a CNN model to classify images with 91% accuracy.
-                </li>
-                <li>
-                    <strong>Data Analysis and ML Toolkit</strong><br>
-                    Developed a Streamlit web application for dataset analysis and machine learning models visualization, featuring data preview, visualizations, adjustable model parameters, and predictions.
-                </li>
-                <li>
-                    <strong>Real Estate Price Prediction</strong><br>
-                    Applied regression algorithms to predict house prices using features such as bed, bath, and house size, involving data preprocessing, model tuning, and evaluation to identify the best model.
-                </li>
-                <li>
-                    <strong>Car Sales Prediction</strong><br>
-                    Applied multiple machine learning algorithms to predict car prices using features like engine size and horsepower, optimizing model performance through hyperparameter tuning and evaluation.
-                </li>
-                <li>
-                    <strong>Employee Attrition Analysis and Prediction</strong><br>
-                    Analyzed employee data to predict attrition rates and identified key factors influencing employee turnover, leading to improved retention strategies.
-                </li>
-                <li>
-                    <strong>Power BI Dashboard for Sales Data</strong><br>
-                    Designed and implemented a Power BI dashboard for sales data visualization, enabling dynamic reporting and interactive insights for stakeholders.
-                </li>
+                <li><strong>Real Estate Price Prediction:</strong> Analyzed housing data to predict prices using multiple models, leading to insights into pricing trends and model performance.</li>
+                <li><strong>Car Sales Prediction:</strong> Developed a predictive model for car sales, identifying key factors affecting prices and trends.</li>
+                <li><strong>Employee Attrition Analysis and Prediction:</strong> Analyzed employee data to predict attrition rates and identified key factors influencing employee turnover, leading to improved retention strategies.</li>
+                <li><strong>Power BI Dashboard for Sales Data:</strong> Designed and implemented a Power BI dashboard for sales data visualization, enabling dynamic reporting and interactive insights for stakeholders.</li>
             </ul>
         </div>
 
         <div id="research" class="tab-content">
             <h2 class="section-title">Research</h2>
             <ul class="research">
-                <li>
-                    <strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong><br>
-                    Research on leveraging AI to enhance Overall Equipment Effectiveness in manufacturing.
-                </li>
-                <li>
-                    <strong>Deep Learning Model for Image Classification</strong><br>
-                    Investigated the application of deep learning techniques for classifying images into various categories.
-                </li>
+                <li><strong>AI Integration with Overall Equipment Effectiveness (OEE):</strong> Research on leveraging AI to enhance Overall Equipment Effectiveness in manufacturing.</li>
+                <li><strong>Deep Learning Model for Image Classification:</strong> Investigated the application of deep learning techniques for classifying images into various categories.</li>
             </ul>
         </div>
 
         <div id="education" class="tab-content">
             <h2 class="section-title">Education</h2>
             <ul class="education">
-                <li>
-                    <strong>Master of Industrial Engineering & Management</strong><br>
-                    University of the Punjab, Gold Medalist
-                </li>
-                <li>
-                    <strong>Bachelor of Industrial & Manufacturing Engineering</strong><br>
-                    UET Lahore
-                </li>
+                <li><strong>Master of Industrial Engineering & Management:</strong> University of the Punjab, Gold Medalist</li>
+                <li><strong>Bachelor of Industrial & Manufacturing Engineering:</strong> UET Lahore</li>
             </ul>
         </div>
 
@@ -272,67 +232,38 @@
                         <div class="skill">PyTorch</div>
                         <div class="skill">CNNs</div>
                         <div class="skill">RNNs</div>
+                        <div class="skill">Transfer Learning</div>
+                        <div class="skill">Hyperparameter Tuning</div>
                     </div>
                 </div>
                 <div class="category">
-                    <h3>Natural Language Processing</h3>
+                    <h3>Data Analysis</h3>
                     <div class="skills">
-                        <div class="skill">NLTK</div>
-                        <div class="skill">spaCy</div>
-                        <div class="skill">transformers</div>
-                        <div class="skill">text preprocessing</div>
-                        <div class="skill">tokenization</div>
-                        <div class="skill">sentiment analysis</div>
-                    </div>
-                </div>
-                <div class="category">
-                    <h3>Data Visualization</h3>
-                    <div class="skills">
-                        <div class="skill">Power BI</div>
-                        <div class="skill">Tableau</div>
-                        <div class="skill">Matplotlib</div>
-                        <div class="skill">Seaborn</div>
-                    </div>
-                </div>
-                <div class="category">
-                    <h3>Databases</h3>
-                    <div class="skills">
-                        <div class="skill">SQL</div>
-                        <div class="skill">Microsoft SQL Server</div>
-                    </div>
-                </div>
-                <div class="category">
-                    <h3>Machine Learning</h3>
-                    <div class="skills">
-                        <div class="skill">Supervised Learning</div>
-                        <div class="skill">Unsupervised Learning</div>
-                        <div class="skill">Model Deployment</div>
+                        <div class="skill">Exploratory Data Analysis</div>
+                        <div class="skill">Statistical Analysis</div>
+                        <div class="skill">Predictive Modeling</div>
+                        <div class="skill">Data Visualization</div>
                         <div class="skill">Feature Engineering</div>
                     </div>
                 </div>
                 <div class="category">
-                    <h3>Tools</h3>
+                    <h3>Tools & Technologies</h3>
                     <div class="skills">
-                        <div class="skill">Jupyter Notebook</div>
-                        <div class="skill">Visual Studio Code</div>
-                        <div class="skill">PyCharm</div>
-                        <div class="skill">RStudio</div>
-                        <div class="skill">Git</div>
-                        <div class="skill">APIs</div>
-                        <div class="skill">Web Scraping</div>
-                        <div class="skill">Excel</div>
+                        <div class="skill">Power BI</div>
+                        <div class="skill">Microsoft SQL Server</div>
+                        <div class="skill">BigQuery</div>
                         <div class="skill">Streamlit</div>
+                        <div class="skill">Tableau</div>
                     </div>
                 </div>
                 <div class="category">
                     <h3>Soft Skills</h3>
                     <div class="skills">
-                        <div class="skill">Problem-solving</div>
-                        <div class="skill">Critical Thinking</div>
-                        <div class="skill">Creativity</div>
-                        <div class="skill">People Management</div>
-                        <div class="skill">Emotional Intelligence</div>
-                        <div class="skill">Decision-making</div>
+                        <div class="skill">Problem-Solving</div>
+                        <div class="skill">Team Collaboration</div>
+                        <div class="skill">Communication</div>
+                        <div class="skill">Project Management</div>
+                        <div class="skill">Time Management</div>
                     </div>
                 </div>
             </div>
@@ -341,17 +272,13 @@
         <div id="softwares" class="tab-content">
             <h2 class="section-title">Softwares</h2>
             <ul class="softwares">
-                <li>Microsoft Office 365</li>
-                <li>Visual Studio Code</li>
-                <li>Microsoft Power BI</li>
+                <li>Python</li>
+                <li>R</li>
+                <li>Power BI</li>
+                <li>Microsoft SQL Server</li>
+                <li>BigQuery</li>
+                <li>Streamlit</li>
                 <li>Tableau</li>
-                <li>Google Cloud Platform</li>
-                <li>Jupyter Notebook</li>
-                <li>MySQL Workbench</li>
-                <li>Minitab</li>
-                <li>SPSS</li>
-                <li>Trello</li>
-                <li>Draw.io</li>
             </ul>
         </div>
     </div>
@@ -361,18 +288,15 @@
     </footer>
 
     <script>
-        function openTab(evt, tabName) {
-            var i, tabcontent, tabs;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";  
-            }
-            tabs = document.getElementsByClassName("tab");
-            for (i = 0; i < tabs.length; i++) {
-                tabs[i].className = tabs[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
+        function openTab(event, tabId) {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabContents.forEach(content => content.style.display = 'none');
+
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).style.display = 'block';
         }
     </script>
 </body>
