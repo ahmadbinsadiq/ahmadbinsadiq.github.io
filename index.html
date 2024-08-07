@@ -13,7 +13,7 @@
             padding: 0;
         }
         header {
-            background-color: #003366;
+            background-color: #003366; /* Dark Blue */
             color: #ffffff;
             padding: 20px;
             text-align: center;
@@ -23,29 +23,30 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
+            padding-bottom: 60px; /* Ensure content doesn't overlap with footer */
         }
         .tabs {
             display: flex;
             cursor: pointer;
             padding: 0;
             margin: 0;
-            background-color: #003366;
-            border-bottom: 2px solid #009688;
+            background-color: #009688; /* Teal */
+            border-bottom: 2px solid #6a1b9a; /* Purple */
             border-radius: 12px 12px 0 0;
         }
         .tab {
             flex: 1;
             padding: 15px;
             text-align: center;
-            background-color: #004080;
-            border: 1px solid #004080;
+            background-color: #004d40; /* Dark Teal */
+            border: 1px solid #004d40;
             border-radius: 12px 12px 0 0;
             margin-right: 2px;
             color: #ffffff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .tab:hover {
-            background-color: #00695c;
+            background-color: #00796b; /* Medium Teal */
         }
         .tab-content {
             display: none;
@@ -54,12 +55,13 @@
             border-radius: 12px;
             border: 1px solid #ddd;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            overflow: auto; /* Allow scrolling */
         }
         .active {
             display: block;
         }
         footer {
-            background-color: #003366;
+            background-color: #003366; /* Dark Blue */
             color: #ffffff;
             text-align: center;
             padding: 10px;
@@ -69,13 +71,13 @@
             box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.3);
         }
         .section-title {
-            color: #009688;
+            color: #009688; /* Teal */
             font-size: 26px;
-            border-bottom: 2px solid #004080;
+            border-bottom: 2px solid #6a1b9a; /* Purple */
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
-        .projects li {
+        .projects li, .research li {
             padding: 15px;
             margin-bottom: 15px;
             border: 1px solid #ddd;
@@ -84,7 +86,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         a {
-            color: #009688;
+            color: #009688; /* Teal */
             text-decoration: none;
         }
         a:hover {
@@ -111,11 +113,9 @@
 
         <div id="about" class="tab-content active">
             <h2 class="section-title">Professional Summary</h2>
-            <p>Dynamic Data Scientist with over 2 years of experience in machine learning, deep learning, and data analytics. Proven track record in developing predictive models, performing complex data analysis, and delivering actionable insights. Skilled in Python, R, SQL, and data visualization tools such as Power BI and Tableau. Adept at working in fast-paced environments and driving process improvements. </p>
-            <p>Email: <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></p>
-            <p>Phone: <a href="tel:+923035049492">+92-303-5049492</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">www.linkedin.com/in/ahmad-bin-sadiq</a></p>
-            <p>GitHub: <a href="https://github.com/ahmadbinsadiq" target="_blank">github.com/ahmadbinsadiq</a></p>
+            <p>Dynamic Data Scientist with over 2 years of experience in machine learning, deep learning, and data analytics. Proven track record in developing predictive models, performing complex data analysis, and delivering actionable insights. Skilled in Python, R, SQL, and data visualization tools such as Power BI and Tableau. Adept at working in fast-paced environments and driving process improvements.</p>
+            <h2 class="section-title">Objective</h2>
+            <p>Aspiring AI expert seeking a challenging role in a forward-thinking multinational company to leverage my deep learning, machine learning, and data analysis skills to develop innovative AI solutions and drive company growth.</p>
         </div>
 
         <div id="projects" class="tab-content">
@@ -166,7 +166,7 @@
 
         <div id="research" class="tab-content">
             <h2 class="section-title">Research</h2>
-            <ul>
+            <ul class="research">
                 <li>
                     <strong>AI Integration with OEE Metrics</strong><br>
                     Research focused on integrating AI with OEE metrics to enhance manufacturing processes, focusing on productivity, efficiency, and quality improvements.
@@ -209,14 +209,6 @@
                 <li><strong>Solar Panel Award</strong> from Chief Minister Punjab | 2014</li>
                 <li><strong>Laptop Award</strong> from Chief Minister Punjab | 2018</li>
             </ul>
-        </div>
-
-        <div id="contact" class="tab-content">
-            <h2 class="section-title">Contact</h2>
-            <p>Email: <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></p>
-            <p>Phone: <a href="tel:+923035049492">+92-303-5049492</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">www.linkedin.com/in/ahmad-bin-sadiq</a></p>
-            <p>GitHub: <a href="https://github.com/ahmadbinsadiq" target="_blank">github.com/ahmadbinsadiq</a></p>
         </div>
     </div>
 
