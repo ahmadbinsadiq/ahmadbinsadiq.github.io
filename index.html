@@ -24,33 +24,39 @@
             margin: auto;
             overflow: hidden;
         }
-        .section {
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #f1c40f;
+            border-radius: 12px 12px 0 0;
+        }
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            background-color: #2c2c2c;
+            border: 1px solid #444;
+            border-radius: 12px 12px 0 0;
+            margin-right: 2px;
+            color: #f1c40f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .tab:hover {
+            background-color: #3498db;
+        }
+        .tab-content {
+            display: none;
             padding: 20px;
-            margin: 20px 0;
             background: #2c2c2c;
             border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-        .section-title {
-            color: #f1c40f;
-            font-size: 26px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .contact-info a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 15px;
+        .active {
+            display: block;
         }
         footer {
             background-color: #1a1a1a;
@@ -62,9 +68,12 @@
             width: 100%;
             box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.3);
         }
-        .projects {
-            margin: 0;
-            padding: 0;
+        .section-title {
+            color: #f1c40f;
+            font-size: 26px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
         .projects li {
             padding: 15px;
@@ -83,87 +92,22 @@
     </header>
 
     <div class="container">
-        <section id="about" class="section">
+        <div class="tabs">
+            <div class="tab" onclick="openTab(event, 'about')">About</div>
+            <div class="tab" onclick="openTab(event, 'projects')">Projects</div>
+            <div class="tab" onclick="openTab(event, 'research')">Research</div>
+            <div class="tab" onclick="openTab(event, 'education')">Education</div>
+            <div class="tab" onclick="openTab(event, 'certifications')">Certifications</div>
+            <div class="tab" onclick="openTab(event, 'awards')">Awards</div>
+            <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
+        </div>
+
+        <div id="about" class="tab-content active">
             <h2 class="section-title">Professional Summary</h2>
             <p>Dynamic Data Scientist with over 2 years of experience in machine learning, deep learning, and data analytics. Proven track record in developing predictive models, performing complex data analysis, and delivering actionable insights. Skilled in Python, R, SQL, and data visualization tools such as Power BI and Tableau. Adept at working in fast-paced environments and driving process improvements.</p>
-        </section>
+        </div>
 
-        <section id="objective" class="section">
-            <h2 class="section-title">Objective</h2>
-            <p>Aspiring AI expert seeking a challenging role in a forward-thinking multinational company to leverage my deep learning, machine learning, and data analysis skills to develop innovative AI solutions and drive company growth.</p>
-        </section>
-
-        <section id="skills" class="section">
-            <h2 class="section-title">Key Skills</h2>
-            <ul>
-                <li><strong>Programming:</strong> Python (Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Plotly), R (data manipulation, ggplot2, Excel integration)</li>
-                <li><strong>Deep Learning:</strong> TensorFlow, Keras, PyTorch, CNNs, RNNs</li>
-                <li><strong>Natural Language Processing:</strong> NLTK, spaCy, transformers, text preprocessing, tokenization, sentiment analysis</li>
-                <li><strong>Data Visualization:</strong> Power BI, Tableau, Matplotlib, Seaborn</li>
-                <li><strong>Databases:</strong> SQL and Microsoft SQL Server</li>
-                <li><strong>Machine Learning:</strong> Supervised and unsupervised learning, model deployment, feature engineering</li>
-                <li><strong>Tools:</strong> Jupyter Notebook, Visual Studio Code, PyCharm, RStudio, Git, APIs, web scraping, Excel</li>
-                <li><strong>Soft Skills:</strong> Problem-solving, critical thinking, creativity, people management, emotional intelligence, decision-making</li>
-            </ul>
-        </section>
-
-        <section id="experience" class="section">
-            <h2 class="section-title">Professional Experience</h2>
-            <ul>
-                <li>
-                    <strong>Data Analyst & Data Scientist</strong><br>
-                    Fiverr & Other Freelance Platforms (Remote) | August 2022 – Present
-                    <ul>
-                        <li>Conducted sales data analysis using SQL, Python, Excel, and Tableau/Power BI to identify trends, resulting in actionable insights for 10% quarterly revenue growth.</li>
-                        <li>Analyzed financial data using SQL, Python, Excel, and Power BI to assess risks, reducing operational risks by 20%.</li>
-                        <li>Identified operational inefficiencies in the date industry using SQL, Python, R, and Tableau, enhancing efficiency and reducing costs.</li>
-                        <li>Optimized supply chain processes using SQL, Python, Excel, and Tableau, resulting in cost savings and improved efficiency.</li>
-                        <li>Predicted energy consumption of 500 textile industries using Python, R, SQL, and Tableau, optimizing resource allocation and reducing costs.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Research Assistant</strong><br>
-                    World Wide Fund for Nature | Lahore, Pakistan | April 2022 – July 2022
-                    <ul>
-                        <li>Provided consultancy services for technical support in the project “Decarbonizing the Textile Manufacturing Sector of Pakistan.”</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Research Assistant</strong><br>
-                    School of International Cooperation and Development (IDEC), Hiroshima University, Japan | Sindh, Pakistan | February 2022 – March 2022
-                    <ul>
-                        <li>Conducted surveys and data collection for permanent solutions regarding floodplain residency with local administrations.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Executive Officer</strong><br>
-                    STYLE TEXTILE | Lahore, Pakistan | November 2020 – February 2022
-                    <ul>
-                        <li>Analyzed production data to identify idle time and bottlenecks, developing data-driven plans that reduced idle time by 15%.</li>
-                        <li>Implemented predictive analytics to forecast production targets and resource requirements, improving system efficiency by 20%.</li>
-                        <li>Led 7 cross-functional teams, utilizing data to track performance metrics and ensure daily production targets were met.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Project Engineer</strong><br>
-                    Bata Shoes | Lahore, Pakistan | January 2020 – July 2020
-                    <ul>
-                        <li>Conducted in-depth analysis of assembly line data to identify inefficiencies, leading to a 14% reduction in defects.</li>
-                        <li>Applied Lean and Six Sigma methodologies to improve production processes and enhance utilization rates.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Project Engineer</strong><br>
-                    Changhong Ruba | Lahore, Pakistan | July 2019 – November 2019
-                    <ul>
-                        <li>Analyzed production line data to identify areas for improvement, resulting in a 5% efficiency increase in assembly lines.</li>
-                        <li>Led data-driven Six Sigma projects that improved assembly line efficiency by 4%.</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-
-        <section id="projects" class="section">
+        <div id="projects" class="tab-content">
             <h2 class="section-title">Projects</h2>
             <ul class="projects">
                 <li>
@@ -183,9 +127,9 @@
                     Developed a CNN model to classify clothing items from the Fashion MNIST dataset, achieving a high classification accuracy.
                 </li>
             </ul>
-        </section>
+        </div>
 
-        <section id="research" class="section">
+        <div id="research" class="tab-content">
             <h2 class="section-title">Research</h2>
             <ul>
                 <li>
@@ -193,9 +137,9 @@
                     Research focused on integrating AI with OEE metrics to enhance manufacturing processes, focusing on productivity, efficiency, and quality improvements.
                 </li>
             </ul>
-        </section>
+        </div>
 
-        <section id="education" class="section">
+        <div id="education" class="tab-content">
             <h2 class="section-title">Education</h2>
             <ul>
                 <li><strong>Master of Industrial Engineering & Management</strong><br>
@@ -206,9 +150,9 @@
                     UET Lahore, Pakistan | 2016-2020
                 </li>
             </ul>
-        </section>
+        </div>
 
-        <section id="certifications" class="section">
+        <div id="certifications" class="tab-content">
             <h2 class="section-title">Certifications</h2>
             <ul>
                 <li>AI Engineering (IBM)</li>
@@ -216,9 +160,9 @@
                 <li>Data Analytics (Google)</li>
                 <li>Lean Six-Sigma Black Belt (AIGPE)</li>
             </ul>
-        </section>
+        </div>
 
-        <section id="awards" class="section">
+        <div id="awards" class="tab-content">
             <h2 class="section-title">Awards</h2>
             <ul>
                 <li>Gold Medal in Master’s Degree (2023)</li>
@@ -226,9 +170,9 @@
                 <li>Solar Panel Award from Chief Minister Punjab (2014)</li>
                 <li>Laptop Award from Chief Minister Punjab (2018)</li>
             </ul>
-        </section>
+        </div>
 
-        <section id="contact" class="section">
+        <div id="contact" class="tab-content">
             <h2 class="section-title">Contact Information</h2>
             <div class="contact-info">
                 <p>Email: <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></p>
@@ -236,11 +180,31 @@
                 <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">www.linkedin.com/in/ahmad-bin-sadiq</a></p>
                 <p>GitHub: <a href="https://github.com/ahmadbinsadiq" target="_blank">github.com/ahmadbinsadiq</a></p>
             </div>
-        </section>
+        </div>
     </div>
 
     <footer>
         <p>&copy; 2024 Ahmad Bin Sadiq. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Hide all tab content
+            var tabcontent = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            // Remove "active" class from all tabs
+            var tabs = document.getElementsByClassName("tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].className = tabs[i].className.replace(" active", "");
+            }
+            // Show the current tab and add an "active" class to the clicked tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        // Set default tab to be open
+        document.querySelector(".tab").click();
+    </script>
 </body>
 </html>
