@@ -3,65 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmad Bin Sadiq - Personal Website</title>
+    <title>Ahmad Bin Sadiq - Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #1c1c1c;
-            color: #f0f0f0;
+            color: #dcdcdc;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #0d0d0d;
-            padding: 20px;
+            background-color: #0a0a0a;
+            color: #fff;
+            padding: 20px 0;
             text-align: center;
         }
         .container {
-            padding: 20px;
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
         }
-        .tabs {
-            display: flex;
-            justify-content: space-around;
-            background-color: #0d0d0d;
-            padding: 10px 0;
+        nav ul {
+            padding: 0;
+            list-style: none;
+            background: #111;
+            text-align: center;
         }
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            color: #8f8f8f;
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
         }
-        .tab.active {
-            background-color: #333;
-            color: #00ff00;
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
         }
         .tab-content {
             display: none;
+            padding: 20px 0;
         }
         .tab-content.active {
             display: block;
         }
         .section-title {
             font-size: 24px;
-            margin-bottom: 10px;
-            color: #00ff00;
+            margin-bottom: 20px;
+            color: #76ff03;
         }
         ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
         }
-        li {
-            margin: 5px 0;
+        ul li {
+            padding: 10px;
+            border-bottom: 1px solid #333;
         }
         a {
-            color: #00ffff;
-            text-decoration: none;
+            color: #76ff03;
         }
-        a:hover {
-            text-decoration: underline;
+        .content-box {
+            background: #2c2c2c;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
         footer {
-            background-color: #0d0d0d;
+            background-color: #0a0a0a;
+            color: #fff;
             text-align: center;
             padding: 10px 0;
             position: fixed;
@@ -72,117 +80,186 @@
 </head>
 <body>
     <header>
-        <h1>Ahmad Bin Sadiq</h1>
-        <p>Data Scientist | Machine Learning Enthusiast | AI Expert</p>
+        <div class="container">
+            <h1>Ahmad Bin Sadiq</h1>
+            <h3>Data Scientist | Machine Learning Enthusiast</h3>
+        </div>
     </header>
 
-    <div class="tabs">
-        <div class="tab" onclick="openTab(event, 'about')">About</div>
-        <div class="tab" onclick="openTab(event, 'projects')">Projects</div>
-        <div class="tab" onclick="openTab(event, 'education')">Education</div>
-        <div class="tab" onclick="openTab(event, 'certifications')">Certifications</div>
-        <div class="tab" onclick="openTab(event, 'awards')">Awards</div>
-        <div class="tab" onclick="openTab(event, 'skills')">Skills</div>
-        <div class="tab" onclick="openTab(event, 'softwares')">Softwares</div>
-        <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
-    </div>
+    <nav>
+        <ul>
+            <li><a href="#" class="tab" onclick="openTab(event, 'about')">About</a></li>
+            <li><a href="#" class="tab" onclick="openTab(event, 'projects')">Projects</a></li>
+            <li><a href="#" class="tab" onclick="openTab(event, 'education')">Education</a></li>
+            <li><a href="#" class="tab" onclick="openTab(event, 'certifications')">Certifications</a></li>
+            <li><a href="#" class="tab" onclick="openTab(event, 'awards')">Awards</a></li>
+            <li><a href="#" class="tab" onclick="openTab(event, 'skills')">Skills</a></li>
+            <li><a href="#" class="tab" onclick="openTab(event, 'softwares')">Software</a></li>
+            <li><a href="#" class="tab" onclick="openTab(event, 'contact')">Contact</a></li>
+        </ul>
+    </nav>
 
     <div class="container">
         <div id="about" class="tab-content active">
             <h2 class="section-title">Professional Summary</h2>
-            <p>I am Ahmad Bin Sadiq, a dynamic Data Scientist with a strong passion for leveraging data to drive actionable insights and innovative solutions. With over two years of hands-on experience in machine learning, deep learning, and data analytics, I have a proven track record of developing predictive models, performing complex data analyses, and delivering impactful results. My technical expertise spans a wide array of tools and technologies, including Python, R, SQL, TensorFlow, Keras, and Power BI. I am adept at working in fast-paced environments and thrive on solving complex problems with creative and effective solutions.</p>
-            <p>Throughout my career, I have successfully led projects that optimize operational efficiency, forecast sales, analyze financial risks, and improve production processes. My recent endeavors include developing a real-time object detection system using TensorFlow, predicting energy consumption for the textile industry, and creating an AI-powered toolkit for data analysis and machine learning model visualization. Each project has not only honed my technical skills but also reinforced my ability to translate data into strategic business insights.</p>
-            <p>I am now eager to take on new challenges and contribute to a forward-thinking multinational company. My goal is to leverage my expertise in deep learning, machine learning, and data analysis to develop groundbreaking AI solutions that drive growth and innovation. Let's connect and explore how I can contribute to your organization's success.</p>
+            <div class="content-box">
+                <p>
+                    I am Ahmad Bin Sadiq, a dynamic Data Scientist with a strong passion for leveraging data to drive actionable insights and innovative solutions. With over two years of hands-on experience in machine learning, deep learning, and data analytics, I have a proven track record of developing predictive models, performing complex data analyses, and delivering impactful results. My technical expertise spans a wide array of tools and technologies, including Python, R, SQL, TensorFlow, Keras, and Power BI. I am adept at working in fast-paced environments and thrive on solving complex problems with creative and effective solutions.
+                </p>
+                <p>
+                    Throughout my career, I have successfully led projects that optimize operational efficiency, forecast sales, analyze financial risks, and improve production processes. My recent endeavors include developing a real-time object detection system using TensorFlow, predicting energy consumption for the textile industry, and creating an AI-powered toolkit for data analysis and machine learning model visualization. Each project has not only honed my technical skills but also reinforced my ability to translate data into strategic business insights.
+                </p>
+                <p>
+                    I am now eager to take on new challenges and contribute to a forward-thinking multinational company. My goal is to leverage my expertise in deep learning, machine learning, and data analysis to develop groundbreaking AI solutions that drive growth and innovation. Let's connect and explore how I can contribute to your organization's success.
+                </p>
+            </div>
         </div>
 
         <div id="projects" class="tab-content">
             <h2 class="section-title">Projects</h2>
-            <ul>
-                <li><strong>Real-Time Object Detection with TensorFlow</strong></li>
-                <li><strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong></li>
-                <li><strong>Sales Forecasting with Time Series Analysis</strong></li>
-                <li><strong>Sentiment Analysis of Product Reviews</strong></li>
-                <li><strong>Image Detection with Convolutional Neural Networks</strong></li>
-                <li><strong>Data Analysis and ML Toolkit</strong></li>
-                <li><strong>Real Estate Price Prediction</strong></li>
-                <li><strong>Car Sales Prediction</strong></li>
-                <li><strong>Employee Attrition Analysis and Prediction</strong></li>
-                <li><strong>Power BI Dashboard for Sales Data</strong></li>
-            </ul>
+            <div class="content-box">
+                <h3>Data Analysis and ML Toolkit</h3>
+                <p>A Streamlit web application allowing users to analyze datasets, visualize results, and adjust model parameters. Available on <a href="https://github.com/ahmadbinsadiq/Data-Analysis-and-ML-Toolkit.git" target="_blank">GitHub</a>.</p>
+            </div>
+            <div class="content-box">
+                <h3>Real-Time Object Detection with TensorFlow</h3>
+                <p>Developed a real-time object detection system using TensorFlow.</p>
+            </div>
+            <div class="content-box">
+                <h3>Sales Forecasting with Time Series Analysis</h3>
+                <p>Implemented time series analysis to forecast sales for a retail company.</p>
+            </div>
+            <div class="content-box">
+                <h3>Sentiment Analysis of Product Reviews</h3>
+                <p>Conducted sentiment analysis on product reviews using NLP techniques.</p>
+            </div>
+            <div class="content-box">
+                <h3>Image Detection with Convolutional Neural Networks</h3>
+                <p>Created a CNN model to detect and classify images.</p>
+            </div>
+            <div class="content-box">
+                <h3>Real Estate Price Prediction</h3>
+                <p>Built models to predict real estate prices based on various features.</p>
+            </div>
+            <div class="content-box">
+                <h3>Car Sales Prediction</h3>
+                <p>Analyzed and predicted car sales using machine learning techniques.</p>
+            </div>
+            <div class="content-box">
+                <h3>Employee Attrition Analysis and Prediction</h3>
+                <p>Developed models to predict employee attrition and analyze factors contributing to it.</p>
+            </div>
+            <div class="content-box">
+                <h3>Power BI Dashboard for Sales Data</h3>
+                <p>Created an interactive Power BI dashboard to visualize sales data.</p>
+            </div>
         </div>
 
         <div id="education" class="tab-content">
             <h2 class="section-title">Education</h2>
-            <ul>
-                <li><strong>Master of Industrial Engineering & Management</strong><br>
-                    University of the Punjab, Pakistan | 2021-2024 | Gold Medalist</li>
-                <li><strong>Bachelor of Industrial & Manufacturing Engineering</strong><br>
-                    UET Lahore, Pakistan | 2016-2020</li>
-            </ul>
+            <div class="content-box">
+                <h3>Master of Industrial Engineering & Management (Gold Medalist)</h3>
+                <p>University of the Punjab, Pakistan | 2021-2024</p>
+            </div>
+            <div class="content-box">
+                <h3>Bachelor of Industrial & Manufacturing Engineering</h3>
+                <p>UET Lahore, Pakistan | 2016-2020</p>
+            </div>
         </div>
 
         <div id="certifications" class="tab-content">
             <h2 class="section-title">Certifications</h2>
-            <ul>
-                <li>AI Engineering (IBM)</li>
-                <li>Data Science (IBM)</li>
-                <li>Data Analytics (Google)</li>
-                <li>Lean Six-Sigma Black Belt (AIGPE)</li>
-            </ul>
+            <div class="content-box">
+                <h3>AI Engineering</h3>
+                <p>IBM</p>
+            </div>
+            <div class="content-box">
+                <h3>Data Science</h3>
+                <p>IBM</p>
+            </div>
+            <div class="content-box">
+                <h3>Data Analytics</h3>
+                <p>Google</p>
+            </div>
+            <div class="content-box">
+                <h3>Lean Six-Sigma Black Belt</h3>
+                <p>AIGPE</p>
+            </div>
         </div>
 
         <div id="awards" class="tab-content">
             <h2 class="section-title">Awards</h2>
-            <ul>
-                <li><strong>Gold Medal</strong> in Master's Degree, University of the Punjab | 2023</li>
-                <li><strong>Benevolent Scholarship</strong> from Punjab Government | 2014-2020</li>
-                <li><strong>Solar Panel Award</strong> from Chief Minister Punjab | 2014</li>
-                <li><strong>Laptop Award</strong> from Chief Minister Punjab | 2018</li>
-            </ul>
+            <div class="content-box">
+                <h3>Gold Medal</h3>
+                <p>Master's Degree, University of the Punjab | 2023</p>
+            </div>
+            <div class="content-box">
+                <h3>Benevolent Scholarship</h3>
+                <p>Punjab Government | 2014-2020</p>
+            </div>
+            <div class="content-box">
+                <h3>Solar Panel Award</h3>
+                <p>Chief Minister Punjab | 2014</p>
+            </div>
+            <div class="content-box">
+                <h3>Laptop Award</h3>
+                <p>Chief Minister Punjab | 2018</p>
+            </div>
         </div>
 
         <div id="skills" class="tab-content">
             <h2 class="section-title">Skills</h2>
-            <ul>
-                <li><strong>Programming:</strong> Python (Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Plotly), R (data manipulation, ggplot2, Excel integration)</li>
-                <li><strong>Deep Learning:</strong> TensorFlow, Keras, PyTorch, CNNs, RNNs</li>
-                <li><strong>Natural Language Processing:</strong> NLTK, spaCy, transformers, text preprocessing, tokenization, sentiment analysis</li>
-                <li><strong>Data Visualization:</strong> Power BI, Tableau, Matplotlib, Seaborn</li>
-                <li><strong>Databases:</strong> SQL and Microsoft SQL Server</li>
-                <li><strong>Machine Learning:</strong> Supervised and unsupervised learning, model deployment, feature engineering</li>
-                <li><strong>Tools:</strong> Jupyter Notebook, Visual Studio Code, PyCharm, RStudio, Git, APIs, web scraping, Excel, Streamlit</li>
-                <li><strong>Soft Skills:</strong> Problem-solving, critical thinking, creativity, people management, emotional intelligence, decision-making</li>
-            </ul>
+            <div class="content-box">
+                <h3>Programming</h3>
+                <p>Python (Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Plotly), R (data manipulation, ggplot2, Excel integration)</p>
+                <h3>Deep Learning</h3>
+                <p>TensorFlow, Keras, PyTorch, CNNs, RNNs</p>
+                <h3>Natural Language Processing</h3>
+                <p>NLTK, spaCy, transformers, text preprocessing, tokenization, sentiment analysis</p>
+                <h3>Data Visualization</h3>
+                <p>Power BI, Tableau, Matplotlib, Seaborn</p>
+                <h3>Databases</h3>
+                <p>SQL and Microsoft SQL Server</p>
+                <h3>Machine Learning</h3>
+                <p>Supervised and unsupervised learning, model deployment, feature engineering</p>
+                <h3>Tools</h3>
+                <p>Jupyter Notebook, Visual Studio Code, PyCharm, RStudio, Git, APIs, web scraping, Excel, Streamlit</p>
+                <h3>Soft Skills</h3>
+                <p>Problem-solving, critical thinking, creativity, people management, emotional intelligence, decision-making</p>
+            </div>
         </div>
 
         <div id="softwares" class="tab-content">
-            <h2 class="section-title">Softwares</h2>
-            <ul>
-                <li>Microsoft Office 365</li>
-                <li>Visual Studio Code</li>
-                <li>Microsoft Power BI</li>
-                <li>Tableau</li>
-                <li>Google Cloud Platform</li>
-                <li>Jupyter Notebook</li>
-                <li>MySQL Workbench</li>
-                <li>Minitab</li>
-                <li>SPSS</li>
-                <li>Excel</li>
-            </ul>
+            <h2 class="section-title">Software</h2>
+            <div class="content-box">
+                <p>Microsoft Office 365</p>
+                <p>Visual Studio Code</p>
+                <p>Microsoft Power BI</p>
+                <p>Tableau</p>
+                <p>Google Cloud Platform</p>
+                <p>Jupyter Notebook</p>
+                <p>MySQL Workbench</p>
+                <p>Minitab</p>
+                <p>SPSS</p>
+                <p>Excel</p>
+            </div>
         </div>
 
         <div id="contact" class="tab-content">
             <h2 class="section-title">Contact</h2>
-            <ul>
-                <li><strong>Email:</strong> <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></li>
-                <li><strong>Phone:</strong> <a href="tel:+923035049492">+92-303-5049492</a></li>
-                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ahmad-bin-sadiq">www.linkedin.com/in/ahmad-bin-sadiq</a></li>
-            </ul>
+            <div class="content-box">
+                <h3>Email</h3>
+                <p>ahmadbinsadiq@gmail.com</p>
+                <h3>Phone</h3>
+                <p>+92-303-5049492</p>
+                <h3>LinkedIn</h3>
+                <p><a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">LinkedIn Profile</a></p>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Ahmad Bin Sadiq. All Rights Reserved.</p>
+        <p>&copy; 2024 Ahmad Bin Sadiq. All rights reserved.</p>
     </footer>
 
     <script>
