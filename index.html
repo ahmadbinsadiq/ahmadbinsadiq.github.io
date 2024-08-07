@@ -13,7 +13,7 @@
             padding: 0;
         }
         header {
-            background-color: #003366; /* Dark Blue */
+            background-color: #3e2a6c; /* Deep Purple */
             color: #ffffff;
             padding: 20px;
             text-align: center;
@@ -30,23 +30,23 @@
             cursor: pointer;
             padding: 0;
             margin: 0;
-            background-color: #009688; /* Teal */
-            border-bottom: 2px solid #6a1b9a; /* Purple */
+            background-color: #6a1b9a; /* Medium Purple */
+            border-bottom: 2px solid #aeaeae; /* Gray */
             border-radius: 12px 12px 0 0;
         }
         .tab {
             flex: 1;
             padding: 15px;
             text-align: center;
-            background-color: #004d40; /* Dark Teal */
-            border: 1px solid #004d40;
+            background-color: #3e2a6c; /* Deep Purple */
+            border: 1px solid #3e2a6c;
             border-radius: 12px 12px 0 0;
             margin-right: 2px;
             color: #ffffff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .tab:hover {
-            background-color: #00796b; /* Medium Teal */
+            background-color: #5c2a91; /* Purple Hover */
         }
         .tab-content {
             display: none;
@@ -61,7 +61,7 @@
             display: block;
         }
         footer {
-            background-color: #003366; /* Dark Blue */
+            background-color: #3e2a6c; /* Deep Purple */
             color: #ffffff;
             text-align: center;
             padding: 10px;
@@ -71,9 +71,9 @@
             box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.3);
         }
         .section-title {
-            color: #009688; /* Teal */
+            color: #6a1b9a; /* Medium Purple */
             font-size: 26px;
-            border-bottom: 2px solid #6a1b9a; /* Purple */
+            border-bottom: 2px solid #a7a7a7; /* Gray */
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
@@ -86,7 +86,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         a {
-            color: #009688; /* Teal */
+            color: #6a1b9a; /* Medium Purple */
             text-decoration: none;
         }
         a:hover {
@@ -109,6 +109,8 @@
             <div class="tab" onclick="openTab(event, 'certifications')">Certifications</div>
             <div class="tab" onclick="openTab(event, 'awards')">Awards</div>
             <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
+            <!-- Add General Tab if needed -->
+            <!-- <div class="tab" onclick="openTab(event, 'general')">General</div> -->
         </div>
 
         <div id="about" class="tab-content active">
@@ -183,7 +185,7 @@
             <ul>
                 <li><strong>Master of Industrial Engineering & Management</strong><br>
                     University of the Punjab, Lahore, Pakistan | 2021-2024<br>
-                    <span style="color: #009688;">Gold Medalist</span>
+                    <span style="color: #6a1b9a;">Gold Medalist</span>
                 </li>
                 <li><strong>Bachelor of Industrial & Manufacturing Engineering</strong><br>
                     UET Lahore, Pakistan | 2016-2020
@@ -210,6 +212,22 @@
                 <li><strong>Laptop Award</strong> from Chief Minister Punjab | 2018</li>
             </ul>
         </div>
+
+        <div id="contact" class="tab-content">
+            <h2 class="section-title">Contact</h2>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+923035049492">+92-303-5049492</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">www.linkedin.com/in/ahmad-bin-sadiq</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/ahmadbinsadiq" target="_blank">https://github.com/ahmadbinsadiq</a></li>
+            </ul>
+        </div>
+        
+        <!-- Optional General Tab -->
+        <!-- <div id="general" class="tab-content">
+            <h2 class="section-title">General Information</h2>
+            <p>Overview of all sections...</p>
+        </div> -->
     </div>
 
     <footer>
