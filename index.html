@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmad Bin Sadiq - Portfolio</title>
+    <title>Ahmad Bin Sadiq - Data Scientist</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -25,38 +25,51 @@
             overflow: hidden;
             padding-bottom: 60px; /* Ensure content doesn't overlap with footer */
         }
-        nav ul {
+        .tabs {
+            display: flex;
+            cursor: pointer;
             padding: 0;
-            list-style: none;
-            background: #2d2d2d; /* Dark Gray */
-            text-align: center;
+            margin: 0;
+            background-color: #2d2d2d; /* Dark Gray */
             border-bottom: 2px solid #333333; /* Darker Gray */
             border-radius: 12px 12px 0 0;
         }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            background-color: #444444; /* Medium Gray */
+            border: 1px solid #333333;
+            border-radius: 12px 12px 0 0;
+            margin-right: 2px;
             color: #ffffff; /* White text */
-            text-decoration: none;
-            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
-        nav ul li a:hover {
+        .tab:hover {
             background-color: #39ff14; /* Neon Green Hover */
             color: #1c1c1c; /* Dark Gray text on hover */
         }
         .tab-content {
             display: none;
-            padding: 20px 0;
+            padding: 20px;
             background: #333333; /* Darker Gray background */
             border-radius: 12px;
             border: 1px solid #444444;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             overflow: auto; /* Allow scrolling */
         }
-        .tab-content.active {
+        .active {
             display: block;
+        }
+        footer {
+            background-color: #333333; /* Darker Gray */
+            color: #39ff14; /* Neon Green */
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.5);
         }
         .section-title {
             color: #39ff14; /* Neon Green */
@@ -65,11 +78,7 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
+        .projects li, .research li {
             padding: 15px;
             margin-bottom: 15px;
             border: 1px solid #444444;
@@ -84,16 +93,6 @@
         a:hover {
             text-decoration: underline;
         }
-        footer {
-            background-color: #333333; /* Darker Gray */
-            color: #39ff14; /* Neon Green */
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.5);
-        }
     </style>
 </head>
 <body>
@@ -102,71 +101,80 @@
         <p>Data Scientist | AI Specialist</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#" class="tab" onclick="openTab(event, 'about')">About</a></li>
-            <li><a href="#" class="tab" onclick="openTab(event, 'projects')">Projects</a></li>
-            <li><a href="#" class="tab" onclick="openTab(event, 'education')">Education</a></li>
-            <li><a href="#" class="tab" onclick="openTab(event, 'certifications')">Certifications</a></li>
-            <li><a href="#" class="tab" onclick="openTab(event, 'awards')">Awards</a></li>
-            <li><a href="#" class="tab" onclick="openTab(event, 'skills')">Skills</a></li>
-            <li><a href="#" class="tab" onclick="openTab(event, 'softwares')">Software</a></li>
-            <li><a href="#" class="tab" onclick="openTab(event, 'contact')">Contact</a></li>
-        </ul>
-    </nav>
-
     <div class="container">
+        <div class="tabs">
+            <div class="tab" onclick="openTab(event, 'about')">About</div>
+            <div class="tab" onclick="openTab(event, 'projects')">Projects</div>
+            <div class="tab" onclick="openTab(event, 'research')">Research</div>
+            <div class="tab" onclick="openTab(event, 'education')">Education</div>
+            <div class="tab" onclick="openTab(event, 'certifications')">Certifications</div>
+            <div class="tab" onclick="openTab(event, 'awards')">Awards</div>
+            <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
+        </div>
+
         <div id="about" class="tab-content active">
             <h2 class="section-title">Professional Summary</h2>
-            <p>
-                I am Ahmad Bin Sadiq, a dynamic Data Scientist with a strong passion for leveraging data to drive actionable insights and innovative solutions. With over two years of hands-on experience in machine learning, deep learning, and data analytics, I have a proven track record of developing predictive models, performing complex data analyses, and delivering impactful results. My technical expertise spans a wide array of tools and technologies, including Python, R, SQL, TensorFlow, Keras, and Power BI. I am adept at working in fast-paced environments and thrive on solving complex problems with creative and effective solutions.
-            </p>
-            <p>
-                Throughout my career, I have successfully led projects that optimize operational efficiency, forecast sales, analyze financial risks, and improve production processes. My recent endeavors include developing a real-time object detection system using TensorFlow, predicting energy consumption for the textile industry, and creating an AI-powered toolkit for data analysis and machine learning model visualization. Each project has not only honed my technical skills but also reinforced my ability to translate data into strategic business insights.
-            </p>
-            <p>
-                I am now eager to take on new challenges and contribute to a forward-thinking multinational company. My goal is to leverage my expertise in deep learning, machine learning, and data analysis to develop groundbreaking AI solutions that drive growth and innovation. Let's connect and explore how I can contribute to your organization's success.
-            </p>
+            <p>Dynamic Data Scientist with over 2 years of experience in machine learning, deep learning, and data analytics. Proven track record in developing predictive models, performing complex data analysis, and delivering actionable insights. Skilled in Python, R, SQL, and data visualization tools such as Power BI and Tableau. Adept at working in fast-paced environments and driving process improvements.</p>
+            <h2 class="section-title">Objective</h2>
+            <p>Aspiring AI expert seeking a challenging role in a forward-thinking multinational company to leverage my deep learning, machine learning, and data analysis skills to develop innovative AI solutions and drive company growth.</p>
         </div>
 
         <div id="projects" class="tab-content">
             <h2 class="section-title">Projects</h2>
             <ul class="projects">
                 <li>
-                    <strong>Data Analysis and ML Toolkit</strong><br>
-                    A Streamlit web application allowing users to analyze datasets, visualize results, and adjust model parameters. Available on <a href="https://github.com/ahmadbinsadiq/Data-Analysis-and-ML-Toolkit.git" target="_blank">GitHub</a>.
+                    <strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong><br>
+                    Effectively provided consultancy services for Technical Support in the project “AI Integration with Overall Equipment Effectiveness in the manufacturing industry.”
                 </li>
                 <li>
                     <strong>Real-Time Object Detection with TensorFlow</strong><br>
-                    Developed a real-time object detection system using TensorFlow.
+                    Developed a real-time object detection system using TensorFlow, capable of detecting and classifying multiple objects in video streams. This project involved data preprocessing, model training, and real-time application.
                 </li>
                 <li>
                     <strong>Sales Forecasting with Time Series Analysis</strong><br>
-                    Implemented time series analysis to forecast sales for a retail company.
+                    Built a model to forecast monthly sales, increasing forecast accuracy by 20%.
                 </li>
                 <li>
                     <strong>Sentiment Analysis of Product Reviews</strong><br>
-                    Conducted sentiment analysis on product reviews using NLP techniques.
+                    Analyzed product reviews to determine customer sentiment, improving product offerings.
                 </li>
                 <li>
                     <strong>Image Detection with Convolutional Neural Networks</strong><br>
-                    Created a CNN model to detect and classify images.
+                    Implemented a CNN model to classify images with 91% accuracy.
+                </li>
+                <li>
+                    <strong>Data Analysis and ML Toolkit</strong><br>
+                    Developed a Streamlit web application for dataset analysis and machine learning models visualization, featuring data preview, visualizations, adjustable model parameters, and predictions.
                 </li>
                 <li>
                     <strong>Real Estate Price Prediction</strong><br>
-                    Built models to predict real estate prices based on various features.
+                    Applied regression algorithms to predict house prices using features such as bed, bath, and house size, involving data preprocessing, model tuning, and evaluation to identify the best model.
                 </li>
                 <li>
                     <strong>Car Sales Prediction</strong><br>
-                    Analyzed and predicted car sales using machine learning techniques.
+                    Applied multiple machine learning algorithms to predict car prices using features like engine size and horsepower, optimizing model performance through hyperparameter tuning and evaluation.
                 </li>
                 <li>
                     <strong>Employee Attrition Analysis and Prediction</strong><br>
-                    Developed models to predict employee attrition and analyze factors contributing to it.
+                    Analyzed employee data to predict attrition, resulting in a 30% reduction in turnover.
                 </li>
                 <li>
                     <strong>Power BI Dashboard for Sales Data</strong><br>
-                    Created an interactive Power BI dashboard to visualize sales data.
+                    Developed an interactive Power BI dashboard to visualize sales data, enhancing decision-making.
+                </li>
+            </ul>
+        </div>
+
+        <div id="research" class="tab-content">
+            <h2 class="section-title">Research</h2>
+            <ul class="research">
+                <li>
+                    <strong>AI Integration with OEE Metrics</strong><br>
+                    Research focused on integrating AI with OEE metrics to enhance manufacturing processes, focusing on productivity, efficiency, and quality improvements.
+                </li>
+                <li>
+                    <strong>Investigating Factors Affecting the Adoption of Industry 5.0 in the Manufacturing Sector: An Integrated Model Approach</strong><br>
+                    Conducted master’s research identifying factors influencing the adoption of Industry 5.0 technologies, utilizing advanced data collection and analysis to provide strategic recommendations for integration and operational efficiency.
                 </li>
             </ul>
         </div>
@@ -174,8 +182,9 @@
         <div id="education" class="tab-content">
             <h2 class="section-title">Education</h2>
             <ul>
-                <li><strong>Master of Industrial Engineering & Management (Gold Medalist)</strong><br>
-                    University of the Punjab, Pakistan | 2021-2024
+                <li><strong>Master of Industrial Engineering & Management</strong><br>
+                    University of the Punjab, Lahore, Pakistan | 2021-2024<br>
+                    <span style="color: #39ff14;">Gold Medalist</span>
                 </li>
                 <li><strong>Bachelor of Industrial & Manufacturing Engineering</strong><br>
                     UET Lahore, Pakistan | 2016-2020
@@ -189,73 +198,43 @@
                 <li>AI Engineering (IBM)</li>
                 <li>Data Science (IBM)</li>
                 <li>Data Analytics (Google)</li>
-                <li>Lean Six-Sigma Green Belt (KPMG)</li>
+                <li>Lean Six-Sigma Black Belt (AIGPE)</li>
             </ul>
         </div>
 
         <div id="awards" class="tab-content">
             <h2 class="section-title">Awards</h2>
             <ul>
-                <li>Gold Medal for securing 1st position in Master's Program</li>
-                <li>Certificate of Merit in Bachelor's Program</li>
-            </ul>
-        </div>
-
-        <div id="skills" class="tab-content">
-            <h2 class="section-title">Skills</h2>
-            <ul>
-                <li>Python, R, SQL</li>
-                <li>Machine Learning, Deep Learning</li>
-                <li>Data Analysis, Data Visualization</li>
-                <li>TensorFlow, Keras</li>
-                <li>Power BI, Tableau</li>
-                <li>Natural Language Processing (NLP)</li>
-            </ul>
-        </div>
-
-        <div id="softwares" class="tab-content">
-            <h2 class="section-title">Software</h2>
-            <ul>
-                <li>TensorFlow, Keras</li>
-                <li>Power BI, Tableau</li>
-                <li>Jupyter Notebook, VS Code</li>
-                <li>MATLAB, Simulink</li>
-                <li>SQL, MongoDB</li>
+                <li>Gold Medal in Master's Degree (2023)</li>
+                <li>Merit-based Benevolent Scholarship from Punjab Government (2014-2020)</li>
+                <li>Merit-based Solar Panel Award from Chief Minister Punjab (2014)</li>
+                <li>Merit-based Laptop Award from Chief Minister Punjab (2018)</li>
             </ul>
         </div>
 
         <div id="contact" class="tab-content">
             <h2 class="section-title">Contact</h2>
-            <p>If you'd like to get in touch, you can reach me at:</p>
-            <ul>
-                <li>Email: <a href="mailto:ahmadbinsadiq98@gmail.com">ahmadbinsadiq98@gmail.com</a></li>
-                <li>Phone: +92 313 6900362</li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq-0327b9188" target="_blank">Ahmad Bin Sadiq</a></li>
-            </ul>
+            <p>Email: <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></p>
+            <p>Phone: <a href="tel:+92-303-5049492">+92-303-5049492</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">www.linkedin.com/in/ahmad-bin-sadiq</a></p>
         </div>
     </div>
 
     <footer>
-        <p>Ahmad Bin Sadiq &copy; 2024</p>
+        <p>© 2024 Ahmad Bin Sadiq. All rights reserved.</p>
     </footer>
 
     <script>
         function openTab(event, tabName) {
-            var i, tabcontent, tablinks;
-
-            // Hide all tab contents
+            var i, tabcontent, tabs;
             tabcontent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
-
-            // Remove active class from all tabs
-            tablinks = document.getElementsByClassName("tab");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            tabs = document.getElementsByClassName("tab");
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].className = tabs[i].className.replace(" active", "");
             }
-
-            // Show the current tab and add an "active" class to the button that opened the tab
             document.getElementById(tabName).style.display = "block";
             event.currentTarget.className += " active";
         }
