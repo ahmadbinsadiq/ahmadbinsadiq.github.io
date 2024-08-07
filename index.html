@@ -62,6 +62,28 @@
         .active {
             display: block;
         }
+        .section-title {
+            color: #39ff14; /* Neon Green */
+            font-size: 26px;
+            border-bottom: 2px solid #39ff14; /* Neon Green */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .info-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #444444;
+            border-radius: 8px;
+            background: #2d2d2d; /* Dark Gray */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .info-item a {
+            color: #00ffff; /* Neon Cyan */
+            text-decoration: none;
+        }
+        .info-item a:hover {
+            text-decoration: underline;
+        }
         footer {
             background-color: #333333; /* Darker Gray */
             color: #39ff14; /* Neon Green */
@@ -71,28 +93,6 @@
             bottom: 0;
             width: 100%;
             box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.5);
-        }
-        .section-title {
-            color: #39ff14; /* Neon Green */
-            font-size: 26px;
-            border-bottom: 2px solid #39ff14; /* Neon Green */
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .projects li, .research li {
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #444444;
-            border-radius: 8px;
-            background: #2d2d2d; /* Dark Gray */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-        a {
-            color: #00ffff; /* Neon Cyan */
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -122,102 +122,116 @@
 
         <div id="projects" class="tab-content">
             <h2 class="section-title">Projects</h2>
-            <ul class="projects">
-                <li>
-                    <strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong><br>
-                    Effectively provided consultancy services for Technical Support in the project “AI Integration with Overall Equipment Effectiveness in the manufacturing industry.”
-                </li>
-                <li>
-                    <strong>Real-Time Object Detection with TensorFlow</strong><br>
-                    Developed a real-time object detection system using TensorFlow, capable of detecting and classifying multiple objects in video streams. This project involved data preprocessing, model training, and real-time application.
-                </li>
-                <li>
-                    <strong>Sales Forecasting with Time Series Analysis</strong><br>
-                    Built a model to forecast monthly sales, increasing forecast accuracy by 20%.
-                </li>
-                <li>
-                    <strong>Sentiment Analysis of Product Reviews</strong><br>
-                    Analyzed product reviews to determine customer sentiment, improving product offerings.
-                </li>
-                <li>
-                    <strong>Image Detection with Convolutional Neural Networks</strong><br>
-                    Implemented a CNN model to classify images with 91% accuracy.
-                </li>
-                <li>
-                    <strong>Data Analysis and ML Toolkit</strong><br>
-                    Developed a Streamlit web application for dataset analysis and machine learning models visualization, featuring data preview, visualizations, adjustable model parameters, and predictions.
-                </li>
-                <li>
-                    <strong>Real Estate Price Prediction</strong><br>
-                    Applied regression algorithms to predict house prices using features such as bed, bath, and house size, involving data preprocessing, model tuning, and evaluation to identify the best model.
-                </li>
-                <li>
-                    <strong>Car Sales Prediction</strong><br>
-                    Applied multiple machine learning algorithms to predict car prices using features like engine size and horsepower, optimizing model performance through hyperparameter tuning and evaluation.
-                </li>
-                <li>
-                    <strong>Employee Attrition Analysis and Prediction</strong><br>
-                    Analyzed employee data to predict attrition, resulting in a 30% reduction in turnover.
-                </li>
-                <li>
-                    <strong>Power BI Dashboard for Sales Data</strong><br>
-                    Developed an interactive Power BI dashboard to visualize sales data, enhancing decision-making.
-                </li>
-            </ul>
+            <div class="info-item">
+                <strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong><br>
+                Effectively provided consultancy services for Technical Support in the project “AI Integration with Overall Equipment Effectiveness in the manufacturing industry.”
+            </div>
+            <div class="info-item">
+                <strong>Real-Time Object Detection with TensorFlow</strong><br>
+                Developed a real-time object detection system using TensorFlow, capable of detecting and classifying multiple objects in video streams. This project involved data preprocessing, model training, and real-time application.
+            </div>
+            <div class="info-item">
+                <strong>Sales Forecasting with Time Series Analysis</strong><br>
+                Built a model to forecast monthly sales, increasing forecast accuracy by 20%.
+            </div>
+            <div class="info-item">
+                <strong>Sentiment Analysis of Product Reviews</strong><br>
+                Analyzed product reviews to determine customer sentiment, improving product offerings.
+            </div>
+            <div class="info-item">
+                <strong>Image Detection with Convolutional Neural Networks</strong><br>
+                Implemented a CNN model to classify images with 91% accuracy.
+            </div>
+            <div class="info-item">
+                <strong>Data Analysis and ML Toolkit</strong><br>
+                Developed a Streamlit web application for dataset analysis and machine learning models visualization, featuring data preview, visualizations, adjustable model parameters, and predictions.
+            </div>
+            <div class="info-item">
+                <strong>Real Estate Price Prediction</strong><br>
+                Applied regression algorithms to predict house prices using features such as bed, bath, and house size, involving data preprocessing, model tuning, and evaluation to identify the best model.
+            </div>
+            <div class="info-item">
+                <strong>Car Sales Prediction</strong><br>
+                Applied multiple machine learning algorithms to predict car prices using features like engine size and horsepower, optimizing model performance through hyperparameter tuning and evaluation.
+            </div>
+            <div class="info-item">
+                <strong>Employee Attrition Analysis and Prediction</strong><br>
+                Analyzed employee data to predict attrition, resulting in a 30% reduction in turnover.
+            </div>
+            <div class="info-item">
+                <strong>Power BI Dashboard for Sales Data</strong><br>
+                Developed an interactive Power BI dashboard to visualize sales data, enhancing decision-making.
+            </div>
         </div>
 
         <div id="research" class="tab-content">
             <h2 class="section-title">Research</h2>
-            <ul class="research">
-                <li>
-                    <strong>AI Integration with OEE Metrics</strong><br>
-                    Research focused on integrating AI with OEE metrics to enhance manufacturing processes, focusing on productivity, efficiency, and quality improvements.
-                </li>
-                <li>
-                    <strong>Investigating Factors Affecting the Adoption of Industry 5.0 in the Manufacturing Sector: An Integrated Model Approach</strong><br>
-                    Conducted master’s research identifying factors influencing the adoption of Industry 5.0 technologies, utilizing advanced data collection and analysis to provide strategic recommendations for integration and operational efficiency.
-                </li>
-            </ul>
+            <div class="info-item">
+                <strong>AI Integration with OEE Metrics</strong><br>
+                Research focused on integrating AI with OEE metrics to enhance manufacturing processes, focusing on productivity, efficiency, and quality improvements.
+            </div>
+            <div class="info-item">
+                <strong>Investigating Factors Affecting the Adoption of Industry 5.0 in the Manufacturing Sector: An Integrated Model Approach</strong><br>
+                Conducted master’s research identifying factors influencing the adoption of Industry 5.0 technologies, utilizing advanced data collection and analysis to provide strategic recommendations for integration and operational efficiency.
+            </div>
         </div>
 
         <div id="education" class="tab-content">
             <h2 class="section-title">Education</h2>
-            <ul class="education">
-                <li><strong>Master of Industrial Engineering & Management</strong><br>
-                    University of the Punjab, Lahore, Pakistan | 2021-2024<br>
-                    Achieved Gold Medalist status.
-                </li>
-                <li><strong>Bachelor of Industrial & Manufacturing Engineering</strong><br>
-                    University of Engineering and Technology (UET), Lahore, Pakistan | 2016-2020
-                </li>
-            </ul>
+            <div class="info-item">
+                <strong>Master of Industrial Engineering & Management</strong><br>
+                University of the Punjab, Lahore, Pakistan | 2021-2024<br>
+                <span style="color: #39ff14;">Gold Medalist</span>
+            </div>
+            <div class="info-item">
+                <strong>Bachelor of Industrial & Manufacturing Engineering</strong><br>
+                University of Engineering and Technology (UET) Lahore, Pakistan | 2016-2020
+            </div>
         </div>
 
         <div id="certifications" class="tab-content">
             <h2 class="section-title">Certifications</h2>
-            <ul>
-                <li>AI Engineering (IBM)</li>
-                <li>Data Science (IBM)</li>
-                <li>Data Analytics (Google)</li>
-                <li>Lean Six-Sigma Black Belt (AIGPE)</li>
-            </ul>
+            <div class="info-item">
+                <strong>AI Engineering (IBM)</strong>
+            </div>
+            <div class="info-item">
+                <strong>Data Science (IBM)</strong>
+            </div>
+            <div class="info-item">
+                <strong>Data Analytics (Google)</strong>
+            </div>
+            <div class="info-item">
+                <strong>Lean Six-Sigma Black Belt (AIGPE)</strong>
+            </div>
         </div>
 
         <div id="awards" class="tab-content">
             <h2 class="section-title">Awards</h2>
-            <ul>
-                <li>Gold Medal in Master's Degree (2023)</li>
-                <li>Merit-based Benevolent Scholarship from Punjab Government (2014-2020)</li>
-                <li>Merit-based Solar Panel Award from Chief Minister Punjab (2014)</li>
-                <li>Merit-based Laptop Award from Chief Minister Punjab (2018)</li>
-            </ul>
+            <div class="info-item">
+                <strong>Gold Medal in Master's Degree (2023)</strong>
+            </div>
+            <div class="info-item">
+                <strong>Merit-based Benevolent Scholarship from Punjab Government (2014-2020)</strong>
+            </div>
+            <div class="info-item">
+                <strong>Merit-based Solar Panel Award from Chief Minister Punjab (2014)</strong>
+            </div>
+            <div class="info-item">
+                <strong>Merit-based Laptop Award from Chief Minister Punjab (2018)</strong>
+            </div>
         </div>
 
         <div id="contact" class="tab-content">
             <h2 class="section-title">Contact</h2>
-            <p>Email: <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></p>
-            <p>Phone: <a href="tel:+92-303-5049492">+92-303-5049492</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">www.linkedin.com/in/ahmad-bin-sadiq</a></p>
+            <div class="info-item">
+                <strong>Email:</strong> <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a>
+            </div>
+            <div class="info-item">
+                <strong>Phone:</strong> <a href="tel:+92-303-5049492">+92-303-5049492</a>
+            </div>
+            <div class="info-item">
+                <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ahmad-bin-sadiq" target="_blank">www.linkedin.com/in/ahmad-bin-sadiq</a>
+            </div>
         </div>
     </div>
 
