@@ -3,284 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmad Bin Sadiq - Resume</title>
+    <title>Ahmad Bin Sadiq - Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            color: #333;
             background-color: #f4f4f4;
         }
-
         header {
             background-color: #333;
             color: #fff;
-            padding: 1rem;
+            padding: 1em;
             text-align: center;
         }
-
-        .container {
-            width: 80%;
-            margin: 2rem auto;
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
         .tabs {
             display: flex;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #333;
+            justify-content: center;
+            background-color: #333;
+            padding: 0.5em;
         }
-
         .tab {
-            flex: 1;
-            padding: 1rem;
-            text-align: center;
+            background-color: #444;
+            color: #fff;
+            padding: 0.5em 1em;
+            margin: 0 0.2em;
             cursor: pointer;
-            background-color: #eee;
+            border-radius: 5px;
+            text-align: center;
         }
-
         .tab.active {
-            background-color: #fff;
-            border-bottom: 2px solid #333;
+            background-color: #555;
         }
-
         .tab-content {
             display: none;
+            padding: 1em;
+            margin: 1em;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #333;
-            padding-bottom: 0.5rem;
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
         }
-
         .projects, .research, .education, .certifications, .awards, .contact, .softwares {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
+            margin: 0;
         }
-
         .projects li, .research li, .education li, .certifications li, .awards li, .contact li, .softwares li {
-            background-color: #f9f9f9;
-            margin: 0.5rem 0;
-            padding: 0.5rem;
-            border-radius: 4px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            padding: 0.5em 0;
+            border-bottom: 1px solid #ddd;
         }
-
+        .projects li:last-child, .research li:last-child, .education li:last-child, .certifications li:last-child, .awards li:last-child, .contact li:last-child, .softwares li:last-child {
+            border-bottom: none;
+        }
         .key-skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            justify-content: space-around;
         }
-
         .category {
             flex: 1;
             min-width: 200px;
+            margin: 0.5em;
         }
-
         .category h3 {
             background-color: #333;
             color: #fff;
-            padding: 0.5rem;
+            padding: 0.5em;
+            border-radius: 5px;
             margin: 0;
-            border-radius: 4px;
-            text-align: center;
         }
-
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
         }
-
         .skill {
-            background-color: #00ff00;
-            color: #000;
-            padding: 0.5rem;
-            border-radius: 4px;
-            flex: 1 1 auto;
-            text-align: center;
+            background-color: #eee;
+            padding: 0.5em;
+            margin: 0.5em;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
-
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 1rem;
+            padding: 1em;
             position: fixed;
-            width: 100%;
             bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            .tabs {
-                flex-direction: column;
-            }
-
-            .tab {
-                flex: none;
-                width: 100%;
-            }
-
-            .key-skills {
-                flex-direction: column;
-            }
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Ahmad Bin Sadiq</h1>
-        <p>AI Expert | Data Scientist | Industrial Engineer</p>
+        <p>AI Expert | Data Scientist | Engineer</p>
     </header>
 
-    <div class="container">
-        <div class="tabs">
-            <div class="tab active" onclick="openTab(event, 'projects')">Projects</div>
-            <div class="tab" onclick="openTab(event, 'research')">Research</div>
-            <div class="tab" onclick="openTab(event, 'education')">Education</div>
-            <div class="tab" onclick="openTab(event, 'certifications')">Certifications</div>
-            <div class="tab" onclick="openTab(event, 'awards')">Awards</div>
-            <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
-            <div class="tab" onclick="openTab(event, 'key-skills')">Key Skills</div>
-            <div class="tab" onclick="openTab(event, 'softwares')">Softwares</div>
-        </div>
+    <div class="tabs">
+        <div class="tab active" onclick="openTab(event, 'projects')">Projects</div>
+        <div class="tab" onclick="openTab(event, 'research')">Research</div>
+        <div class="tab" onclick="openTab(event, 'education')">Education</div>
+        <div class="tab" onclick="openTab(event, 'certifications')">Certifications</div>
+        <div class="tab" onclick="openTab(event, 'awards')">Awards</div>
+        <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
+        <div class="tab" onclick="openTab(event, 'key-skills')">Key Skills</div>
+        <div class="tab" onclick="openTab(event, 'softwares')">Softwares</div>
+    </div>
 
-        <div id="projects" class="tab-content" style="display: block;">
-            <h2 class="section-title">Projects</h2>
-            <ul class="projects">
-                <li><strong>Real Estate Price Prediction:</strong> Analyzed housing data to predict prices using multiple models, leading to insights into pricing trends and model performance.</li>
-                <li><strong>Car Sales Prediction:</strong> Developed a predictive model for car sales, identifying key factors affecting prices and trends.</li>
-                <li><strong>Employee Attrition Analysis and Prediction:</strong> Analyzed employee data to predict attrition rates and identified key factors influencing employee turnover, leading to improved retention strategies.</li>
-                <li><strong>Power BI Dashboard for Sales Data:</strong> Designed and implemented a Power BI dashboard for sales data visualization, enabling dynamic reporting and interactive insights for stakeholders.</li>
-            </ul>
-        </div>
+    <div id="projects" class="tab-content">
+        <h2 class="section-title">Projects</h2>
+        <ul class="projects">
+            <li>
+                <strong>Real-Time Object Detection with TensorFlow</strong><br>
+                Implemented a real-time object detection system using TensorFlow, achieving high accuracy in detecting and classifying objects in live video feeds.
+            </li>
+            <li>
+                <strong>Sales Forecasting with Time Series Analysis</strong><br>
+                Developed a time series forecasting model to predict sales trends, resulting in improved inventory management and resource allocation.
+            </li>
+            <li>
+                <strong>Sentiment Analysis of Product Reviews</strong><br>
+                Created a sentiment analysis model to classify product reviews into positive, negative, and neutral categories, providing valuable insights for marketing strategies.
+            </li>
+            <li>
+                <strong>Image Detection with Convolutional Neural Networks</strong><br>
+                Designed and trained a CNN model to detect and classify images, enhancing the accuracy of image-based predictions in various applications.
+            </li>
+            <li>
+                <strong>Data Analysis and ML Toolkit</strong><br>
+                Developed a Streamlit web application for data analysis and machine learning, featuring options for dataset uploads, visualizations, and model parameter adjustments.
+            </li>
+            <li>
+                <strong>Real Estate Price Prediction</strong><br>
+                Analyzed and built models to predict real estate prices based on various features, leading to insights that aid in property valuation and investment decisions.
+            </li>
+            <li>
+                <strong>Car Sales Prediction</strong><br>
+                Created predictive models for car sales forecasting, using features such as car attributes and historical sales data to improve sales strategies.
+            </li>
+            <li>
+                <strong>Employee Attrition Analysis and Prediction</strong><br>
+                Analyzed employee data to predict attrition rates and identified key factors influencing employee turnover, leading to improved retention strategies.
+            </li>
+            <li>
+                <strong>Power BI Dashboard for Sales Data</strong><br>
+                Designed and implemented a Power BI dashboard for sales data visualization, enabling dynamic reporting and interactive insights for stakeholders.
+            </li>
+        </ul>
+    </div>
 
-        <div id="research" class="tab-content">
-            <h2 class="section-title">Research</h2>
-            <ul class="research">
-                <li><strong>AI Integration with Overall Equipment Effectiveness (OEE):</strong> Research on leveraging AI to enhance Overall Equipment Effectiveness in manufacturing.</li>
-                <li><strong>Deep Learning Model for Image Classification:</strong> Investigated the application of deep learning techniques for classifying images into various categories.</li>
-            </ul>
-        </div>
+    <div id="research" class="tab-content">
+        <h2 class="section-title">Research</h2>
+        <ul class="research">
+            <li>
+                <strong>AI Integration with Overall Equipment Effectiveness (OEE)</strong><br>
+                Research on leveraging AI to enhance Overall Equipment Effectiveness in manufacturing.
+            </li>
+            <li>
+                <strong>Deep Learning Model for Image Classification</strong><br>
+                Investigated the application of deep learning techniques for classifying images into various categories.
+            </li>
+        </ul>
+    </div>
 
-        <div id="education" class="tab-content">
-            <h2 class="section-title">Education</h2>
-            <ul class="education">
-                <li><strong>Master of Industrial Engineering & Management:</strong> University of the Punjab, Gold Medalist</li>
-                <li><strong>Bachelor of Industrial & Manufacturing Engineering:</strong> UET Lahore</li>
-            </ul>
-        </div>
+    <div id="education" class="tab-content">
+        <h2 class="section-title">Education</h2>
+        <ul class="education">
+            <li>
+                <strong>Master of Industrial Engineering & Management</strong><br>
+                University of the Punjab, Gold Medalist
+            </li>
+            <li>
+                <strong>Bachelor of Industrial & Manufacturing Engineering</strong><br>
+                UET Lahore
+            </li>
+        </ul>
+    </div>
 
-        <div id="certifications" class="tab-content">
-            <h2 class="section-title">Certifications</h2>
-            <ul class="certifications">
-                <li>AI Engineering - IBM</li>
-                <li>Data Science - IBM</li>
-                <li>Data Analytics - Google</li>
-                <li>Lean Six-Sigma Black Belt - AIGPE</li>
-            </ul>
-        </div>
+    <div id="certifications" class="tab-content">
+        <h2 class="section-title">Certifications</h2>
+        <ul class="certifications">
+            <li>AI Engineering - IBM</li>
+            <li>Data Science - IBM</li>
+            <li>Data Analytics - Google</li>
+            <li>Lean Six-Sigma Black Belt - AIGPE</li>
+        </ul>
+    </div>
 
-        <div id="awards" class="tab-content">
-            <h2 class="section-title">Awards</h2>
-            <ul class="awards">
-                <li>Gold Medal in Master's Degree (2023)</li>
-                <li>Benevolent Scholarship from Punjab Government (2014-2020)</li>
-                <li>Solar Panel Award from Chief Minister Punjab (2014)</li>
-                <li>Laptop Award from Chief Minister Punjab (2018)</li>
-            </ul>
-        </div>
+    <div id="awards" class="tab-content">
+        <h2 class="section-title">Awards</h2>
+        <ul class="awards">
+            <li>Gold Medal in Master's Degree (2023)</li>
+            <li>Benevolent Scholarship from Punjab Government (2014-2020)</li>
+            <li>Solar Panel Award from Chief Minister Punjab (2014)</li>
+            <li>Laptop Award from Chief Minister Punjab (2018)</li>
+        </ul>
+    </div>
 
-        <div id="contact" class="tab-content">
-            <h2 class="section-title">Contact</h2>
-            <ul class="contact">
-                <li>Email: <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></li>
-                <li>Phone: <a href="tel:+923035049492">+92-303-5049492</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq">Ahmad Bin Sadiq</a></li>
-            </ul>
-        </div>
+    <div id="contact" class="tab-content">
+        <h2 class="section-title">Contact</h2>
+        <ul class="contact">
+            <li>Email: <a href="mailto:ahmadbinsadiq@gmail.com">ahmadbinsadiq@gmail.com</a></li>
+            <li>Phone: <a href="tel:+923035049492">+92-303-5049492</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/ahmad-bin-sadiq">Ahmad Bin Sadiq</a></li>
+        </ul>
+    </div>
 
-        <div id="key-skills" class="tab-content">
-            <h2 class="section-title">Key Skills</h2>
-            <div class="key-skills">
-                <div class="category">
-                    <h3>Programming</h3>
-                    <div class="skills">
-                        <div class="skill">Python</div>
-                        <div class="skill">Scikit-learn</div>
-                        <div class="skill">Pandas</div>
-                        <div class="skill">NumPy</div>
-                        <div class="skill">Matplotlib</div>
-                        <div class="skill">Seaborn</div>
-                        <div class="skill">Plotly</div>
-                        <div class="skill">R</div>
-                        <div class="skill">ggplot2</div>
-                        <div class="skill">Excel</div>
-                    </div>
+    <div id="key-skills" class="tab-content">
+        <h2 class="section-title">Key Skills</h2>
+        <div class="key-skills">
+            <div class="category">
+                <h3>Programming Languages</h3>
+                <div class="skills">
+                    <div class="skill">Python</div>
+                    <div class="skill">R</div>
+                    <div class="skill">SQL</div>
                 </div>
-                <div class="category">
-                    <h3>Deep Learning</h3>
-                    <div class="skills">
-                        <div class="skill">TensorFlow</div>
-                        <div class="skill">Keras</div>
-                        <div class="skill">PyTorch</div>
-                        <div class="skill">CNNs</div>
-                        <div class="skill">RNNs</div>
-                        <div class="skill">Transfer Learning</div>
-                        <div class="skill">Hyperparameter Tuning</div>
-                    </div>
+            </div>
+            <div class="category">
+                <h3>Machine Learning</h3>
+                <div class="skills">
+                    <div class="skill">Supervised Learning</div>
+                    <div class="skill">Unsupervised Learning</div>
+                    <div class="skill">Reinforcement Learning</div>
+                    <div class="skill">Deep Learning</div>
                 </div>
-                <div class="category">
-                    <h3>Data Analysis</h3>
-                    <div class="skills">
-                        <div class="skill">Exploratory Data Analysis</div>
-                        <div class="skill">Statistical Analysis</div>
-                        <div class="skill">Predictive Modeling</div>
-                        <div class="skill">Data Visualization</div>
-                        <div class="skill">Feature Engineering</div>
-                    </div>
+            </div>
+            <div class="category">
+                <h3>Data Analysis</h3>
+                <div class="skills">
+                    <div class="skill">Exploratory Data Analysis</div>
+                    <div class="skill">Statistical Analysis</div>
+                    <div class="skill">Data Visualization</div>
                 </div>
-                <div class="category">
-                    <h3>Tools & Technologies</h3>
-                    <div class="skills">
-                        <div class="skill">Power BI</div>
-                        <div class="skill">Microsoft SQL Server</div>
-                        <div class="skill">BigQuery</div>
-                        <div class="skill">Streamlit</div>
-                        <div class="skill">Tableau</div>
-                    </div>
-                </div>
-                <div class="category">
-                    <h3>Soft Skills</h3>
-                    <div class="skills">
-                        <div class="skill">Problem-Solving</div>
-                        <div class="skill">Team Collaboration</div>
-                        <div class="skill">Communication</div>
-                        <div class="skill">Project Management</div>
-                        <div class="skill">Time Management</div>
-                    </div>
+            </div>
+            <div class="category">
+                <h3>Software & Tools</h3>
+                <div class="skills">
+                    <div class="skill">Power BI</div>
+                    <div class="skill">BigQuery</div>
+                    <div class="skill">Excel</div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div id="softwares" class="tab-content">
-            <h2 class="section-title">Softwares</h2>
-            <ul class="softwares">
-                <li>Python</li>
-                <li>R</li>
-                <li>Power BI</li>
-                <li>Microsoft SQL Server</li>
-                <li>BigQuery</li>
-                <li>Streamlit</li>
-                <li>Tableau</li>
-            </ul>
-        </div>
+    <div id="softwares" class="tab-content">
+        <h2 class="section-title">Softwares</h2>
+        <ul class="softwares">
+            <li>Visual Studio Code</li>
+            <li>Jupyter Notebook</li>
+            <li>PyCharm</li>
+            <li>Tableau</li>
+            <li>Microsoft Power BI</li>
+        </ul>
     </div>
 
     <footer>
@@ -288,16 +270,24 @@
     </footer>
 
     <script>
-        function openTab(event, tabId) {
-            const tabs = document.querySelectorAll('.tab');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            tabs.forEach(tab => tab.classList.remove('active'));
-            tabContents.forEach(content => content.style.display = 'none');
-
-            event.currentTarget.classList.add('active');
-            document.getElementById(tabId).style.display = 'block';
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
         }
+
+        // Display the first tab by default
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".tab").click();
+        });
     </script>
 </body>
 </html>
