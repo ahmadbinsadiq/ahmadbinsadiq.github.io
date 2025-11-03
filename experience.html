@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ahmad Bin Sadiq — Experience</title>
+  <style>
+    /* ---------- Reset & Tokens ---------- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root{
+      --ink:#111; --paper:#fff; --accent:#000; --muted:#555; --ring:#000; --card-br:12px;
+    }
+    html, body { height: 100%; }
+    body {
+      font-family: "Poppins","Helvetica Neue",Arial,sans-serif;
+      background: var(--paper); color: var(--ink); line-height: 1.7;
+      overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Banner ---------- */
+    .banner { width: 100%; background: var(--accent); color: #fff; padding: 80px 20px 60px; text-align: center; }
+    .banner .name { font-size: 44px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+    .banner .tagline { font-size: 18px; font-weight: 500; margin-top: 18px; opacity: .9; max-width: 900px; margin-left: auto; margin-right: auto; }
+
+    /* ---------- Navbar (exactly as requested) ---------- */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid #000;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin: 0;
+      padding: 14px 0;
+    }
+    .navbar a {
+      position: relative;
+      font-weight: 600;
+      color: #000;
+      text-transform: uppercase;
+      font-size: 14.5px;
+      letter-spacing: 0.6px;
+      padding: 6px 10px;
+      transition: all 0.3s ease;
+      text-decoration: none; /* 🔹 Removed underline */
+    }
+    .navbar a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: #000;
+      transition: width 0.3s ease;
+    }
+    .navbar a:hover::after,
+    .navbar a.active::after { width: 100%; }
+
+    /* ---------- Layout ---------- */
+    .container { max-width: 1280px; margin: 60px auto; padding: 0 24px; }
+    section h2{
+      font-size: 26px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase;
+      margin-bottom: 40px; display: flex; align-items: center; gap: 12px;
+    }
+    section h2::before{ content:""; display:inline-block; width:5px; height:30px; background: var(--accent); border-radius: 3px; }
+
+    .intro-text{ font-size:16px; color:#222; text-align:justify; line-height:1.9; max-width:1000px; margin:0 auto 50px; }
+
+    /* ---------- Cards grid (3 per row desktop) ---------- */
+    .cards{
+      display: grid; gap: 36px; align-items: stretch;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @media (max-width: 1200px){ .cards{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+    @media (max-width: 900px){ .cards{ grid-template-columns: 1fr; } }
+
+    /* ---------- Card look (career-summary style) ---------- */
+    .card{
+      background: #fff; border: 2px solid var(--accent); border-radius: var(--card-br);
+      padding: 22px; text-align: justify; transition: all .3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: flex; flex-direction: column; align-items: center; gap: 14px;
+    }
+    .card:hover{ background: var(--accent); color:#fff; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    .card img{
+      width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover;
+      border-radius: 10px; border: 1.5px solid #000; margin-bottom: 6px; transition: transform .35s ease;
+    }
+    .card:hover img{ transform: scale(1.03); }
+    .card h3{ text-align: center; font-size: 18px; font-weight: 800; }
+    .card p{ font-size: 15.5px; line-height: 1.8; max-width: 90%; }
+    .card strong{ color: #000; }
+    .card:hover strong{ color: #fff; }
+
+    /* ---------- Company header ---------- */
+    .company{ margin-bottom: 80px; }
+    .company-header{ display:flex; gap:16px; align-items:center; margin-bottom: 24px; }
+    .company-logo{ width:64px; height:64px; object-fit: contain; border:1.5px solid var(--ink); border-radius:12px; padding:6px; background:#fff; }
+    .company-title{ font-size: 20px; font-weight: 800; }
+    .duration{ display:inline-block; margin-left:8px; font-size:14px; padding:2px 10px; border:1.5px solid var(--ink); border-radius: 999px; }
+
+    /* ---------- Career Summary band ---------- */
+    .summary{
+      width:100vw; margin-left: calc(50% - 50vw); padding: 90px 0;
+      background: linear-gradient(180deg,#f8f8f8,#f2f2f2);
+      border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); text-align:center;
+    }
+    .summary h2{ justify-content: center; }
+    .summary p{ font-size:16px; color:#222; margin-bottom:40px; }
+    .summary-grid{ max-width:1280px; margin:0 auto; padding:0 24px; }
+
+    /* ---------- Footer ---------- */
+    footer { text-align: center; font-size: 13px; color: #555; margin: 70px 0 40px; }
+  </style>
+</head>
+<body>
+
+  <!-- Banner -->
+  <header class="banner">
+    <div class="name">AHMAD BIN SADIQ</div>
+    <div class="tagline">Experience • Projects • Achievements</div>
+  </header>
+
+  <!-- Navbar (sticky, like your Education page) -->
+  <nav class="navbar" aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="experience.html" class="active">Experience</a></li>
+      <li><a href="ai-manufacturing.html">AI for Manufacturing</a></li>
+      <li><a href="operational-excellence.html">Operational Excellence</a></li>
+      <li><a href="data-analytics.html">Data Analytics</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="ongoing-projects.html">Ongoing Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Active link auto-highlight -->
+  <script>
+    (function(){
+      const links = document.querySelectorAll('.navbar a');
+      const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+      links.forEach(a => {
+        if ((a.getAttribute('href')||'').toLowerCase() === path) a.classList.add('active');
+      });
+    })();
+  </script>
+
+  <!-- Intro -->
+  <section class="container">
+    <h2>Professional Journey</h2>
+    <p class="intro-text">
+      My professional journey reflects a constant pursuit of <strong>continuous improvement</strong> — both in <strong>systems</strong> and in <strong>people</strong>.
+      From the <strong>shop floor</strong> to the <strong>boardroom</strong>, every experience has shaped my understanding of how
+      <strong>data-driven insight</strong>, <strong>process discipline</strong>, and <strong>leadership alignment</strong> can redefine
+      <strong>industrial performance</strong> and enable sustainable transformation.
+    </p>
+  </section>
+
+  <!-- Jahangir Packages -->
+  <section class="container company">
+    <div class="company-header">
+      <img src="assets/jplogo.png" alt="Jahangir Packages" class="company-logo">
+      <div class="company-title">Jahangir Packages Pvt. Ltd. <span class="duration">Oct 2024 – Present</span></div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <img src="assets/efficiency2.jpeg" alt="Operational Optimization">
+        <h3>Operational Optimization</h3>
+        <p>Addressed rising production costs by developing and implementing a monitoring system, achieving annual savings of <strong>PKR 30M</strong>.</p>
+      </div>
+      <div class="card">
+        <img src="assets/meeting.jpg" alt="Daily Management">
+        <h3>Daily Management System</h3>
+        <p>Introduced a 15-minute daily HOD review for targets, issues, and actions — improving accountability and cross-functional coordination.</p>
+      </div>
+      <div class="card">
+        <img src="assets/lean.jpg" alt="Lean Implementation">
+        <h3>Lean Implementation</h3>
+        <p>Reduced labor cost by <strong>37%/hr</strong> and halved planned overtime using time studies, gap analysis, and Lean tools.</p>
+      </div>
+      <div class="card">
+        <img src="assets/tps.jpg" alt="TPS Principles">
+        <h3>TPS-Inspired Maintenance</h3>
+        <p>Applied standardized work and TPM routines to lifter maintenance — cutting downtime from <strong>48–60 hrs/month → 0</strong>.</p>
+      </div>
+      <div class="card">
+        <img src="assets/scheduling.jpg" alt="Heijunka">
+        <h3>Heijunka Scheduling</h3>
+        <p>Reduced production lead time from <strong>15 days → 2 days</strong>, improving on-time delivery and inventory turns.</p>
+      </div>
+      <div class="card">
+        <img src="assets/cost.png" alt="Post-Costing">
+        <h3>Post-Costing Optimization</h3>
+        <p>Redesigned tracking sheets; moved post-costing cadence from quarterly → <strong>daily</strong> for real-time cost control.</p>
+      </div>
+      <div class="card">
+        <img src="assets/marketing.jpg" alt="Marketing">
+        <h3>Data-Driven Marketing</h3>
+        <p>Built Lean visualization to sync production ↔ marketing, resulting in a <strong>2× increase</strong> in sales conversion within 6 months.</p>
+      </div>
+      <div class="card">
+        <img src="assets/kpi.png" alt="KPI System">
+        <h3>KPI System Design</h3>
+        <p>Deployed a KPI framework aligning departments with strategy, lifting measured operational efficiency by <strong>10%</strong>.</p>
+      </div>
+      <div class="card">
+        <img src="assets/layout.png" alt="Facility Layout">
+        <h3>Facility & Inventory Flow</h3>
+        <p>Layout redesign reduced handling time by <strong>30%</strong> and internal logistics cost by <strong>25%</strong>.</p>
+      </div>
+      <div class="card">
+        <img src="assets/maintenance.png" alt="Downtime">
+        <h3>Lifter Downtime Elimination</h3>
+        <p>Achieved <strong>zero</strong> equipment downtime through preventive/corrective maintenance integrated with Lean.</p>
+      </div>
+      <div class="card">
+        <img src="assets/energy.jpg" alt="Fuel">
+        <h3>Boiler Fuel Efficiency</h3>
+        <p>Engineered a fuel management framework to cut energy cost while enabling live performance monitoring.</p>
+      </div>
+      <div class="card">
+        <img src="assets/wip.jpg" alt="WIP">
+        <h3>Low WIP Optimization</h3>
+        <p>A3 problem-solving to minimize excess WIP, streamlining flow and boosting productivity.</p>
+      </div>
+      <div class="card">
+        <img src="assets/mechanical.png" alt="Mechanical">
+        <h3>Mechanical Failures ↓</h3>
+        <p>Reduced mechanical failures by up to <strong>25%</strong> via structured PM and continuous improvement.</p>
+      </div>
+      <div class="card">
+        <img src="assets/reporting.png" alt="Reporting">
+        <h3>Automated Reporting</h3>
+        <p>Digitized production reporting — generation time ↓ <strong>40%</strong>, KPIs tracked in real-time.</p>
+      </div>
+      <div class="card">
+        <img src="assets/standardization.png" alt="SOPs">
+        <h3>Process Standardization</h3>
+        <p>Authored and deployed <strong>9 SOPs</strong>, cutting variation and saving <strong>PKR 365,000/yr</strong>.</p>
+      </div>
+      <div class="card">
+        <img src="assets/5s.jpg" alt="5S">
+        <h3>5S Implementation</h3>
+        <p>Led a <strong>12-member</strong> team to full-scale 5S within 3 months — audit-ready and efficient.</p>
+      </div>
+      <div class="card">
+        <img src="assets/rca.png" alt="RCA">
+        <h3>Root Cause Analysis</h3>
+        <p>Structured RCAs improved reliability and throughput on constrained assets.</p>
+      </div>
+      <div class="card">
+        <img src="assets/training.jpg" alt="Training">
+        <h3>Capability Development</h3>
+        <p>Targeted training + standardized handovers reduced error rates and enabled multi-skilling.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fiverr / Freelance -->
+  <section class="container company">
+    <div class="company-header">
+      <img src="assets/fiverr-logo.jpg" alt="Fiverr" class="company-logo">
+      <div class="company-title">Fiverr & Freelance Platforms <span class="duration">Aug 2022 – Sep 2024</span></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="assets/production.jpg" alt="Global Delivery">
+        <h3>Global Data Projects</h3>
+        <p>Delivered <strong>30+ projects</strong> across ML, process optimization, and BI for international clients.</p>
+      </div>
+      <div class="card">
+        <img src="assets/Predictive.jpg" alt="Predictive">
+        <h3>Predictive Analytics</h3>
+        <p>ML models + Power BI improved client decision-making efficiency by up to <strong>25%</strong>.</p>
+      </div>
+      <div class="card">
+        <img src="assets/kpi.jpg" alt="KPI">
+        <h3>Forecasting & KPI Systems</h3>
+        <p>Built forecasting and KPI frameworks for SMEs to elevate planning and performance monitoring.</p>
+      </div>
+      <div class="card">
+        <img src="assets/Lean-AI.jpg" alt="Lean AI">
+        <h3>Lean × AI Consultancy</h3>
+        <p>Advised on integrating Lean with data science to lift throughput and reduce cost.</p>
+      </div>
+      <div class="card">
+        <img src="assets/layout.png" alt="Layout">
+        <h3>Layout Design</h3>
+        <p>Optimized layouts to reduce material handling time by <strong>20%</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WWF -->
+  <section class="container company">
+    <div class="company-header">
+      <img src="assets/wwf-logo.jpg" alt="WWF" class="company-logo">
+      <div class="company-title">World Wide Fund for Nature (WWF) <span class="duration">Apr 2022 – Jul 2022</span></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="assets/sustainability.jpg" alt="Eco-efﬁciency">
+        <h3>Eco-Efficiency Modeling</h3>
+        <p>Supported development of models integrating production and environmental metrics for sustainable manufacturing.</p>
+      </div>
+      <div class="card">
+        <img src="assets/project.png" alt="Energy">
+        <h3>Energy Optimization</h3>
+        <p>Contributed frameworks for better energy utilization and cost reduction across facilities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Style Textile -->
+  <section class="container company">
+    <div class="company-header">
+      <img src="assets/style-textile-logo.jpg" alt="Style Textile" class="company-logo">
+      <div class="company-title">Style Textile <span class="duration">Nov 2020 – Feb 2022</span></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="assets/management.jpg" alt="Manufacturing">
+        <h3>Manufacturing Management</h3>
+        <p>Directed operations in fast-paced textile production, ensuring quality and delivery performance.</p>
+      </div>
+      <div class="card">
+        <img src="assets/process.jpg" alt="Process">
+        <h3>Process Improvement</h3>
+        <p>Drove initiatives to reduce waste and improve sustainability in denim manufacturing.</p>
+      </div>
+      <div class="card">
+        <img src="assets/leadership.jpg" alt="Leadership">
+        <h3>Leadership & Team Management</h3>
+        <p>Led cross-functional teams to hit production targets and embed continuous improvement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Summary -->
+  <section class="summary">
+    <div class="container" style="margin:0 auto;">
+      <h2>Career Summary</h2>
+      <p>Across every role, I’ve integrated three dimensions of impact:</p>
+      <div class="summary-grid cards">
+        <div class="card">
+          <img src="assets/process-excellence.jpg" alt="Process Excellence">
+          <h3>Process Excellence through Lean & IE</h3>
+          <p>Operational efficiency via Lean, waste elimination, and optimized flow — systems that deliver quality, agility, and cost effectiveness.</p>
+        </div>
+        <div class="card">
+          <img src="assets/digital-intelligence.jpg" alt="Digital Intelligence">
+          <h3>Digital Intelligence via Analytics & AI</h3>
+          <p>Modern analytics and AI augment decisions with predictive insights and intelligent automation.</p>
+        </div>
+        <div class="card">
+          <img src="assets/people-empowerment.jpg" alt="People Empowerment">
+          <h3>People Empowerment & Leadership</h3>
+          <p>Environments where teams grow together — purpose, skill, and innovation aligned for collective success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2025 Ahmad Bin Sadiq — Experience</footer>
+</body>
+</html>

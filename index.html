@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ahmad Bin Sadiq — Home</title>
+  <style>
+    /* ---------- Reset & Base ---------- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+      background: #ffffff;
+      color: #111;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Black Banner ---------- */
+    .banner {
+      width: 100%;
+      background: #000;
+      color: #fff;
+      padding: 80px 20px 60px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .banner .name {
+      font-size: 46px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .banner .title {
+      font-size: 17px;
+      font-weight: 500;
+      margin-top: 14px;
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+    .banner .tagline {
+      font-size: 19px;
+      font-weight: 600;
+      margin-top: 24px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.95);
+    }
+
+    /* ---------- NAVBAR (World-Class Style) ---------- */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: background 0.3s ease;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 16px 0;
+      margin: 0;
+      gap: 28px;
+    }
+
+    .navbar a {
+      position: relative;
+      font-weight: 600;
+      color: #000;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 6px 10px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background: #000;
+      transition: width 0.3s ease;
+    }
+
+    .navbar a:hover::after {
+      width: 100%;
+    }
+
+    .navbar a.active {
+      color: #000;
+      font-weight: 700;
+    }
+
+    .navbar a.active::after {
+      width: 100%;
+      background: #000;
+    }
+
+    /* ---------- Main Container ---------- */
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- Hero (Intro + Photo) ---------- */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 40px;
+      align-items: center;
+    }
+    .intro {
+      border-left: 4px solid #000;
+      padding-left: 24px;
+    }
+    .intro h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .intro p {
+      color: #222;
+      font-size: 15.5px;
+      margin-bottom: 20px;
+    }
+
+    /* ---------- Buttons ---------- */
+    .cta { margin-top: 8px; }
+    .btn {
+      border: 2px solid #000;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      background: #fff;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .btn:hover {
+      background: #000;
+      color: #fff;
+    }
+    .btn.primary {
+      background: #000;
+      color: #fff;
+    }
+
+    /* ---------- Photo ---------- */
+    .photo-card {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 16 / 9;
+      border: 2px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ---------- Motto Section ---------- */
+    .motto {
+      max-width: 1200px; /* extended width for full line */
+      margin: 100px auto 0;
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+      background: #fafafa;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+      overflow-x: auto;
+      white-space: nowrap; /* keeps text single-line */
+    }
+    .motto p {
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.6;
+      color: #000;
+      font-style: italic;
+      display: inline-block;
+    }
+
+    /* ---------- Core Values ---------- */
+    .core-values {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-top: 90px;
+      padding: 100px 0;
+      background: linear-gradient(to bottom, #f8f8f8 0%, #f2f2f2 100%);
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+      text-align: center;
+      box-shadow: inset 0 10px 20px rgba(0,0,0,0.05);
+    }
+    .core-values h3 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #000;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      justify-content: center;
+      align-items: stretch;
+      padding: 0 50px;
+    }
+    .value-card {
+      border: 1.5px solid #000;
+      padding: 28px 20px;
+      background: #fff;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+    .value-card:hover {
+      background: #000;
+      color: #fff;
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    .value-img {
+      width: 370px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1.5px solid #000;
+      background: #fff;
+      margin-bottom: 18px;
+      transition: all 0.35s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .value-card:hover .value-img {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .value-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .value-card p {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: inherit;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      margin: 70px 0 40px;
+      text-align: center;
+      color: #555;
+      font-size: 13px;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1200px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .core-values { padding: 60px 20px; }
+      .value-img { width: 100%; height: auto; }
+    }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .banner .name { font-size: 34px; }
+      .banner .title { font-size: 14px; }
+      .banner .tagline { font-size: 16px; }
+      .motto p { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Black Header -->
+  <header class="banner">
+    <div class="name">AHMAD BIN SADIQ</div>
+    <div class="title">Industrial Engineer (Gold Medalist) | AI & Data Analytics Strategist | Lean Six Sigma Black Belt | Driving Smart Manufacturing & Operational Excellence</div>
+    <div class="tagline">Driving Industrial Transformation toward Industry 5.0 through AI, Lean Thinking, and a Human-Centric Approach</div>
+  </header>
+
+  <!-- World-Class Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="ai-manufacturing.html">AI for Manufacturing</a></li>
+      <li><a href="operational-excellence.html">Operational Excellence</a></li>
+      <li><a href="data-analytics.html">Data Analytics</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="ongoing-projects.html">Ongoing Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Section -->
+  <main class="container">
+    <section class="hero">
+      <div class="intro">
+        <h2>“Where AI Meets Lean Thinking — Empowering Smarter, Faster, and Sustainable Industry.”</h2>
+        <p>I’m Ahmad Bin Sadiq, a Gold Medalist Industrial Engineer, AI Strategist, and Lean Six Sigma Black Belt dedicated to redefining how manufacturing systems operate in the age of Industry 5.0.</p>
+        <div class="cta">
+          <a class="btn primary" href="contact.html">Let’s Collaborate</a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="assets/ahmad-banner.png" alt="Ahmad Bin Sadiq">
+      </div>
+    </section>
+  </main>
+
+  <!-- Motto Section -->
+  <section class="motto">
+    <p>“Use intelligence — human or artificial — to build systems that make people better, not replace them.”</p>
+  </section>
+
+  <!-- Core Values -->
+  <section class="core-values">
+    <h3>Core Values</h3>
+    <div class="values-grid">
+      <div class="value-card">
+        <img src="assets/innovation.jpg" alt="Innovation with Purpose" class="value-img">
+        <h4>Innovation with Purpose</h4>
+        <p>Technology that empowers, not replaces — creating solutions that elevate human capability.</p>
+      </div>
+      <div class="value-card">
+        <img src="assets/improvement.jpg" alt="Continuous Improvement" class="value-img">
+        <h4>Continuous Improvement</h4>
+        <p>Every process holds the potential to evolve — improvement is not an event, but a culture.</p>
+      </div>
+      <div class="value-card">
+        <img src="assets/people.jpg" alt="Human-Centered Transformation" class="value-img">
+        <h4>Human-Centered Transformation</h4>
+        <p>Success grows when systems and people align — empowering collaboration and purpose-driven growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © <span id="year"></span> Ahmad Bin Sadiq — Where AI Meets Lean Thinking
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
