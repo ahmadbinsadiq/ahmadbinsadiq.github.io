@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Ahmad Bin Sadiq</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root{
+      --ink:#111; --paper:#fff; --accent:#000; --muted:#555; --ring:#000;
+      --card-br:12px;
+    }
+    body {
+      font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.8;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Clean Light Header ---------- */
+    header.site-header {
+      width: 100%;
+      background: linear-gradient(135deg, #fafafa 0%, #f3f3f3 100%);
+      border-bottom: 1px solid #e2e2e2;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .identity-block {
+      border-left: 3px solid #000;
+      padding-left: 18px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #777;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .name {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 8px;
+    }
+
+    .role-line {
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      font-size: 14px;
+      font-weight: 500;
+      color: #444;
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .header-meta {
+      text-align: right;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .header-meta strong { font-weight: 700; }
+    .header-meta span { display: block; }
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+      position: sticky; top: 0; z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.9);
+      transition: background 0.3s ease;
+      border-bottom: 2px solid #000;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .navbar ul {
+      list-style: none; display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 28px; padding: 16px 0;
+    }
+    .navbar a {
+      font-weight: 600; font-size: 15px; text-transform: uppercase;
+      letter-spacing: 0.6px; position: relative; padding: 6px 10px;
+      text-decoration: none;
+    }
+    .navbar a::after {
+      content: ""; position: absolute; left: 0; bottom: -3px;
+      width: 0%; height: 2px; background: var(--ring); transition: width 0.3s;
+    }
+    .navbar a:hover::after, .navbar a.active::after { width: 100%; }
+
+    /* ---------- Layout ---------- */
+    .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+
+    section h2 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    section h2::before {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 30px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    .highlighted-intro {
+      font-size: 16px;
+      color: #222;
+      text-align: justify;
+      line-height: 1.9;
+      max-width: 950px;
+      margin: 0 auto 40px;
+    }
+    .highlighted-intro strong { color: #000; font-weight: 600; }
+
+    /* ---------- Horizontal rows (one column inside) ---------- */
+    .h-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .h-row {
+      border: 2px solid var(--accent);
+      border-radius: var(--card-br);
+      background: #fff;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.3s ease;
+      text-align: justify;
+    }
+    .h-row:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-4px);
+    }
+    .h-row h3 {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 4px;
+      text-transform: none;
+    }
+    .h-row p {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .h-row ul {
+      margin-left: 18px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .h-row li { margin: 4px 0; }
+    .h-row strong { color: #000; }
+    .h-row:hover strong { color: #fff; }
+
+    /* ---------- Value cards ---------- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      border: 2px solid var(--accent);
+      border-radius: var(--card-br);
+      background: #fff;
+      padding: 18px 20px;
+      transition: all 0.3s ease;
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .card:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-4px);
+    }
+    .card h3 {
+      font-size: 17px;
+      font-weight: 800;
+    }
+    .card p {
+      font-size: 14.5px;
+      line-height: 1.8;
+    }
+    .card strong { color: #000; }
+    .card:hover strong { color: #fff; }
+
+    /* ---------- Collaboration band ---------- */
+    .collab-band {
+      max-width: 1100px;
+      margin: 80px auto 0;
+      padding: 32px 24px 34px;
+      border-radius: 16px;
+      border: 2px solid #000;
+      background: linear-gradient(135deg, #000 0%, #222 100%);
+      color: #fff;
+      text-align: center;
+    }
+    .collab-band h2::before { display: none; }
+    .collab-band h2 {
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 24px;
+      letter-spacing: 0.8px;
+    }
+    .collab-band p {
+      font-size: 15.5px;
+      max-width: 800px;
+      margin: 0 auto 6px;
+      line-height: 1.9;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #555;
+      margin: 60px 0 40px;
+    }
+
+    /* ---------- Responsive header ---------- */
+    @media (max-width: 1000px) {
+      .header-inner {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: left;
+      }
+      .header-meta {
+        text-align: left;
+        padding-left: 18px;
+      }
+    }
+    @media (max-width: 900px) {
+      .name { font-size: 28px; }
+      .tagline { font-size: 13.5px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" aria-label="Hero banner">
+    <div class="header-inner">
+      <div class="identity-block">
+        <div class="eyebrow">About</div>
+        <div class="name">Ahmad Bin Sadiq</div>
+        <div class="role-line">
+          Gold Medalist Industrial Engineer · AI Strategist · Lean Six Sigma Black Belt
+        </div>
+        <div class="tagline">
+          Redefining how manufacturing systems operate in the age of Industry&nbsp;5.0 — where intelligence, process, and people move in harmony.
+        </div>
+      </div>
+      <div class="header-meta">
+        <span><strong>Focus:</strong> Intelligent, human-centered industrial systems</span>
+        <span><strong>Experience:</strong> 5+ years across IE, analytics, and strategic projects</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar" aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="ai-manufacturing.html">AI for Manufacturing</a></li>
+      <li><a href="operational-excellence.html">Operational Excellence</a></li>
+      <li><a href="data-analytics.html">Data Analytics</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="ongoing-projects.html">Ongoing Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Me -->
+  <section class="container">
+    <h2>About Me</h2>
+    <p class="highlighted-intro">
+      I’m <strong>Ahmad Bin Sadiq</strong>, a Gold Medalist Industrial Engineer, AI Strategist, and Lean Six Sigma Black Belt
+      dedicated to redefining how manufacturing systems operate in the age of <strong>Industry&nbsp;5.0</strong>.
+      With over five years of cross-functional experience across industrial engineering, data analytics, and strategic
+      project management, I specialize in driving <strong>operational excellence</strong> through intelligent systems,
+      Lean transformation, and AI integration.
+    </p>
+    <p class="highlighted-intro">
+      My professional journey began with a simple belief — <strong>every process, no matter how complex, hides a story that data can tell</strong>.
+      That curiosity evolved into a passion for understanding how <strong>technology</strong>, <strong>process behavior</strong>, and
+      <strong>human intelligence</strong> can work together to create adaptive, efficient, and resilient systems.
+      Throughout my career, I’ve led initiatives that merge AI, Lean Six Sigma, and digital transformation — from
+      <strong>predictive maintenance</strong> and <strong>OEE optimization</strong> to building <strong>real-time KPI dashboards</strong> that empower smarter, faster decisions.
+    </p>
+    <p class="highlighted-intro">
+      Each project reflects my guiding principle: <strong>progress must be intelligent, measurable, and human-centered</strong>.
+      For me, leadership is not about control — it’s about <strong>clarity, empowerment, and culture</strong>.
+      I believe in environments where teams thrive on innovation, not fear of change; where data drives direction,
+      and collaboration fuels growth.
+    </p>
+    <p class="highlighted-intro">
+      At my core, I aim to harmonize <strong>intelligence</strong>, <strong>process</strong>, and <strong>people</strong> —
+      turning complexity into clarity and data into direction.
+      Today, as a strategic leader and innovator, I continue to evolve as both a learner and a transformer — helping
+      organizations reimagine what’s possible when <strong>AI</strong>, <strong>analytics</strong>, and <strong>engineering</strong> converge.
+    </p>
+  </section>
+
+  <!-- Core Values -->
+  <section class="container">
+    <h2>Core Values</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Innovation with Purpose</h3>
+        <p>
+          I believe technology should <strong>empower, not replace</strong>. Every tool, model, or system I design is anchored in a clear
+          purpose: to make people more capable, decisions more informed, and operations more humane.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Continuous Improvement</h3>
+        <p>
+          Every process holds potential to evolve. I see organizations as <strong>living systems</strong> that must constantly learn,
+          adapt, and refine how they work — one insight, one improvement, one experiment at a time.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Human-Centered Transformation</h3>
+        <p>
+          Sustainable success happens when <strong>systems and people align</strong>. I design transformations that respect human
+          experience, build trust, and create cultures where ownership, accountability, and learning are shared.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision, Mission & Collaboration -->
+  <section class="container">
+    <h2>Vision, Mission & Collaboration</h2>
+    <div class="h-grid">
+      <div class="h-row">
+        <h3>Vision — Intelligent and Human-Centered Industry</h3>
+        <p>
+          I envision a world where <strong>AI and humanity coexist in harmony</strong>, where factories think intelligently,
+          decisions are guided by data, and people remain at the heart of innovation.
+          My goal is to help lead the transformation toward <strong>Industry&nbsp;5.0</strong> — an era defined not by automation alone,
+          but by balance, creativity, and shared intelligence.
+        </p>
+        <p>
+          The future of manufacturing will be <strong>adaptive</strong>, <strong>sustainable</strong>, and deeply <strong>human</strong> —
+          where systems learn, teams collaborate, and organizations continuously evolve toward excellence.
+        </p>
+      </div>
+
+      <div class="h-row">
+        <h3>Mission — Turning Data into Direction, and Direction into Impact</h3>
+        <p>
+          My mission is to help organizations move from <strong>reactive management</strong> to <strong>predictive and purpose-driven leadership</strong>
+          by integrating three pillars:
+        </p>
+        <ul>
+          <li><strong>Artificial Intelligence</strong> for foresight and adaptability,</li>
+          <li><strong>Lean Thinking</strong> for structure, flow, and stability,</li>
+          <li><strong>Human Intelligence</strong> for empathy, creativity, and trust.</li>
+        </ul>
+        <p>
+          Through consulting, collaboration, and innovation, I aim to build factories and organizations that
+          <strong>think, learn, and grow</strong> — intelligently, efficiently, and ethically.
+        </p>
+      </div>
+
+      <div class="h-row">
+        <h3>Empowering Your Industry</h3>
+        <p>
+          In today’s era of rapid industrial evolution, success belongs to those who can transform
+          <strong>complexity into clarity</strong> and <strong>data into decisions</strong>.
+          I help organizations reimagine their operations through a fusion of <strong>Lean excellence</strong>,
+          <strong>AI-driven intelligence</strong>, and <strong>digital innovation</strong> — empowering teams to achieve performance
+          that is not only efficient, but also sustainable and human-centered.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I Create Impact -->
+  <section class="container">
+    <h2>Where I Create Impact</h2>
+    <div class="h-grid">
+
+      <div class="h-row">
+        <h3>1. Lean Transformation &amp; Process Excellence</h3>
+        <p>
+          Lean is not just a set of tools — it is a <strong>mindset of continuous improvement</strong>.
+          I work with industries to eliminate waste, enhance flow, and simplify complexity — building systems
+          that <strong>evolve instead of age</strong>.
+        </p>
+        <p>
+          From <strong>Value Stream Mapping</strong> to <strong>Kaizen</strong>, I help transform operational pain points into
+          predictable, high-performing processes that are stable, scalable, and transparent.
+        </p>
+      </div>
+
+      <div class="h-row">
+        <h3>2. Daily Management Systems (DMS)</h3>
+        <p>
+          Every organization needs visibility — not once a week, but every hour, every shift.
+          Through digital <strong>Daily Management Systems</strong>, I help teams monitor live KPIs, track OEE,
+          and align actions with strategy in real time.
+        </p>
+        <p>
+          For me, DMS is more than a dashboard — it is a <strong>culture of accountability, communication, and learning</strong>
+          where everyone can see performance, understand priorities, and act with clarity.
+        </p>
+      </div>
+
+      <div class="h-row">
+        <h3>3. Waste Reduction, Efficiency &amp; Quality Excellence</h3>
+        <p>
+          Time, motion, material, and energy — every form of waste hides opportunity.
+          By applying <strong>Lean Six Sigma</strong>, <strong>Root Cause Analysis</strong>, and <strong>AI-based diagnostics</strong>,
+          I help teams uncover hidden inefficiencies, minimize variation, and build resource-efficient production systems
+          that do more with less.
+        </p>
+        <p>
+          True quality goes beyond inspection — it is built into every decision, every process, and every person.
+          I help organizations establish <strong>data-driven quality systems</strong> where precision meets purpose, combining
+          Lean Six Sigma, RCA, and AI-based monitoring to move toward <strong>zero-defect performance</strong>.
+        </p>
+        <p>
+          The result is a culture where teams own quality, systems predict deviation, and organizations deliver
+          <strong>consistency and trust</strong> across the value chain — every time.
+        </p>
+      </div>
+
+      <div class="h-row">
+        <h3>4. Data Understanding &amp; Insight Generation</h3>
+        <p>
+          Data alone does not create value — <strong>understanding it does</strong>.
+          I specialize in making complex industrial data accessible, visual, and actionable, enabling leaders to see
+          not just what is happening, but <strong>why</strong> — and what to do next.
+        </p>
+        <p>
+          From <strong>Power BI dashboards</strong> to <strong>machine learning insights</strong>, I turn numbers into narratives that
+          guide smarter decisions, clearer priorities, and more confident strategy.
+        </p>
+      </div>
+
+      <div class="h-row">
+        <h3>5. Live Data, Live Decisions</h3>
+        <p>
+          Every second counts in manufacturing.
+          I create real-time data systems that work across different setups — from <strong>IoT sensors</strong> and
+          <strong>PLC data</strong> to something as simple as <strong>Excel logs</strong> — ensuring performance visibility
+          without demanding heavy infrastructure.
+        </p>
+        <p>
+          Through <strong>Python automation</strong> and <strong>Power BI dashboards</strong>, teams can track downtime, quality loss,
+          and efficiency in real time. The result: faster responses, smarter actions, and confident decisions — live from
+          the shop floor.
+        </p>
+      </div>
+
+      <div class="h-row">
+        <h3>6. Live Costing &amp; Financial Transparency</h3>
+        <p>
+          Every operational choice carries a cost.
+          I design automated cost analysis systems that calculate <strong>hourly</strong>, <strong>per-machine</strong>, and
+          <strong>per-line</strong> costs in real time — connecting operational data directly to financial impact.
+        </p>
+        <p>
+          With live costing dashboards, leaders gain instant visibility into <strong>profitability</strong>, enabling more
+          informed decisions on pricing, scheduling, product mix, and investment.
+        </p>
+      </div>
+
+      <div class="h-row">
+        <h3>7. Smart Digital Transformation</h3>
+        <p>
+          True digital transformation is not about technology — it is about <strong>integration, people, and purpose</strong>.
+          I help organizations adopt AI, analytics, and automation with a <strong>human-first approach</strong>, ensuring that systems
+          are not just smart, but scalable and sustainable.
+        </p>
+        <p>
+          The goal is not to digitalize for the sake of it, but to build <strong>smarter, adaptive, and learning organizations</strong>
+          where technology amplifies human capability instead of replacing it.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Collaboration CTA -->
+  <section class="collab-band">
+    <h2>Let’s Collaborate</h2>
+    <p>
+      Transformation does not happen alone — it is built through partnerships, curiosity, and shared vision.
+      Whether it is designing an AI-driven production system, coaching teams on digital Lean practices, or building
+      data strategies for sustainable growth, I am always open to working with forward-thinking individuals and organizations
+      who believe in making technology meaningful.
+    </p>
+    <p>
+      If you are exploring how to bring <strong>AI</strong>, <strong>Lean</strong>, and <strong>data analytics</strong> into your operations in a way that is
+      intelligent, measurable, and human-centered — I would be glad to connect.
+      Let’s build the next chapter of <strong>intelligent industry</strong> together.
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Ahmad Bin Sadiq — About
+  </footer>
+
+</body>
+</html>

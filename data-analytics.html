@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ahmad Bin Sadiq — Data Analytics & Digital Transformation</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #111;
+      --paper: #fff;
+      --accent: #000;
+      --muted: #555;
+      --ring: #000;
+      --card-br: 12px;
+    }
+    body {
+      font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Clean Light Header (same family as other pages) ---------- */
+    header.site-header {
+      width: 100%;
+      background: linear-gradient(135deg, #fafafa 0%, #f3f3f3 100%);
+      border-bottom: 1px solid #e2e2e2;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 28px;
+      align-items: center;
+    }
+    .identity-block {
+      border-left: 3px solid #000;
+      padding-left: 18px;
+    }
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #777;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .name {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 8px;
+    }
+    .role-line {
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .tagline {
+      font-size: 14px;
+      font-weight: 500;
+      color: #444;
+      font-style: italic;
+      line-height: 1.7;
+    }
+    .header-meta {
+      text-align: right;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .header-meta strong { font-weight: 700; }
+    .header-meta span { display: block; }
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.85);
+      transition: background 0.3s ease;
+      border-bottom: 2px solid rgba(0,0,0,1);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding: 16px 0;
+    }
+    .navbar a {
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      position: relative;
+      padding: 6px 10px;
+    }
+    .navbar a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background: var(--ring);
+      transition: width 0.3s;
+    }
+    .navbar a:hover::after,
+    .navbar a.active::after { width: 100%; }
+
+    /* ---------- Container ---------- */
+    .container {
+      max-width: 1280px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+
+    /* Section heading with left bar */
+    section h2 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    section h2::before {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 30px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    .highlighted-intro {
+      font-size: 16px;
+      color: #222;
+      text-align: justify;
+      line-height: 1.9;
+      max-width: 1000px;
+      margin: 0 auto 50px;
+    }
+    .highlighted-intro strong {
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* Grid / Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    /* Force two columns also for featured project */
+    .project {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    @media (max-width: 900px) {
+      .cards,
+      .project { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      border: 2px solid var(--accent);
+      border-radius: var(--card-br);
+      background: #fff;
+      padding: 24px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: justify;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .card:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+      border-color: var(--accent);
+    }
+
+    /* (Images removed for pictureless design) */
+    /* .card img { ... } — deleted */
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .card p {
+      font-size: 15.5px;
+      line-height: 1.8;
+    }
+    .card ul { margin-left: 18px; }
+    .card li { margin: 6px 0; }
+
+    /* Featured Project extras */
+    .kpis {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .kpi {
+      border: 2px dashed var(--accent);
+      border-radius: 12px;
+      padding: 14px 16px;
+      min-width: 160px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .kpi small {
+      display: block;
+      font-weight: 600;
+      opacity: .75;
+    }
+    .chip {
+      display: inline-block;
+      padding: 4px 12px;
+      border: 1.5px solid var(--ink);
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 6px;
+    }
+
+    .arch {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .arch-item {
+      border: 1.5px solid var(--ink);
+      border-radius: 10px;
+      padding: 12px;
+    }
+    .arch-item strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* Timeline block for the project phases */
+    .timeline {
+      position: relative;
+      margin-left: 8px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--ink);
+    }
+    .tl-step {
+      position: relative;
+      padding-left: 26px;
+      margin: 14px 0;
+    }
+    .tl-step::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #555;
+      margin: 70px 0 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Clean Light Header -->
+  <header class="site-header" aria-label="Page header">
+    <div class="header-inner">
+      <div class="identity-block">
+        <div class="eyebrow">Data Analytics & Digital Transformation</div>
+        <div class="name">Ahmad Bin Sadiq</div>
+        <div class="role-line">
+          Industrial Engineer (Gold Medalist) · AI & Data Analytics Strategist · Lean Six Sigma Black Belt
+        </div>
+        <div class="tagline">
+          From raw data to decision intelligence — building real-time visibility and predictive control.
+        </div>
+      </div>
+      <div class="header-meta">
+        <span><strong>Focus:</strong> Decision intelligence, KPI visibility, and digital maturity</span>
+        <span><strong>Tools:</strong> Python · SQL · Power BI · ML & Forecasting</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar" aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="ai-manufacturing.html">AI for Manufacturing</a></li>
+      <li><a href="operational-excellence.html">Operational Excellence</a></li>
+      <li><a href="data-analytics.html" class="active">Data Analytics</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="ongoing-projects.html">Ongoing Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Intro -->
+  <section class="container">
+    <h2>Data Analytics & Digital Transformation</h2>
+    <p class="highlighted-intro">
+      Every great industrial transformation begins with a single question — <strong>what story does the data tell?</strong>
+      My work turns that story into strategy: helping organizations use their data not just for measurement,
+      but for <strong>insight, prediction, and sustainable growth</strong>. I combine AI, analytics, and system design to create
+      <strong>real-time visibility</strong> across operations — translating complex performance data into clear, actionable intelligence.
+      Over the years, I’ve designed data-driven ecosystems that redefine how teams monitor KPIs, manage performance,
+      and optimize resources. For me, analytics isn’t just dashboards — it’s <strong>decision intelligence</strong> that connects data,
+      processes, and people with purpose.
+    </p>
+  </section>
+
+  <!-- Core Expertise -->
+  <section class="container" id="core-expertise">
+    <h2>Core Expertise</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>1. Business Intelligence & KPI Visualization</h3>
+        <ul>
+          <li>Interactive <strong>Power BI</strong> dashboards for efficiency, quality, and utilization.</li>
+          <li>Automated reports via <strong>Python + SQL</strong> pipelines (time −<strong>80%</strong>).</li>
+          <li>Executive KPI systems aligned with strategy.</li>
+          <li>Real-time <strong>OEE</strong> transparency at shift & machine level.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>2. Predictive & Prescriptive Analytics</h3>
+        <ul>
+          <li>Models for downtime, quality deviation, and demand.</li>
+          <li>Regression, forecasting, clustering for planning optimization.</li>
+          <li>Anomaly detection for early issue flags and proactive maintenance.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>3. Digital Transformation & Process Intelligence</h3>
+        <ul>
+          <li>Sensor, logs, and MES data frameworks.</li>
+          <li>Apps and automations using <strong>Streamlit</strong> & <strong>Power BI Gateways</strong>.</li>
+          <li>Roadmaps blending <strong>Lean</strong> with digital maturity for scale.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>4. AI-Driven Decision Support Systems</h3>
+        <ul>
+          <li>Process data + ML → intelligent management dashboards.</li>
+          <li>Embedded analytics in daily reviews (decision time −<strong>30%</strong>).</li>
+          <li>Upskilled teams to interpret analytics & visualization.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Project -->
+  <section class="container" id="featured-project">
+    <h2>Featured Project — Real-Time Production Intelligence System</h2>
+    <div class="project">
+      <div class="card">
+        <h3>The Challenge</h3>
+        <div class="timeline">
+          <div class="tl-step"><strong>Fragmented data</strong> across production, quality, and maintenance.</div>
+          <div class="tl-step"><strong>Slow reporting</strong> cycles (T+1/T+7) blocking daily decisions.</div>
+          <div class="tl-step"><strong>No single source of truth</strong> for KPIs like OEE & cost/unit.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Architecture (Simplified)</h3>
+        <div class="arch">
+          <div class="arch-item"><strong>Ingestion</strong> PLC/MES logs, QC sheets, CMMS → <em>SQL</em></div>
+          <div class="arch-item"><strong>Transform</strong> Python pipelines (cleaning, joins, features)</div>
+          <div class="arch-item"><strong>Model</strong> Forecasting & anomaly detection (scikit-learn)</div>
+          <div class="arch-item"><strong>Serve</strong> Power BI semantic model → dashboards</div>
+        </div>
+        <p>
+          <span class="chip">SQL</span><span class="chip">Python</span><span class="chip">scikit-learn</span>
+          <span class="chip">Power BI</span><span class="chip">CMMS/MES</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>High-Impact KPIs</h3>
+        <div class="kpis">
+          <div class="kpi">−60%<small>Decision latency</small></div>
+          <div class="kpi">+18%<small>Asset utilization</small></div>
+          <div class="kpi">−22%<small>Unplanned stops</small></div>
+          <div class="kpi">+35%<small>On-time reports</small></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>What Changed</h3>
+        <ul>
+          <li>Shifted from static spreadsheets to <strong>live KPIs</strong> with drill-downs.</li>
+          <li>Daily tier meetings run off the same source of truth.</li>
+          <li>Maintenance moves from reactive to <strong>predictive</strong> interventions.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Capabilities -->
+  <section class="container" id="capabilities">
+    <h2>Key Capabilities</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Analytics & Machine Learning</h3>
+        <ul>
+          <li>Python, R, scikit-learn for supervised & time-series models.</li>
+          <li>Feature engineering for production & quality signals.</li>
+          <li>Model monitoring and feedback loops.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Business Intelligence</h3>
+        <ul>
+          <li>Power BI semantic models, DAX, row-level security.</li>
+          <li>SQL views for governed, reusable datasets.</li>
+          <li>Self-service analytics enablement.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Reliability & Optimization</h3>
+        <ul>
+          <li>Predictive maintenance & anomaly detection.</li>
+          <li>Bottleneck analysis & what-if simulations.</li>
+          <li>OEE, takt, and throughput optimization.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Digital Maturity & Smart Factory</h3>
+        <ul>
+          <li>Roadmaps blending Lean with digital standards.</li>
+          <li>Governance, data quality, and change management.</li>
+          <li>Scalable architectures for multi-site rollout.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Highlights -->
+  <section class="container" id="portfolio">
+    <h2>Portfolio Highlights</h2>
+    <p class="highlighted-intro">
+      My portfolio sits at the intersection of <strong>AI</strong>, <strong>Industrial Engineering</strong>, and <strong>Data Analytics</strong> — real-world projects that turn
+      complex manufacturing problems into structured, intelligent solutions. Each project reflects a mission to make operations
+      smarter, faster, and more resilient through applied intelligence and continuous improvement.
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Ahmad Bin Sadiq — Data Analytics & Decision Intelligence
+  </footer>
+</body>
+</html>

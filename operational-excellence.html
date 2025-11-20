@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ahmad Bin Sadiq — Operational Excellence</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root{
+      --ink:#111; --paper:#fff; --accent:#000; --muted:#555; --ring:#000;
+      --card-br:12px;
+    }
+    body {
+      font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Clean Light Header ---------- */
+    header.site-header {
+      width: 100%;
+      background: linear-gradient(135deg, #fafafa 0%, #f3f3f3 100%);
+      border-bottom: 1px solid #e2e2e2;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .identity-block {
+      border-left: 3px solid #000;
+      padding-left: 18px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #777;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .name {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 8px;
+    }
+
+    .role-line {
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      font-size: 14px;
+      font-weight: 500;
+      color: #444;
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .header-meta {
+      text-align: right;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .header-meta strong { font-weight: 700; }
+    .header-meta span { display: block; }
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+      position: sticky; top: 0; z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.9);
+      transition: background 0.3s ease;
+      border-bottom: 2px solid #000;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .navbar ul {
+      list-style: none; display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 28px; padding: 16px 0;
+    }
+    .navbar a {
+      font-weight: 600; font-size: 15px; text-transform: uppercase;
+      letter-spacing: 0.6px; position: relative; padding: 6px 10px;
+      text-decoration: none;
+    }
+    .navbar a::after {
+      content: ""; position: absolute; left: 0; bottom: -3px;
+      width: 0%; height: 2px; background: var(--ring); transition: width 0.3s;
+    }
+    .navbar a:hover::after, .navbar a.active::after { width: 100%; }
+
+    /* Container */
+    .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+
+    /* Section headings with left accent bar */
+    section h2 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    section h2::before {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 30px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    .highlighted-intro {
+      font-size: 16px; color: #222; text-align: justify; line-height: 1.9;
+      max-width: 950px; margin: 0 auto 50px;
+    }
+    .highlighted-intro strong { color: #000; font-weight: 600; }
+
+    /* ---------- Horizontal Card Grid ---------- */
+    .h-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .h-row {
+      border: 2px solid var(--accent);
+      border-radius: var(--card-br);
+      background: #fff;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;       /* 🔹 One column inside card */
+      gap: 14px;
+      transition: all 0.3s ease;
+    }
+    .h-row:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-4px);
+    }
+    .h-row-main,
+    .h-row-detail {
+      flex: 1 1 100%;
+      min-width: 0;
+    }
+    .h-row h3 {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      text-transform: none;
+    }
+    .h-row p {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 6px;
+      text-align: justify;
+    }
+    .h-row ul {
+      margin-left: 18px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .h-row li {
+      margin: 5px 0;
+      text-align: justify;
+    }
+    .h-row strong { color: #000; }
+    .h-row:hover strong { color: #fff; }
+
+    /* ---------- Vertical cards (Key Tools & Techniques) ---------- */
+    .career-section {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px; align-items: stretch;
+    }
+    .career-card {
+      border: 2px solid var(--accent); border-radius: var(--card-br);
+      background: #fff; padding: 18px 20px; transition: all 0.3s ease;
+      display: flex; flex-direction: column; gap: 10px;
+      text-align: justify;
+    }
+    .career-card:hover {
+      background: var(--accent); color: #fff; transform: translateY(-4px);
+    }
+    .career-card h3 {
+      font-size: 17px; font-weight: 800; text-transform: none;
+    }
+    .career-card ul { margin-left: 18px; font-size: 14.5px; }
+    .career-card li { margin: 4px 0; }
+    .career-card strong { color: #000; }
+    .career-card:hover strong { color: #fff; }
+
+    footer {
+      text-align: center; font-size: 13px; color: #555;
+      margin: 70px 0 40px;
+    }
+
+    /* Responsive header */
+    @media (max-width: 1000px) {
+      .header-inner {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: left;
+      }
+      .header-meta {
+        text-align: left;
+        padding-left: 18px;
+      }
+    }
+    @media (max-width: 900px) {
+      .name { font-size: 28px; }
+      .tagline { font-size: 13.5px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Clean Light Header -->
+  <header class="site-header" aria-label="Hero banner">
+    <div class="header-inner">
+      <div class="identity-block">
+        <div class="eyebrow">Operational Excellence & Lean Transformation</div>
+        <div class="name">Ahmad Bin Sadiq</div>
+        <div class="role-line">
+          Industrial Engineer (Gold Medalist) · Lean Six Sigma Black Belt · AI & Data Analytics Strategist
+        </div>
+        <div class="tagline">
+          Driving transformation through data, discipline, and a mindset of continuous improvement.
+        </div>
+      </div>
+      <div class="header-meta">
+        <span><strong>Focus:</strong> Flow, waste elimination, and reliable systems</span>
+        <span><strong>Method:</strong> Lean, Six Sigma, and data-driven problem solving</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar" aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="ai-manufacturing.html">AI for Manufacturing</a></li>
+      <li><a href="operational-excellence.html" class="active">Operational Excellence</a></li>
+      <li><a href="data-analytics.html">Data Analytics</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="ongoing-projects.html">Ongoing Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Intro -->
+  <section class="container">
+    <h2>Lean Six Sigma & Industrial Engineering Excellence</h2>
+    <p class="highlighted-intro">
+      At the core of every high-performing organization lies one principle — <strong>continuous improvement</strong>.
+      My journey as a Lean Six Sigma Black Belt and Industrial Engineer has been driven by a single objective:
+      to eliminate waste, enhance flow, and create systems that deliver more value with less effort. Over the years,
+      I’ve led numerous Lean transformation and process optimization projects, turning manual, inconsistent, and reactive
+      operations into <strong>data-driven, standardized, and proactive systems</strong>. For me, Lean is not just a methodology — it’s a
+      <strong>mindset of evolution through measurement, learning, and collaboration</strong>.
+    </p>
+  </section>
+
+  <!-- Core Expertise (Horizontal Rows) -->
+  <section class="container" id="core-expertise">
+    <h2>Core Expertise</h2>
+    <div class="h-grid">
+      <div class="h-row">
+        <div class="h-row-main">
+          <h3>Process Optimization &amp; Value Stream Transformation</h3>
+          <p>
+            Building end-to-end visibility of processes to remove waste, compress lead time, and align resources
+            with value-creating work.
+          </p>
+        </div>
+        <div class="h-row-detail">
+          <ul>
+            <li>Conducted detailed Value Stream Mapping (VSM) to visualize and eliminate bottlenecks.</li>
+            <li>Reduced process lead times by up to <strong>70%</strong> and non-value-added activities by <strong>25%</strong>.</li>
+            <li>Implemented layout redesign and process balancing to optimize resource flow.</li>
+            <li>Combined Lean principles with <strong>Python-based analytics</strong> for faster problem detection.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="h-row">
+        <div class="h-row-main">
+          <h3>Lean Six Sigma Projects</h3>
+          <p>
+            Using structured DMAIC thinking to attack chronic losses, stabilize processes, and build repeatable,
+            data-driven improvement routines.
+          </p>
+        </div>
+        <div class="h-row-detail">
+          <ul>
+            <li>Led <strong>DMAIC</strong> projects addressing defects, downtime, and process variation.</li>
+            <li>Reduced variation via <strong>SPC</strong> and hypothesis testing using <strong>Minitab</strong>, <strong>Python</strong>, and <strong>R</strong>.</li>
+            <li>Trained teams on <strong>RCA</strong> and <strong>CAPA</strong> frameworks.</li>
+            <li>Developed standardized work systems that improved operator consistency and reduced rework.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="h-row">
+        <div class="h-row-main">
+          <h3>Production Planning &amp; System Efficiency</h3>
+          <p>
+            Leveling demand, stabilizing flow, and aligning manpower with takt so that systems run smoothly instead
+            of firefighting.
+          </p>
+        </div>
+        <div class="h-row-detail">
+          <ul>
+            <li>Introduced <strong>Heijunka</strong> scheduling to balance workloads and stabilize production.</li>
+            <li>Optimized manpower allocation through time studies and data-driven planning.</li>
+            <li>Integrated Lean metrics (Cycle Time, Takt Time, OEE) with <strong>Power BI</strong> dashboards for transparency.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="h-row">
+        <div class="h-row-main">
+          <h3>Cross-Functional Collaboration &amp; Leadership</h3>
+          <p>
+            Connecting operations, maintenance, and quality around a shared performance language and
+            joint problem-solving.
+          </p>
+        </div>
+        <div class="h-row-detail">
+          <ul>
+            <li>Facilitated workshops between operations, maintenance, and quality teams.</li>
+            <li>Mentored engineers and supervisors in Lean problem-solving and waste reduction.</li>
+            <li>Built a culture of ownership and continuous development to sustain long-term improvement momentum.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Lean Projects (Horizontal Rows) -->
+  <section class="container" id="signature-projects">
+    <h2>Signature Lean Projects — Four Dimensions of Excellence</h2>
+    <p class="highlighted-intro" style="margin-bottom:32px;">
+      Lean transformation is not just about tools or charts — it’s about designing harmony between <strong>systems</strong>, <strong>processes</strong>,
+      <strong>data</strong>, and <strong>people</strong>. Each project contributes to one of these four dimensions that define sustainable
+      operational excellence.
+    </p>
+
+    <div class="h-grid">
+      <!-- Systems -->
+      <div class="h-row">
+        <div class="h-row-main">
+          <h3>1. Systems — Creating Stability &amp; Flow</h3>
+          <p><strong>Downtime Reduction &amp; Line Balancing</strong></p>
+          <ul>
+            <li><em>Problem:</em> Excessive downtime and imbalance causing missed targets.</li>
+            <li><em>Solution:</em> Applied VSM and Lean tools to identify 8 loss areas; introduced TPM-inspired routines and standardized shift reviews.</li>
+            <li><em>Result:</em> Downtime reduced from <strong>60 hours/month to zero</strong>, throughput +<strong>22%</strong>, equipment utilization +<strong>18%</strong>.</li>
+          </ul>
+        </div>
+        <div class="h-row-detail">
+          <p><strong>Layout Redesign &amp; Flow Optimization</strong></p>
+          <ul>
+            <li><em>Problem:</em> Long travel distances and workflow interruptions between departments.</li>
+            <li><em>Solution:</em> Optimized factory layout using spaghetti diagrams and flow simulation.</li>
+            <li><em>Result:</em> Internal travel distance −<strong>40%</strong>, better floor-space utilization, enhanced process visibility.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Processes -->
+      <div class="h-row">
+        <div class="h-row-main">
+          <h3>2. Processes — Standardization &amp; Continuous Flow</h3>
+          <p><strong>Heijunka Scheduling &amp; Workload Leveling</strong></p>
+          <ul>
+            <li>Balanced workloads between lines and shifts using demand-based scheduling.</li>
+            <li>Introduced takt-time alignment and pitch boards for daily visibility.</li>
+            <li><strong>Result:</strong> Production variability −<strong>30%</strong>, improved schedule adherence, smoother flow.</li>
+          </ul>
+          <p><strong>Standard Work Implementation</strong></p>
+          <ul>
+            <li>Designed and documented SOPs; introduced visual aids for repetitive tasks.</li>
+            <li><strong>Impact:</strong> Process consistency +<strong>35%</strong>, reduced training time, seamless shift transitions.</li>
+          </ul>
+        </div>
+        <div class="h-row-detail">
+          <p><strong>Lead Time Reduction Initiative</strong></p>
+          <ul>
+            <li>Conducted end-to-end VSM and introduced Kanban & WIP control limits for continuous flow.</li>
+            <li><strong>Result:</strong> Lead time <strong>15 → 2 days</strong>, on-time delivery +<strong>45%</strong>, higher customer satisfaction.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Data -->
+      <div class="h-row">
+        <div class="h-row-main">
+          <h3>3. Data — Visibility &amp; Decision Intelligence</h3>
+          <p><strong>Visual Performance Management System</strong></p>
+          <ul>
+            <li>Developed Power BI dashboards integrating Lean KPIs (OEE, Takt Time, Cycle Time).</li>
+            <li><strong>Result:</strong> Daily performance tracking, faster RCA, decision turnaround improved by <strong>30%</strong>.</li>
+          </ul>
+        </div>
+        <div class="h-row-detail">
+          <p><strong>Lean + AI Integration Pilot</strong></p>
+          <ul>
+            <li>Used Python models for anomaly detection and maintenance prediction; visualized insights in Power BI.</li>
+            <li><strong>Result:</strong> Reduced unplanned stoppages; enabled proactive improvement planning.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- People -->
+      <div class="h-row">
+        <div class="h-row-main">
+          <h3>4. People — Culture, Ownership &amp; Collaboration</h3>
+          <p><strong>Organizational Development &amp; Cultural Transformation</strong></p>
+          <ul>
+            <li>Shifted focus from documentation to people-driven improvement — ownership, respect, communication.</li>
+            <li>Introduced Kaizen circles, leadership & collaboration workshops, and a “Respect for People” charter.</li>
+          </ul>
+        </div>
+        <div class="h-row-detail">
+          <ul>
+            <li><strong>Result:</strong> Team engagement +<strong>40%</strong>, idea generation tripled, self-sustaining improvement culture.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="container" id="philosophy">
+    <h2>Philosophy — Lean + AI = Intelligent Efficiency</h2>
+    <p class="highlighted-intro">
+      <strong>Lean excellence provides structure — AI provides insight.</strong> By merging the two, I help organizations move from
+      reactive firefighting to <strong>predictive excellence</strong>. When data analytics identifies bottlenecks and Lean systems sustain the fix,
+      the result is real, measurable transformation. My goal is to evolve Lean thinking for the digital age — building factories that
+      continuously learn, adapt, and improve, powered by both human ingenuity and artificial intelligence.
+    </p>
+  </section>
+
+  <!-- Key Tools & Techniques -->
+  <section class="container" id="tools">
+    <h2>Key Tools &amp; Techniques</h2>
+    <div class="career-section">
+      <div class="career-card">
+        <h3>Lean &amp; Quality</h3>
+        <ul>
+          <li>Lean Six Sigma: DMAIC, Kaizen, 5S, VSM, Heijunka</li>
+          <li>SPC (Statistical Process Control)</li>
+          <li>RCA &amp; FMEA</li>
+        </ul>
+      </div>
+      <div class="career-card">
+        <h3>Analytics &amp; Visualization</h3>
+        <ul>
+          <li>Minitab, Python, R</li>
+          <li>Power BI, Excel</li>
+          <li>KPI Development &amp; Process Visualization</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Ahmad Bin Sadiq — Operational Excellence & Lean Transformation
+  </footer>
+
+</body>
+</html>
